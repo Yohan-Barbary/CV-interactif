@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours SQL - DWWM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cours.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">DWWM</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="../lexique.html"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="course-content">
+        <aside class="course-menu">
+            <h3>Sommaire SQL</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#bases">Bases de données</a></li>
+                <li><a href="#tables">Tables et Types</a></li>
+                <li><a href="#crud">Opérations CRUD</a></li>
+                <li><a href="#jointures">Jointures</a></li>
+                <li><a href="#fonctions">Fonctions SQL</a></li>
+                <li><a href="#index">Index et Performance</a></li>
+                <li><a href="#transactions">Transactions</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-main">
+            <h1>SQL - Les Fondamentaux</h1>
+
+            <article id="introduction">
+                <h2>Introduction à SQL</h2>
+                <p>SQL (Structured Query Language) est un langage standardisé pour la gestion des bases de données relationnelles.</p>
+                
+                <div class="info-box">
+                    <h3>Types de commandes SQL :</h3>
+                    <ul>
+                        <li>DDL (Data Definition Language)</li>
+                        <li>DML (Data Manipulation Language)</li>
+                        <li>DCL (Data Control Language)</li>
+                        <li>TCL (Transaction Control Language)</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Commentaire sur une ligne
+/* Commentaire
+   sur plusieurs lignes */
+
+-- Création d'une base de données
+CREATE DATABASE ma_base;
+
+-- Utilisation d'une base de données
+USE ma_base;
+
+-- Afficher les bases de données
+SHOW DATABASES;
+
+-- Supprimer une base de données
+DROP DATABASE ma_base;
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="tables">
+                <h2>Tables et Types de données</h2>
+                
+                <div class="info-box">
+                    <h3>Types de données courants :</h3>
+                    <ul>
+                        <li>Numériques (INT, DECIMAL, FLOAT)</li>
+                        <li>Chaînes (VARCHAR, TEXT)</li>
+                        <li>Dates (DATE, DATETIME, TIMESTAMP)</li>
+                        <li>Booléens (BOOLEAN/TINYINT)</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Création d'une table
+CREATE TABLE utilisateurs (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    age INT CHECK (age >= 18),
+    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP,
+    actif BOOLEAN DEFAULT true
+);
+
+-- Modification de structure
+ALTER TABLE utilisateurs
+ADD COLUMN telephone VARCHAR(15),
+MODIFY COLUMN nom VARCHAR(100);
+
+-- Contraintes
+CREATE TABLE commandes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    utilisateur_id INT,
+    montant DECIMAL(10,2),
+    date_commande DATETIME,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateurs(id)
+);
+
+-- Index
+CREATE INDEX idx_email ON utilisateurs(email);
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="crud">
+                <h2>Opérations CRUD</h2>
+                
+                <div class="info-box">
+                    <h3>Opérations de base :</h3>
+                    <ul>
+                        <li>CREATE (INSERT)</li>
+                        <li>READ (SELECT)</li>
+                        <li>UPDATE</li>
+                        <li>DELETE</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- INSERT : Ajouter des données
+INSERT INTO utilisateurs (nom, email, age)
+VALUES ('John Doe', 'john@example.com', 25);
+
+-- INSERT multiple
+INSERT INTO utilisateurs (nom, email, age) VALUES 
+    ('Alice', 'alice@example.com', 30),
+    ('Bob', 'bob@example.com', 28);
+
+-- SELECT : Lire des données
+SELECT * FROM utilisateurs;
+SELECT nom, email FROM utilisateurs WHERE age > 25;
+SELECT * FROM utilisateurs ORDER BY nom ASC LIMIT 10;
+
+-- UPDATE : Modifier des données
+UPDATE utilisateurs 
+SET email = 'nouveau@example.com'
+WHERE id = 1;
+
+-- DELETE : Supprimer des données
+DELETE FROM utilisateurs WHERE id = 1;
+DELETE FROM utilisateurs WHERE age < 18;
+
+-- Clause WHERE avec opérateurs
+SELECT * FROM utilisateurs
+WHERE age BETWEEN 25 AND 35
+AND ville IN ('Paris', 'Lyon')
+AND nom LIKE 'A%';
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="jointures">
+                <h2>Jointures SQL</h2>
+                
+                <div class="info-box">
+                    <h3>Types de jointures :</h3>
+                    <ul>
+                        <li>INNER JOIN</li>
+                        <li>LEFT JOIN</li>
+                        <li>RIGHT JOIN</li>
+                        <li>FULL JOIN</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- INNER JOIN
+SELECT u.nom, c.montant
+FROM utilisateurs u
+INNER JOIN commandes c ON u.id = c.utilisateur_id;
+
+-- LEFT JOIN
+SELECT u.nom, c.montant
+FROM utilisateurs u
+LEFT JOIN commandes c ON u.id = c.utilisateur_id;
+
+-- Multiple JOIN
+SELECT u.nom, c.montant, p.nom_produit
+FROM utilisateurs u
+LEFT JOIN commandes c ON u.id = c.utilisateur_id
+LEFT JOIN produits p ON c.produit_id = p.id;
+
+-- Sous-requêtes
+SELECT nom, 
+    (SELECT COUNT(*) FROM commandes 
+     WHERE utilisateur_id = u.id) as nb_commandes
+FROM utilisateurs u;
+
+-- GROUP BY avec JOIN
+SELECT u.ville, COUNT(c.id) as nb_commandes, 
+       AVG(c.montant) as montant_moyen
+FROM utilisateurs u
+LEFT JOIN commandes c ON u.id = c.utilisateur_id
+GROUP BY u.ville
+HAVING nb_commandes > 5;
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="fonctions">
+                <h2>Fonctions SQL</h2>
+                
+                <div class="info-box">
+                    <h3>Types de fonctions :</h3>
+                    <ul>
+                        <li>Fonctions d'agrégation</li>
+                        <li>Fonctions de chaînes</li>
+                        <li>Fonctions de dates</li>
+                        <li>Fonctions mathématiques</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Fonctions d'agrégation
+SELECT 
+    COUNT(*) as total,
+    COUNT(DISTINCT ville) as nb_villes,
+    AVG(age) as age_moyen,
+    SUM(montant) as total_ventes,
+    MAX(date_commande) as derniere_commande
+FROM utilisateurs;
+
+-- Fonctions de chaînes
+SELECT 
+    UPPER(nom) as nom_maj,
+    LOWER(email) as email_min,
+    CONCAT(nom, ' (', ville, ')') as nom_complet,
+    LENGTH(nom) as longueur_nom,
+    SUBSTRING(description, 1, 100) as extrait
+FROM utilisateurs;
+
+-- Fonctions de dates
+SELECT 
+    DATE_FORMAT(date_inscription, '%d/%m/%Y') as date_fr,
+    DATEDIFF(NOW(), date_inscription) as jours_inscription,
+    DATE_ADD(date_inscription, INTERVAL 1 YEAR) as renouvellement,
+    YEAR(date_inscription) as annee,
+    MONTH(date_inscription) as mois;
+
+-- GROUP BY et HAVING
+SELECT 
+    ville,
+    COUNT(*) as nb_utilisateurs,
+    AVG(age) as age_moyen
+FROM utilisateurs
+GROUP BY ville
+HAVING nb_utilisateurs > 10
+ORDER BY nb_utilisateurs DESC;
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="index">
+                <h2>Index et Performance</h2>
+                
+                <div class="info-box">
+                    <h3>Types d'index :</h3>
+                    <ul>
+                        <li>Index primaire (PRIMARY KEY)</li>
+                        <li>Index unique (UNIQUE)</li>
+                        <li>Index simple</li>
+                        <li>Index composé</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Création d'index
+CREATE INDEX idx_nom ON utilisateurs(nom);
+CREATE UNIQUE INDEX idx_email ON utilisateurs(email);
+CREATE INDEX idx_ville_age ON utilisateurs(ville, age);
+
+-- Suppression d'index
+DROP INDEX idx_nom ON utilisateurs;
+
+-- Analyse des requêtes
+EXPLAIN SELECT * FROM utilisateurs WHERE email = 'test@example.com';
+
+-- Optimisation des requêtes
+SELECT * FROM utilisateurs 
+USE INDEX (idx_ville_age)
+WHERE ville = 'Paris' AND age > 25;
+
+-- Statistiques des tables
+ANALYZE TABLE utilisateurs;
+SHOW INDEX FROM utilisateurs;
+
+-- Maintenance des index
+OPTIMIZE TABLE utilisateurs;
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Bonnes pratiques :</h3>
+                    <ul>
+                        <li>Indexer les colonnes fréquemment utilisées dans WHERE</li>
+                        <li>Éviter les index sur les colonnes rarement filtrées</li>
+                        <li>Utiliser EXPLAIN pour analyser les performances</li>
+                        <li>Maintenir régulièrement les index</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="transactions">
+                <h2>Transactions et Concurrence</h2>
+                
+                <div class="info-box">
+                    <h3>Propriétés ACID :</h3>
+                    <ul>
+                        <li>Atomicité</li>
+                        <li>Cohérence</li>
+                        <li>Isolation</li>
+                        <li>Durabilité</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Démarrer une transaction
+START TRANSACTION;
+
+-- Opérations dans la transaction
+UPDATE comptes SET solde = solde - 100 WHERE id = 1;
+UPDATE comptes SET solde = solde + 100 WHERE id = 2;
+
+-- Valider la transaction
+COMMIT;
+
+-- Annuler la transaction
+ROLLBACK;
+
+-- Niveaux d'isolation
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+-- Verrouillage explicite
+SELECT * FROM comptes WHERE id = 1 FOR UPDATE;
+SELECT * FROM comptes WHERE id = 1 LOCK IN SHARE MODE;
+
+-- Points de sauvegarde
+SAVEPOINT point1;
+-- opérations...
+ROLLBACK TO SAVEPOINT point1;
+
+-- Gestion des deadlocks
+SET innodb_lock_wait_timeout = 50;
+SHOW ENGINE INNODB STATUS;
+                    </code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h3>Niveaux d'isolation :</h3>
+                    <ul>
+                        <li>READ UNCOMMITTED : Lectures sales possibles</li>
+                        <li>READ COMMITTED : Pas de lectures sales</li>
+                        <li>REPEATABLE READ : Lectures cohérentes</li>
+                        <li>SERIALIZABLE : Isolation totale</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="securite">
+                <h2>Sécurité et Droits d'accès</h2>
+                
+                <div class="info-box">
+                    <h3>Gestion des utilisateurs :</h3>
+                    <ul>
+                        <li>Création d'utilisateurs</li>
+                        <li>Attribution des privilèges</li>
+                        <li>Révocation des droits</li>
+                        <li>Sécurité des données</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-sql">
+-- Création d'utilisateur
+CREATE USER 'utilisateur'@'localhost' 
+IDENTIFIED BY 'mot_de_passe';
+
+-- Attribution de privilèges
+GRANT SELECT, INSERT ON ma_base.* 
+TO 'utilisateur'@'localhost';
+
+-- Privilèges spécifiques
+GRANT SELECT ON ma_base.utilisateurs 
+TO 'utilisateur'@'localhost';
+
+-- Révocation de privilèges
+REVOKE INSERT ON ma_base.* 
+FROM 'utilisateur'@'localhost';
+
+-- Suppression d'utilisateur
+DROP USER 'utilisateur'@'localhost';
+
+-- Voir les privilèges
+SHOW GRANTS FOR 'utilisateur'@'localhost';
+
+-- Mise à jour des privilèges
+FLUSH PRIVILEGES;
+                    </code></pre>
+                </div>
+            </article>
+
+            <footer>
+                <p>&copy; 2024 Formation DWWM - Tous droits réservés</p>
+            </footer>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html> 

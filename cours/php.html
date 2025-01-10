@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours PHP - DWWM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cours.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">DWWM</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="../lexique.html"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="course-content">
+        <aside class="course-menu">
+            <h3>Sommaire PHP</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#bases">Les bases</a></li>
+                <li><a href="#variables">Variables et Types</a></li>
+                <li><a href="#conditions">Conditions et Boucles</a></li>
+                <li><a href="#fonctions">Fonctions</a></li>
+                <li><a href="#arrays">Tableaux</a></li>
+                <li><a href="#poo">POO</a></li>
+                <li><a href="#bdd">Bases de données</a></li>
+                <li><a href="#sessions">Sessions et Cookies</a></li>
+                <li><a href="#operateurs">Opérateurs</a></li>
+                <li><a href="#erreurs">Gestion des Erreurs et Exceptions</a></li>
+                <li><a href="#fichiers">Manipulation de Fichiers</a></li>
+                <li><a href="#securite">Sécurité et Validation des Données</a></li>
+                <li><a href="#api">API REST</a></li>
+                <li><a href="#formulaires">Formulaires et Traitement des Données</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-main">
+            <h1>PHP - Les Fondamentaux</h1>
+
+            <article id="introduction">
+                <h2>Introduction à PHP</h2>
+                <p>PHP (Hypertext Preprocessor) est un langage de programmation côté serveur spécialement conçu pour le développement web.</p>
+                
+                <div class="info-box">
+                    <h3>Caractéristiques :</h3>
+                    <ul>
+                        <li>Langage côté serveur</li>
+                        <li>Intégration facile avec HTML</li>
+                        <li>Large écosystème</li>
+                        <li>Support des bases de données</li>
+                    </ul>
+                </div>
+
+                <h3>Configuration de base</h3>
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token comment">// Fichier php.ini - Configurations courantes</span>
+
+<span class="token comment">// Affichage des erreurs (développement)</span>
+<span class="token function">error_reporting</span>(<span class="token constant">E_ALL</span>);
+<span class="token function">ini_set</span>(<span class="token string">'display_errors'</span>, <span class="token number">1</span>);
+
+<span class="token comment">// Fuseau horaire</span>
+<span class="token function">date_default_timezone_set</span>(<span class="token string">'Europe/Paris'</span>);
+
+<span class="token comment">// Encodage</span>
+<span class="token function">ini_set</span>(<span class="token string">'default_charset'</span>, <span class="token string">'UTF-8'</span>);
+
+<span class="token comment">// Limite de mémoire</span>
+<span class="token function">ini_set</span>(<span class="token string">'memory_limit'</span>, <span class="token string">'256M'</span>);
+
+<span class="token comment">// Temps maximum d'exécution</span>
+<span class="token function">set_time_limit</span>(<span class="token number">30</span>);
+
+<span class="token comment">// Taille maximale des fichiers uploadés</span>
+<span class="token function">ini_set</span>(<span class="token string">'upload_max_filesize'</span>, <span class="token string">'2M'</span>);
+<span class="token function">ini_set</span>(<span class="token string">'post_max_size'</span>, <span class="token string">'8M'</span>);
+
+<span class="token comment">// Information sur PHP</span>
+<span class="token function">phpinfo</span>();
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points importants :</h4>
+                    <ul>
+                        <li>Les configurations peuvent être modifiées dans php.ini ou via ini_set()</li>
+                        <li>Certains paramètres ne peuvent être modifiés qu'au niveau du serveur</li>
+                        <li>Les valeurs doivent être adaptées selon l'environnement (dev/prod)</li>
+                        <li>phpinfo() permet de voir la configuration actuelle</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="bases">
+                <h2>Les bases de PHP</h2>
+                
+                <div class="info-box">
+                    <h3>Syntaxe de base :</h3>
+                    <ul>
+                        <li>Tags PHP</li>
+                        <li>Commentaires</li>
+                        <li>Echo et Print</li>
+                        <li>Variables</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token comment">// Déclaration PHP</span>
+<span class="token delimiter">&lt;?php</span>
+
+<span class="token comment">// Commentaire sur une ligne</span>
+<span class="token comment">/* Commentaire
+   sur plusieurs lignes */</span>
+
+<span class="token comment">// Affichage</span>
+<span class="token function">echo</span> <span class="token string">"&lt;h1&gt;Hello World!&lt;/h1&gt;"</span>;
+<span class="token function">print</span>(<span class="token string">"&lt;p&gt;Hello World!&lt;/p&gt;"</span>);
+
+<span class="token comment">// Variables</span>
+<span class="token variable">$nom</span> = <span class="token string">"John"</span>;
+<span class="token variable">$age</span> = <span class="token number">25</span>;
+
+<span class="token comment">// Concaténation</span>
+<span class="token function">echo</span> <span class="token string">"&lt;p&gt;Je m'appelle "</span> . <span class="token variable">$nom</span> . <span class="token string">" et j'ai "</span> . <span class="token variable">$age</span> . <span class="token string">" ans.&lt;/p&gt;"</span>;
+<span class="token function">echo</span> <span class="token string">"&lt;p&gt;Je m'appelle $nom et j'ai $age ans.&lt;/p&gt;"</span>; <span class="token comment">// Avec guillemets doubles</span>
+
+<span class="token comment">// Constantes</span>
+<span class="token keyword">define</span>(<span class="token string">'PI'</span>, <span class="token number">3.14159</span>);
+<span class="token keyword">const</span> MA_CONSTANTE = <span class="token string">"Valeur"</span>;
+
+<span class="token comment">// Types de données de base</span>
+<span class="token variable">$chaine</span> = <span class="token string">"texte"</span>;
+<span class="token variable">$nombre</span> = <span class="token number">42</span>;
+<span class="token variable">$decimal</span> = <span class="token number">3.14</span>;
+<span class="token variable">$booleen</span> = <span class="token boolean">true</span>;
+<span class="token variable">$nul</span> = <span class="token keyword">null</span>;
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h3>Points importants :</h3>
+                    <ul>
+                        <li>Les variables commencent par $</li>
+                        <li>PHP est sensible à la casse pour les variables</li>
+                        <li>Les constantes sont généralement en majuscules</li>
+                        <li>Le point (.) sert à la concaténation</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="variables">
+                <h2>Variables et Types de données</h2>
+                
+                <div class="info-box">
+                    <h3>Types de données :</h3>
+                    <ul>
+                        <li>Scalaires (string, integer, float, boolean)</li>
+                        <li>Composés (array, object)</li>
+                        <li>Spéciaux (null, resource)</li>
+                        <li>Conversion de types</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Vérification des types</span>
+<span class="token variable">$nombre</span> = <span class="token number">42</span>;
+<span class="token function">var_dump</span>(<span class="token variable">$nombre</span>);        <span class="token comment">// affiche: int(42)</span>
+<span class="token function">gettype</span>(<span class="token variable">$nombre</span>);         <span class="token comment">// retourne: "integer"</span>
+<span class="token function">is_int</span>(<span class="token variable">$nombre</span>);         <span class="token comment">// retourne: true</span>
+
+<span class="token comment">// Conversion de types</span>
+<span class="token variable">$texte</span> = <span class="token string">"123"</span>;
+<span class="token variable">$nombre</span> = (<span class="token keyword">int</span>)<span class="token variable">$texte</span>;   <span class="token comment">// Cast explicite</span>
+<span class="token variable">$nombre</span> = <span class="token function">intval</span>(<span class="token variable">$texte</span>); <span class="token comment">// Fonction de conversion</span>
+
+<span class="token comment">// Vérification de variable</span>
+<span class="token function">isset</span>(<span class="token variable">$variable</span>);        <span class="token comment">// Vérifie si définie et non null</span>
+<span class="token function">empty</span>(<span class="token variable">$variable</span>);        <span class="token comment">// Vérifie si vide</span>
+<span class="token function">is_null</span>(<span class="token variable">$variable</span>);      <span class="token comment">// Vérifie si null</span>
+
+<span class="token comment">// Variables variables</span>
+<span class="token variable">$a</span> = <span class="token string">"hello"</span>;
+<span class="token variable">$hello</span> = <span class="token string">"Bonjour"</span>;
+<span class="token function">echo</span> <span class="token variable">$$a</span>;               <span class="token comment">// Affiche "Bonjour"</span>
+
+<span class="token comment">// Portée des variables</span>
+<span class="token variable">$globale</span> = <span class="token string">"Je suis globale"</span>;
+<span class="token keyword">function</span> <span class="token function-definition">test</span>() {
+    <span class="token keyword">global</span> <span class="token variable">$globale</span>;    <span class="token comment">// Accès à une variable globale</span>
+    <span class="token keyword">static</span> <span class="token variable">$compteur</span> = <span class="token number">0</span>; <span class="token comment">// Variable statique</span>
+    <span class="token variable">$compteur</span>++;
+}
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points importants :</h4>
+                    <ul>
+                        <li>PHP est un langage à typage dynamique</li>
+                        <li>Les conversions de types peuvent être implicites ou explicites</li>
+                        <li>Les variables ont différentes portées (locale, globale, statique)</li>
+                        <li>Utilisez les fonctions de vérification pour éviter les erreurs</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="conditions">
+                <h2>Les Conditions en PHP</h2>
+                
+                <div class="info-box">
+                    <h3>Types de conditions :</h3>
+                    <ul>
+                        <li>if, else, elseif</li>
+                        <li>switch et match (PHP 8+)</li>
+                        <li>Opérateurs de comparaison</li>
+                        <li>Opérateurs logiques</li>
+                        <li>Conditions ternaires</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3>Introduction aux Conditions</h3>
+                    <p>Les structures conditionnelles permettent d'exécuter différents blocs de code selon des conditions.</p>
+
+                <div class="code-example">
+                        <h4>Structure de Base</h4>
+                    <pre><code class="language-php">
+/*
+ * Structures conditionnelles en PHP
+ * -------------------------------
+ * if, else, elseif : Conditions de base
+ * switch : Alternative aux multiples if/else
+ * match : Version moderne du switch (PHP 8+)
+ * Opérateurs de comparaison : ==, ===, !=, !==, <, >, <=, >=
+ * Opérateurs logiques : &&, ||, !, and, or, xor
+ */
+                        </code></pre>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>If-Else Simple</h4>
+                        <pre><code class="language-php">
+// Structure if-else simple
+$age = 20;
+if ($age >= 18) {
+    echo "Majeur";
+} else {
+    echo "Mineur";
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>If-Elseif-Else</h4>
+                        <pre><code class="language-php">
+// Structure if-elseif-else
+$note = 15;
+if ($note >= 16) {
+    echo "Très bien";
+} elseif ($note >= 14) {
+    echo "Bien";
+} elseif ($note >= 12) {
+    echo "Assez bien";
+} else {
+    echo "Passable";
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Opérateurs Logiques</h4>
+                        <pre><code class="language-php">
+// Conditions avec opérateurs logiques
+$estConnecte = true;
+$estAdmin = false;
+if ($estConnecte && $estAdmin) {
+    echo "Accès au panneau d'administration";
+} elseif ($estConnecte || $estAdmin) {
+    echo "Accès limité";
+}
+        </code></pre>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Switch et Match</h4>
+        <pre><code class="language-php">
+// Switch case
+$fruit = "pomme";
+switch ($fruit) {
+    case "pomme":
+        echo "C'est une pomme";
+        break;
+    case "orange":
+        echo "C'est une orange";
+        break;
+    case "banane":
+        echo "C'est une banane";
+        break;
+    default:
+        echo "Fruit inconnu";
+}
+
+// Match (PHP 8+) - Plus moderne et concis
+$statut = match($note) {
+    20 => "Parfait",
+    18, 19 => "Excellent",
+    16, 17 => "Très bien",
+    14, 15 => "Bien",
+    12, 13 => "Assez bien",
+    default => "À améliorer"
+};
+        </code></pre>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Opérateurs Spéciaux</h4>
+        <pre><code class="language-php">
+// Opérateur ternaire
+$age = 20;
+$statut = ($age >= 18) ? "Majeur" : "Mineur";
+
+// Opérateur null coalescing
+$nom = $_GET['nom'] ?? "Anonyme";  // Si $_GET['nom'] n'existe pas, utilise "Anonyme"
+
+// Opérateur spaceship (PHP 7+)
+$comparaison = 5 <=> 10;  // Retourne -1 si inférieur, 0 si égal, 1 si supérieur
+                    </code></pre>
+                    </div>
+                </div>
+
+    <div class="explanation">
+        <h4>Bonnes pratiques :</h4>
+        <ul>
+            <li>Préférer === à == pour éviter les conversions de type implicites</li>
+            <li>Utiliser match plutôt que switch quand possible (PHP 8+)</li>
+            <li>Éviter les conditions trop imbriquées</li>
+            <li>Utiliser les parenthèses pour clarifier l'ordre des opérations</li>
+            <li>Penser à gérer tous les cas possibles</li>
+        </ul>
+    </div>
+            </article>
+
+            <article id="fonctions">
+                <h2>Fonctions</h2>
+                
+                <div class="info-box">
+                    <h3>Concepts clés :</h3>
+                    <ul>
+                        <li>Déclaration et appel</li>
+                        <li>Paramètres et retour</li>
+                        <li>Portée des variables</li>
+                        <li>Fonctions anonymes</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<?php
+// Fonction simple
+function direBonjour($nom) {
+    return "Bonjour $nom!";
+}
+
+// Paramètres typés (PHP 7+)
+function addition(int $a, int $b): int {
+    return $a + $b;
+}
+
+// Paramètres par défaut
+function config(string $host = 'localhost', int $port = 80) {
+    return "$host:$port";
+}
+
+// Paramètres nommés (PHP 8+)
+config(port: 443, host: 'example.com');
+
+// Fonction avec spread operator
+function somme(...$nombres) {
+    return array_sum($nombres);
+}
+
+// Fonction anonyme
+$double = function($x) {
+    return $x * 2;
+};
+
+// Arrow function (PHP 7.4+)
+$triple = fn($x) => $x * 3;
+
+// Closure
+$message = "Hello";
+$dire = function() use ($message) {
+    echo $message;
+};
+?>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="arrays">
+                <h2>Tableaux (Arrays)</h2>
+                
+                <div class="info-box">
+                    <h3>Types de tableaux :</h3>
+                    <ul>
+                        <li>Tableaux indexés</li>
+                        <li>Tableaux associatifs</li>
+                        <li>Tableaux multidimensionnels</li>
+                        <li>Fonctions de manipulation</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<?php
+// Tableau indexé
+$fruits = ['pomme', 'orange', 'banane'];
+$fruits[] = 'kiwi';  // Ajout d'un élément
+
+// Tableau associatif
+$personne = [
+    'nom' => 'Dupont',
+    'age' => 25,
+    'ville' => 'Paris'
+];
+
+// Tableau multidimensionnel
+$utilisateurs = [
+    ['nom' => 'Jean', 'age' => 30],
+    ['nom' => 'Marie', 'age' => 25]
+];
+
+// Fonctions utiles
+count($fruits);              // Nombre d'éléments
+array_push($fruits, 'poire'); // Ajoute à la fin
+array_pop($fruits);          // Retire le dernier
+array_shift($fruits);        // Retire le premier
+array_unshift($fruits, 'raisin'); // Ajoute au début
+
+// Parcours de tableau
+foreach ($personne as $cle => $valeur) {
+    echo "$cle: $valeur\n";
+}
+
+// Fonctions de manipulation
+$nombres = [3, 1, 4, 1, 5];
+sort($nombres);             // Tri
+array_reverse($nombres);    // Inverse
+array_sum($nombres);        // Somme
+array_filter($nombres, fn($n) => $n > 2); // Filtrage
+array_map(fn($n) => $n * 2, $nombres);    // Transformation
+?>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="poo">
+                <h3>Programmation Orientée Objet (POO)</h3>
+                <div class="content-section">
+                    <h4>Concepts de Base</h4>
+                    <p>La POO est un paradigme de programmation qui permet d'organiser le code en objets réutilisables.</p>
+
+                    <pre><code class="language-php">
+/*
+ * Concepts fondamentaux de la POO en PHP
+ * ----------------------------------
+ * Classes et Objets
+ * Propriétés et Méthodes
+ * Encapsulation
+ * Héritage
+ * Polymorphisme
+ * Interfaces
+ * Traits
+ */
+
+// Définition d'une classe de base
+class Utilisateur {
+    // Propriétés avec visibilité
+    private $id;
+    protected $nom;
+    public $email;
+    private static $compteur = 0;
+
+    // Constructeur
+    public function __construct(string $nom, string $email) {
+        $this->nom = $nom;
+        $this->email = $email;
+        $this->id = ++self::$compteur;
+    }
+
+    // Getters et Setters
+    public function getNom(): string {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): void {
+        $this->nom = $nom;
+    }
+
+    // Méthode statique
+    public static function getCompteur(): int {
+        return self::$compteur;
+    }
+
+    // Méthode magique toString
+    public function __toString(): string {
+        return "Utilisateur: {$this->nom} ({$this->email})";
+    }
+}
+
+// Héritage
+class Admin extends Utilisateur {
+    private $niveau;
+
+    public function __construct(string $nom, string $email, int $niveau) {
+        parent::__construct($nom, $email);
+        $this->niveau = $niveau;
+    }
+
+    public function getNiveau(): int {
+        return $this->niveau;
+    }
+}
+
+// Interface
+interface Authentifiable {
+    public function seConnecter(): bool;
+    public function seDeconnecter(): void;
+}
+
+// Trait
+trait Logger {
+    private $logs = [];
+
+    public function log(string $message): void {
+        $this->logs[] = date('Y-m-d H:i:s') . ": $message";
+    }
+
+    public function getLogs(): array {
+        return $this->logs;
+    }
+}
+
+// Classe utilisant interface et trait
+class UtilisateurPremium extends Utilisateur implements Authentifiable {
+    use Logger;
+
+    private $dateAbonnement;
+
+    public function __construct(string $nom, string $email) {
+        parent::__construct($nom, $email);
+        $this->dateAbonnement = new DateTime();
+    }
+
+    public function seConnecter(): bool {
+        $this->log("Connexion de l'utilisateur {$this->getNom()}");
+        return true;
+    }
+
+    public function seDeconnecter(): void {
+        $this->log("Déconnexion de l'utilisateur {$this->getNom()}");
+    }
+}
+
+// Exemple d'utilisation
+$user = new UtilisateurPremium("John Doe", "john@example.com");
+$user->seConnecter();
+echo $user; // Utilise __toString()
+
+// Classe abstraite
+abstract class Vehicule {
+    protected $marque;
+    protected $modele;
+
+    abstract public function demarrer(): void;
+    
+    public function getDescription(): string {
+        return "{$this->marque} {$this->modele}";
+    }
+}
+
+// Classes concrètes
+class Voiture extends Vehicule {
+    private $nombrePortes;
+
+    public function demarrer(): void {
+        echo "La voiture démarre...";
+    }
+}
+
+// Namespace et Autoloading
+namespace App\Models;
+
+class Produit {
+    private $nom;
+    private $prix;
+
+    public function __construct(string $nom, float $prix) {
+        $this->nom = $nom;
+        $this->prix = $prix;
+    }
+}
+
+// Exemple d'autoloading PSR-4
+spl_autoload_register(function ($class) {
+    $prefix = 'App\\';
+    $base_dir = __DIR__ . '/src/';
+
+    $len = strlen($prefix);
+    if (strncmp($prefix, $class, $len) !== 0) {
+        return;
+    }
+
+    $relative_class = substr($class, $len);
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+    if (file_exists($file)) {
+        require $file;
+    }
+});
+                    </code></pre>
+
+                    <div class="explanation">
+                        <h4>Points importants sur la POO :</h4>
+                        <ul>
+                            <li>L'encapsulation protège les données et le comportement</li>
+                            <li>L'héritage permet la réutilisation du code</li>
+                            <li>Les interfaces définissent des contrats</li>
+                            <li>Les traits permettent la réutilisation horizontale</li>
+                            <li>Les namespaces organisent le code</li>
+                        </ul>
+
+                        <h4>Exercices pratiques :</h4>
+                        <pre><code class="language-php">
+// Exercice 1: Créer une classe Compte bancaire
+class CompteBancaire {
+    private $solde;
+    private $proprietaire;
+
+    public function __construct(string $proprietaire, float $soldeInitial = 0) {
+        $this->proprietaire = $proprietaire;
+        $this->solde = $soldeInitial;
+    }
+
+    public function deposer(float $montant): void {
+        if ($montant <= 0) {
+            throw new Exception("Le montant doit être positif");
+        }
+        $this->solde += $montant;
+    }
+
+    public function retirer(float $montant): void {
+        if ($montant > $this->solde) {
+            throw new Exception("Solde insuffisant");
+        }
+        $this->solde -= $montant;
+    }
+}
+
+// Exercice 2: Système de gestion de panier
+interface Achetable {
+    public function getPrix(): float;
+    public function getNom(): string;
+}
+
+class Produit implements Achetable {
+    private $nom;
+    private $prix;
+
+    public function __construct(string $nom, float $prix) {
+        $this->nom = $nom;
+        $this->prix = $prix;
+    }
+
+    public function getPrix(): float {
+        return $this->prix;
+    }
+
+    public function getNom(): string {
+        return $this->nom;
+    }
+}
+
+class Panier {
+    private $items = [];
+
+    public function ajouter(Achetable $item): void {
+        $this->items[] = $item;
+    }
+
+    public function getTotal(): float {
+        return array_sum(array_map(fn($item) => $item->getPrix(), $this->items));
+    }
+}
+                    </code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <article id="bdd">
+                <h2>Bases de données avec PDO</h2>
+                
+                <div class="info-box">
+                    <h3>Opérations principales :</h3>
+                    <ul>
+                        <li>Connexion à la base</li>
+                        <li>Requêtes préparées</li>
+                        <li>CRUD (Create, Read, Update, Delete)</li>
+                        <li>Gestion des erreurs</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<?php
+// Connexion à la base de données
+try {
+    $pdo = new PDO(
+        'mysql:host=localhost;dbname=test;charset=utf8',
+        'utilisateur',
+        'motdepasse',
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
+} catch (PDOException $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+// Requête préparée - INSERT
+$stmt = $pdo->prepare('INSERT INTO users (nom, email) VALUES (?, ?)');
+$stmt->execute(['John', 'john@example.com']);
+
+// Requête préparée avec paramètres nommés
+$stmt = $pdo->prepare('SELECT * FROM users WHERE age > :age');
+$stmt->execute(['age' => 18]);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Transaction
+try {
+    $pdo->beginTransaction();
+    
+    $stmt1 = $pdo->prepare('UPDATE comptes SET solde = solde - ? WHERE id = ?');
+    $stmt2 = $pdo->prepare('UPDATE comptes SET solde = solde + ? WHERE id = ?');
+    
+    $stmt1->execute([100, 1]);
+    $stmt2->execute([100, 2]);
+    
+    $pdo->commit();
+} catch (Exception $e) {
+    $pdo->rollBack();
+    throw $e;
+}
+?>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="sessions">
+                <h2>Sessions et Cookies</h2>
+                
+                <div class="info-box">
+                    <h3>Gestion des sessions :</h3>
+                    <ul>
+                        <li>Démarrage et fermeture</li>
+                        <li>Stockage de données</li>
+                        <li>Cookies</li>
+                        <li>Sécurité</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Démarrage de session</span>
+<span class="token function">session_start</span>();
+
+<span class="token comment">// Stockage en session</span>
+<span class="token variable">$_SESSION</span>[<span class="token string">'user_id'</span>] = <span class="token number">123</span>;
+<span class="token variable">$_SESSION</span>[<span class="token string">'username'</span>] = <span class="token string">'john'</span>;
+
+<span class="token comment">// Vérification de session</span>
+<span class="token keyword">if</span> (<span class="token function">isset</span>(<span class="token variable">$_SESSION</span>[<span class="token string">'user_id'</span>])) {
+    <span class="token function">echo</span> <span class="token string">"&lt;p&gt;Utilisateur connecté : ID "</span> . <span class="token variable">$_SESSION</span>[<span class="token string">'user_id'</span>] . <span class="token string">"&lt;/p&gt;"</span>;
+}
+
+<span class="token comment">// Suppression d'une variable de session</span>
+<span class="token function">unset</span>(<span class="token variable">$_SESSION</span>[<span class="token string">'username'</span>]);
+
+<span class="token comment">// Destruction de la session</span>
+<span class="token function">session_destroy</span>();
+
+<span class="token comment">// Gestion des cookies</span>
+<span class="token function">setcookie</span>(<span class="token string">'preference'</span>, <span class="token string">'dark_mode'</span>, <span class="token function">time</span>() + <span class="token number">3600</span> * <span class="token number">24</span> * <span class="token number">30</span>);
+
+<span class="token comment">// Lecture d'un cookie</span>
+<span class="token variable">$preference</span> = <span class="token variable">$_COOKIE</span>[<span class="token string">'preference'</span>] ?? <span class="token string">'light_mode'</span>;
+
+<span class="token comment">// Suppression d'un cookie</span>
+<span class="token function">setcookie</span>(<span class="token string">'preference'</span>, <span class="token string">''</span>, <span class="token function">time</span>() - <span class="token number">3600</span>);
+
+<span class="token comment">// Sécurité des sessions</span>
+<span class="token function">ini_set</span>(<span class="token string">'session.cookie_httponly'</span>, <span class="token number">1</span>);
+<span class="token function">ini_set</span>(<span class="token string">'session.use_only_cookies'</span>, <span class="token number">1</span>);
+<span class="token function">ini_set</span>(<span class="token string">'session.cookie_secure'</span>, <span class="token number">1</span>);
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points importants :</h4>
+                    <ul>
+                        <li>Toujours démarrer la session avec session_start() avant toute utilisation</li>
+                        <li>Les données de session sont stockées côté serveur</li>
+                        <li>Les cookies sont stockés côté client</li>
+                        <li>Penser à la sécurité (httponly, secure, durée de vie)</li>
+                    </ul>
+                    <p>Bonnes pratiques :</p>
+                    <ul>
+                        <li>Nettoyer les sessions inutilisées</li>
+                        <li>Limiter les données stockées en session</li>
+                        <li>Utiliser des tokens CSRF pour les formulaires</li>
+                        <li>Régénérer l'ID de session après connexion</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="operateurs">
+                <h2>Opérateurs en PHP</h2>
+                
+                <div class="info-box">
+                    <h3>Types d'opérateurs :</h3>
+                    <ul>
+                        <li>Arithmétiques (+, -, *, /, %, **)</li>
+                        <li>Comparaison (==, ===, !=, <>, !==, >, <, >=, <=)</li>
+                        <li>Logiques (&&, ||, !, and, or, xor)</li>
+                        <li>Affectation (=, +=, -=, *=, /=, .=)</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Opérateurs arithmétiques</span>
+<span class="token variable">$a</span> = <span class="token number">10</span>;
+<span class="token variable">$b</span> = <span class="token number">3</span>;
+
+<span class="token variable">$addition</span> = <span class="token variable">$a</span> + <span class="token variable">$b</span>;      <span class="token comment">// 13</span>
+<span class="token variable">$soustraction</span> = <span class="token variable">$a</span> - <span class="token variable">$b</span>;  <span class="token comment">// 7</span>
+<span class="token variable">$multiplication</span> = <span class="token variable">$a</span> * <span class="token variable">$b</span>; <span class="token comment">// 30</span>
+<span class="token variable">$division</span> = <span class="token variable">$a</span> / <span class="token variable">$b</span>;      <span class="token comment">// 3.333...</span>
+<span class="token variable">$modulo</span> = <span class="token variable">$a</span> % <span class="token variable">$b</span>;        <span class="token comment">// 1</span>
+<span class="token variable">$puissance</span> = <span class="token variable">$a</span> ** <span class="token variable">$b</span>;     <span class="token comment">// 1000</span>
+
+<span class="token comment">// Opérateurs de comparaison</span>
+<span class="token variable">$egal</span> = (<span class="token variable">$a</span> == <span class="token string">"10"</span>);        <span class="token comment">// true (égalité simple)</span>
+<span class="token variable">$identique</span> = (<span class="token variable">$a</span> === <span class="token string">"10"</span>);   <span class="token comment">// false (égalité stricte)</span>
+<span class="token variable">$different</span> = (<span class="token variable">$a</span> != <span class="token variable">$b</span>);    <span class="token comment">// true</span>
+
+<span class="token comment">// Opérateurs logiques</span>
+<span class="token variable">$et</span> = (<span class="token variable">$a</span> > <span class="token number">5</span> && <span class="token variable">$b</span> < <span class="token number">5</span>);  <span class="token comment">// true</span>
+<span class="token variable">$ou</span> = (<span class="token variable">$a</span> < <span class="token number">5</span> || <span class="token variable">$b</span> < <span class="token number">5</span>);  <span class="token comment">// true</span>
+
+<span class="token comment">// Opérateurs d'affectation combinée</span>
+<span class="token variable">$x</span> = <span class="token number">10</span>;
+<span class="token variable">$x</span> += <span class="token number">5</span>;      <span class="token comment">// $x = 15</span>
+<span class="token variable">$x</span> -= <span class="token number">3</span>;      <span class="token comment">// $x = 12</span>
+<span class="token variable">$x</span> *= <span class="token number">2</span>;      <span class="token comment">// $x = 24</span>
+
+<span class="token comment">// Opérateur de concaténation</span>
+<span class="token variable">$texte</span> = <span class="token string">"Hello"</span>;
+<span class="token variable">$texte</span> .= <span class="token string">" World"</span>; <span class="token comment">// $texte = "Hello World"</span>
+
+<span class="token comment">// Opérateurs de type</span>
+<span class="token variable">$type</span> = <span class="token function">gettype</span>(<span class="token variable">$a</span>);    <span class="token comment">// "integer"</span>
+<span class="token variable">$estNombre</span> = <span class="token function">is_numeric</span>(<span class="token variable">$a</span>); <span class="token comment">// true</span>
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points importants :</h4>
+                    <ul>
+                        <li>L'opérateur === vérifie l'égalité et le type</li>
+                        <li>Les opérateurs logiques courts (&&) sont évalués avant les longs (and)</li>
+                        <li>L'opérateur de coalescence nulle (??) est disponible depuis PHP 7.4</li>
+                        <li>Les opérateurs de comparaison retournent toujours un booléen</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="erreurs">
+                <h2>Gestion des Erreurs et Exceptions</h2>
+                
+                <div class="info-box">
+                    <h3>Types d'erreurs :</h3>
+                    <ul>
+                        <li>Erreurs fatales (E_ERROR)</li>
+                        <li>Avertissements (E_WARNING)</li>
+                        <li>Notices (E_NOTICE)</li>
+                        <li>Exceptions personnalisées</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Configuration de la gestion d'erreurs</span>
+<span class="token function">error_reporting</span>(<span class="token constant">E_ALL</span>);
+<span class="token function">ini_set</span>(<span class="token string">'display_errors'</span>, <span class="token number">1</span>);
+
+<span class="token comment">// Gestionnaire d'erreurs personnalisé</span>
+<span class="token keyword">function</span> <span class="token function-definition">monGestionnaireErreur</span>(<span class="token variable">$errno</span>, <span class="token variable">$errstr</span>, <span class="token variable">$errfile</span>, <span class="token variable">$errline</span>) {
+    <span class="token function">error_log</span>(<span class="token string">"Erreur [$errno] : $errstr dans $errfile ligne $errline"</span>);
+    <span class="token keyword">return</span> <span class="token boolean">true</span>;
+}
+<span class="token function">set_error_handler</span>(<span class="token string">'monGestionnaireErreur'</span>);
+
+<span class="token comment">// Try-Catch avec exceptions personnalisées</span>
+<span class="token keyword">class</span> <span class="token class-name">MonException</span> <span class="token keyword">extends</span> <span class="token class-name">Exception</span> {
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition">getDetailMessage</span>() {
+        <span class="token keyword">return</span> <span class="token string">"Erreur détaillée : "</span> . <span class="token variable">$this</span>->getMessage();
+    }
+}
+
+<span class="token keyword">try</span> {
+    <span class="token variable">$resultat</span> = <span class="token function">someFunction</span>();
+    <span class="token keyword">if</span> (!<span class="token variable">$resultat</span>) {
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MonException</span>(<span class="token string">"Opération échouée"</span>);
+    }
+} <span class="token keyword">catch</span> (<span class="token class-name">MonException</span> <span class="token variable">$e</span>) {
+    <span class="token function">error_log</span>(<span class="token variable">$e</span>->getDetailMessage());
+} <span class="token keyword">catch</span> (<span class="token class-name">Exception</span> <span class="token variable">$e</span>) {
+    <span class="token function">error_log</span>(<span class="token variable">$e</span>->getMessage());
+} <span class="token keyword">finally</span> {
+    <span class="token comment">// Code exécuté dans tous les cas</span>
+}
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points importants :</h4>
+                    <ul>
+                        <li>Toujours configurer la gestion d'erreurs selon l'environnement</li>
+                        <li>Utiliser try-catch pour gérer les exceptions</li>
+                        <li>Logger les erreurs plutôt que les afficher en production</li>
+                        <li>Créer des exceptions personnalisées pour une meilleure gestion</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="fichiers">
+                <h2>Manipulation de Fichiers</h2>
+                
+                <div class="info-box">
+                    <h3>Opérations sur les fichiers :</h3>
+                    <ul>
+                        <li>Lecture et écriture</li>
+                        <li>Upload de fichiers</li>
+                        <li>Gestion des répertoires</li>
+                        <li>Permissions et sécurité</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Lecture de fichier</span>
+<span class="token variable">$contenu</span> = <span class="token function">file_get_contents</span>(<span class="token string">'fichier.txt'</span>);
+<span class="token variable">$lignes</span> = <span class="token function">file</span>(<span class="token string">'fichier.txt'</span>); <span class="token comment">// Lecture ligne par ligne</span>
+
+<span class="token comment">// Écriture dans un fichier</span>
+<span class="token function">file_put_contents</span>(<span class="token string">'nouveau.txt'</span>, <span class="token string">'Contenu'</span>, <span class="token constant">FILE_APPEND</span>);
+
+<span class="token comment">// Manipulation de fichiers</span>
+<span class="token variable">$handle</span> = <span class="token function">fopen</span>(<span class="token string">'data.txt'</span>, <span class="token string">'r+'</span>);
+<span class="token function">fwrite</span>(<span class="token variable">$handle</span>, <span class="token string">"Nouvelle ligne\n"</span>);
+<span class="token function">fclose</span>(<span class="token variable">$handle</span>);
+
+<span class="token comment">// Upload de fichiers</span>
+<span class="token keyword">if</span> (<span class="token function">isset</span>(<span class="token variable">$_FILES</span>[<span class="token string">'fichier'</span>])) {
+    <span class="token variable">$nom</span> = <span class="token function">basename</span>(<span class="token variable">$_FILES</span>[<span class="token string">'fichier'</span>][<span class="token string">'name'</span>]);
+    <span class="token variable">$chemin</span> = <span class="token string">'uploads/'</span> . <span class="token variable">$nom</span>;
+    
+    <span class="token keyword">if</span> (<span class="token function">move_uploaded_file</span>(<span class="token variable">$_FILES</span>[<span class="token string">'fichier'</span>][<span class="token string">'tmp_name'</span>], <span class="token variable">$chemin</span>)) {
+        <span class="token variable">$message</span> = <span class="token string">"Fichier uploadé avec succès!"</span>;
+    }
+}
+
+<span class="token comment">// Gestion des répertoires</span>
+<span class="token keyword">if</span> (!<span class="token function">is_dir</span>(<span class="token string">'dossier'</span>)) {
+    <span class="token function">mkdir</span>(<span class="token string">'dossier'</span>, <span class="token number">0755</span>);
+}
+
+<span class="token comment">// Parcourir un répertoire</span>
+<span class="token variable">$dossier</span> = <span class="token function">opendir</span>(<span class="token string">'.'</span>);
+<span class="token keyword">while</span> (<span class="token variable">$fichier</span> = <span class="token function">readdir</span>(<span class="token variable">$dossier</span>)) {
+    <span class="token keyword">if</span> (<span class="token variable">$fichier</span> != <span class="token string">'.'</span> && <span class="token variable">$fichier</span> != <span class="token string">'..'</span>) {
+        <span class="token function">echo</span> <span class="token variable">$fichier</span> . <span class="token string">"\n"</span>;
+    }
+}
+<span class="token function">closedir</span>(<span class="token variable">$dossier</span>);
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Toujours vérifier les permissions avant les opérations sur les fichiers</li>
+                        <li>Valider les types de fichiers uploadés</li>
+                        <li>Utiliser des chemins absolus pour plus de sécurité</li>
+                        <li>Gérer les erreurs lors des opérations sur les fichiers</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="securite">
+                <h2>Sécurité et Validation des Données</h2>
+                
+                <div class="info-box">
+                    <h3>Points de sécurité essentiels :</h3>
+                    <ul>
+                        <li>Validation des entrées</li>
+                        <li>Protection contre les injections SQL</li>
+                        <li>Protection XSS</li>
+                        <li>Gestion des mots de passe</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Validation des entrées</span>
+<span class="token variable">$email</span> = <span class="token function">filter_var</span>(<span class="token variable">$_POST</span>[<span class="token string">'email'</span>], <span class="token constant">FILTER_VALIDATE_EMAIL</span>);
+<span class="token variable">$age</span> = <span class="token function">filter_var</span>(<span class="token variable">$_POST</span>[<span class="token string">'age'</span>], <span class="token constant">FILTER_VALIDATE_INT</span>);
+<span class="token variable">$url</span> = <span class="token function">filter_var</span>(<span class="token variable">$_POST</span>[<span class="token string">'url'</span>], <span class="token constant">FILTER_VALIDATE_URL</span>);
+
+<span class="token comment">// Protection XSS</span>
+<span class="token variable">$texte_securise</span> = <span class="token function">htmlspecialchars</span>(<span class="token variable">$_POST</span>[<span class="token string">'texte'</span>], <span class="token constant">ENT_QUOTES</span>, <span class="token string">'UTF-8'</span>);
+
+<span class="token comment">// Hachage de mot de passe</span>
+<span class="token variable">$mot_de_passe</span> = <span class="token string">"MonMotDePasse123"</span>;
+<span class="token variable">$hash</span> = <span class="token function">password_hash</span>(<span class="token variable">$mot_de_passe</span>, <span class="token constant">PASSWORD_DEFAULT</span>);
+
+<span class="token comment">// Vérification de mot de passe</span>
+<span class="token keyword">if</span> (<span class="token function">password_verify</span>(<span class="token variable">$mot_de_passe</span>, <span class="token variable">$hash</span>)) {
+    <span class="token function">echo</span> <span class="token string">"Mot de passe correct"</span>;
+}
+
+<span class="token comment">// Protection CSRF</span>
+<span class="token function">session_start</span>();
+<span class="token variable">$token</span> = <span class="token function">bin2hex</span>(<span class="token function">random_bytes</span>(32));
+<span class="token variable">$_SESSION</span>[<span class="token string">'csrf_token'</span>] = <span class="token variable">$token</span>;
+
+<span class="token comment">// Validation du token CSRF</span>
+<span class="token keyword">if</span> (
+    <span class="token function">hash_equals</span>(
+        <span class="token variable">$_SESSION</span>[<span class="token string">'csrf_token'</span>],
+        <span class="token variable">$_POST</span>[<span class="token string">'csrf_token'</span>]
+    )
+) {
+    <span class="token comment">// Traitement du formulaire</span>
+}
+
+<span class="token comment">// Échappement des données pour SQL (avec PDO)</span>
+<span class="token variable">$stmt</span> = <span class="token variable">$pdo</span>->prepare(<span class="token string">'SELECT * FROM users WHERE email = ?'</span>);
+<span class="token variable">$stmt</span>->execute([<span class="token variable">$email</span>]);
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Bonnes pratiques de sécurité :</h4>
+                    <ul>
+                        <li>Toujours valider et nettoyer les entrées utilisateur</li>
+                        <li>Utiliser des requêtes préparées pour la base de données</li>
+                        <li>Ne jamais stocker les mots de passe en clair</li>
+                        <li>Implémenter une protection CSRF pour les formulaires</li>
+                        <li>Utiliser HTTPS pour les données sensibles</li>
+                    </ul>
+
+                    <h4>Validation des données :</h4>
+                    <ul>
+                        <li>Vérifier le type des données</li>
+                        <li>Nettoyer les entrées utilisateur</li>
+                        <li>Valider les formats (email, date, etc.)</li>
+                        <li>Gérer les caractères spéciaux</li>
+                    </ul>
+
+                    <h4>Upload de fichiers :</h4>
+                    <ul>
+                        <li>Vérifier le type MIME</li>
+                        <li>Limiter la taille des fichiers</li>
+                        <li>Générer des noms uniques</li>
+                        <li>Sécuriser le répertoire d'upload</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="api">
+                <h2>API REST avec PHP</h2>
+                
+                <div class="info-box">
+                    <h3>Concepts API REST :</h3>
+                    <ul>
+                        <li>Méthodes HTTP (GET, POST, PUT, DELETE)</li>
+                        <li>Formats de réponse (JSON)</li>
+                        <li>Codes de statut HTTP</li>
+                        <li>Authentification</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+<span class="token comment">// Configuration des headers</span>
+<span class="token function">header</span>(<span class="token string">'Content-Type: application/json'</span>);
+<span class="token function">header</span>(<span class="token string">'Access-Control-Allow-Origin: *'</span>);
+<span class="token function">header</span>(<span class="token string">'Access-Control-Allow-Methods: GET, POST, PUT, DELETE'</span>);
+
+<span class="token comment">// Récupération de la méthode HTTP</span>
+<span class="token variable">$method</span> = <span class="token variable">$_SERVER</span>[<span class="token string">'REQUEST_METHOD'</span>];
+
+<span class="token comment">// Récupération des données</span>
+<span class="token variable">$data</span> = <span class="token function">json_decode</span>(<span class="token function">file_get_contents</span>(<span class="token string">'php://input'</span>), <span class="token boolean">true</span>);
+
+<span class="token comment">// Gestion des routes</span>
+<span class="token keyword">switch</span> (<span class="token variable">$method</span>) {
+    <span class="token keyword">case</span> <span class="token string">'GET'</span>:
+        <span class="token keyword">if</span> (<span class="token function">isset</span>(<span class="token variable">$_GET</span>[<span class="token string">'id'</span>])) {
+            <span class="token variable">$response</span> = getResource(<span class="token variable">$_GET</span>[<span class="token string">'id'</span>]);
+        } <span class="token keyword">else</span> {
+            <span class="token variable">$response</span> = getAllResources();
+        }
+        <span class="token keyword">break</span>;
+
+    <span class="token keyword">case</span> <span class="token string">'POST'</span>:
+        <span class="token variable">$response</span> = createResource(<span class="token variable">$data</span>);
+        <span class="token function">http_response_code</span>(<span class="token number">201</span>);
+        <span class="token keyword">break</span>;
+
+    <span class="token keyword">case</span> <span class="token string">'PUT'</span>:
+        <span class="token variable">$response</span> = updateResource(<span class="token variable">$data</span>);
+        <span class="token keyword">break</span>;
+
+    <span class="token keyword">case</span> <span class="token string">'DELETE'</span>:
+        <span class="token variable">$response</span> = deleteResource(<span class="token variable">$_GET</span>[<span class="token string">'id'</span>]);
+        <span class="token keyword">break</span>;
+
+    <span class="token keyword">default</span>:
+        <span class="token function">http_response_code</span>(<span class="token number">405</span>);
+        <span class="token variable">$response</span> = [<span class="token string">'error'</span> => <span class="token string">'Méthode non autorisée'</span>];
+}
+
+<span class="token comment">// Envoi de la réponse</span>
+<span class="token function">echo</span> <span class="token function">json_encode</span>(<span class="token variable">$response</span>);
+
+<span class="token comment">// Exemple de fonction de traitement</span>
+<span class="token keyword">function</span> <span class="token function-definition">getResource</span>(<span class="token variable">$id</span>) {
+    <span class="token keyword">try</span> {
+        <span class="token comment">// Logique de récupération</span>
+        <span class="token keyword">return</span> [<span class="token string">'id'</span> => <span class="token variable">$id</span>, <span class="token string">'data'</span> => <span class="token string">'exemple'</span>];
+    } <span class="token keyword">catch</span> (<span class="token class-name">Exception</span> <span class="token variable">$e</span>) {
+        <span class="token function">http_response_code</span>(<span class="token number">500</span>);
+        <span class="token keyword">return</span> [<span class="token string">'error'</span> => <span class="token variable">$e</span>->getMessage()];
+    }
+}
+
+<span class="token delimiter">?&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points clés API REST :</h4>
+                    <ul>
+                        <li>Utiliser les méthodes HTTP appropriées</li>
+                        <li>Renvoyer les bons codes de statut HTTP</li>
+                        <li>Formater correctement les réponses JSON</li>
+                        <li>Gérer les erreurs de manière cohérente</li>
+                        <li>Documenter l'API clairement</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="formulaires">
+                <h2>Formulaires et Traitement des Données</h2>
+                
+                <div class="info-box">
+                    <h3>Points clés :</h3>
+                    <ul>
+                        <li>Méthodes GET et POST</li>
+                        <li>Validation des données</li>
+                        <li>Sécurisation des formulaires</li>
+                        <li>Upload de fichiers</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Création et Traitement de Formulaire</h4>
+                    <pre><code class="language-php">
+<span class="token comment">// Traitement du formulaire</span>
+<span class="token keyword">if</span> (<span class="token variable">$_SERVER</span>[<span class="token string">'REQUEST_METHOD'</span>] === <span class="token string">'POST'</span>) {
+    <span class="token comment">// Récupération et nettoyage des données</span>
+    <span class="token variable">$nom</span> = <span class="token function">filter_input</span>(<span class="token constant">INPUT_POST</span>, <span class="token string">'nom'</span>, <span class="token constant">FILTER_SANITIZE_STRING</span>);
+    <span class="token variable">$email</span> = <span class="token function">filter_input</span>(<span class="token constant">INPUT_POST</span>, <span class="token string">'email'</span>, <span class="token constant">FILTER_SANITIZE_EMAIL</span>);
+    <span class="token variable">$age</span> = <span class="token function">filter_input</span>(<span class="token constant">INPUT_POST</span>, <span class="token string">'age'</span>, <span class="token constant">FILTER_VALIDATE_INT</span>);
+
+    <span class="token comment">// Validation des données</span>
+    <span class="token variable">$erreurs</span> = [];
+    
+    <span class="token keyword">if</span> (<span class="token operator">!</span><span class="token variable">$nom</span> || <span class="token function">strlen</span>(<span class="token variable">$nom</span>) < 2) {
+        <span class="token variable">$erreurs</span>[] = <span class="token string">"Le nom doit contenir au moins 2 caractères."</span>;
+    }
+    
+    <span class="token keyword">if</span> (<span class="token operator">!</span><span class="token function">filter_var</span>(<span class="token variable">$email</span>, <span class="token constant">FILTER_VALIDATE_EMAIL</span>)) {
+        <span class="token variable">$erreurs</span>[] = <span class="token string">"L'email n'est pas valide."</span>;
+    }
+    
+    <span class="token keyword">if</span> (<span class="token variable">$age</span> === <span class="token keyword">false</span> || <span class="token variable">$age</span> < 18) {
+        <span class="token variable">$erreurs</span>[] = <span class="token string">"Vous devez avoir au moins 18 ans."</span>;
+    }
+
+    <span class="token comment">// Traitement si pas d'erreurs</span>
+    <span class="token keyword">if</span> (<span class="token function">empty</span>(<span class="token variable">$erreurs</span>)) {
+        <span class="token comment">// Traitement des données...</span>
+    }
+}
+                    </code></pre>
+
+                    <h4>Upload de Fichiers</h4>
+                    <pre><code class="language-php">
+<span class="token comment">// Traitement d'upload de fichier</span>
+<span class="token keyword">if</span> (<span class="token function">isset</span>(<span class="token variable">$_FILES</span>[<span class="token string">'fichier'</span>])) {
+    <span class="token variable">$fichier</span> = <span class="token variable">$_FILES</span>[<span class="token string">'fichier'</span>];
+    <span class="token variable">$nomFichier</span> = <span class="token variable">$fichier</span>[<span class="token string">'name'</span>];
+    <span class="token variable">$typeFichier</span> = <span class="token variable">$fichier</span>[<span class="token string">'type'</span>];
+    <span class="token variable">$tmpName</span> = <span class="token variable">$fichier</span>[<span class="token string">'tmp_name'</span>];
+    <span class="token variable">$error</span> = <span class="token variable">$fichier</span>[<span class="token string">'error'</span>];
+    <span class="token variable">$taille</span> = <span class="token variable">$fichier</span>[<span class="token string">'size'</span>];
+
+    <span class="token comment">// Vérifications de sécurité</span>
+    <span class="token variable">$extensions</span> = [<span class="token string">'jpg'</span>, <span class="token string">'jpeg'</span>, <span class="token string">'png'</span>, <span class="token string">'pdf'</span>];
+    <span class="token variable">$extension</span> = <span class="token function">strtolower</span>(<span class="token function">pathinfo</span>(<span class="token variable">$nomFichier</span>, <span class="token constant">PATHINFO_EXTENSION</span>));
+
+    <span class="token keyword">if</span> (<span class="token variable">$error</span> === <span class="token constant">UPLOAD_ERR_OK</span> && 
+        <span class="token function">in_array</span>(<span class="token variable">$extension</span>, <span class="token variable">$extensions</span>) && 
+        <span class="token variable">$taille</span> <= 5000000) {
+        
+        <span class="token comment">// Génération d'un nom unique</span>
+        <span class="token variable">$nouveauNom</span> = <span class="token function">uniqid</span>() . <span class="token string">'.'</span> . <span class="token variable">$extension</span>;
+        <span class="token variable">$destination</span> = <span class="token string">'uploads/'</span> . <span class="token variable">$nouveauNom</span>;
+
+        <span class="token comment">// Déplacement du fichier</span>
+        <span class="token keyword">if</span> (<span class="token function">move_uploaded_file</span>(<span class="token variable">$tmpName</span>, <span class="token variable">$destination</span>)) {
+            <span class="token variable">$message</span> = <span class="token string">"Fichier uploadé avec succès!"</span>;
+        }
+    }
+}
+                    </code></pre>
+
+                    <h4>Protection CSRF</h4>
+                    <pre><code class="language-php">
+<span class="token comment">// Génération du token CSRF</span>
+<span class="token keyword">if</span> (<span class="token operator">!</span><span class="token function">isset</span>(<span class="token variable">$_SESSION</span>[<span class="token string">'csrf_token'</span>])) {
+    <span class="token variable">$_SESSION</span>[<span class="token string">'csrf_token'</span>] = <span class="token function">bin2hex</span>(<span class="token function">random_bytes</span>(32));
+}
+
+<span class="token comment">// Vérification du token</span>
+<span class="token keyword">if</span> (<span class="token variable">$_SERVER</span>[<span class="token string">'REQUEST_METHOD'</span>] === <span class="token string">'POST'</span>) {
+    <span class="token keyword">if</span> (<span class="token operator">!</span><span class="token function">isset</span>(<span class="token variable">$_POST</span>[<span class="token string">'csrf_token'</span>]) || 
+        <span class="token variable">$_POST</span>[<span class="token string">'csrf_token'</span>] !== <span class="token variable">$_SESSION</span>[<span class="token string">'csrf_token'</span>]) {
+        <span class="token keyword">die</span>(<span class="token string">'Token CSRF invalide'</span>);
+    }
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Sécurité des formulaires :</h4>
+                    <ul>
+                        <li>Toujours valider les données côté serveur</li>
+                        <li>Utiliser filter_input() et filter_var()</li>
+                        <li>Implémenter une protection CSRF</li>
+                        <li>Limiter les types et tailles de fichiers</li>
+                    </ul>
+
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Utiliser des labels pour l'accessibilité</li>
+                        <li>Ajouter des messages d'erreur explicites</li>
+                        <li>Conserver les données valides en cas d'erreur</li>
+                        <li>Valider aussi côté client pour l'UX</li>
+                    </ul>
+
+                    <h4>Validation des données :</h4>
+                    <ul>
+                        <li>Vérifier le type des données</li>
+                        <li>Nettoyer les entrées utilisateur</li>
+                        <li>Valider les formats (email, date, etc.)</li>
+                        <li>Gérer les caractères spéciaux</li>
+                    </ul>
+
+                    <h4>Upload de fichiers :</h4>
+                    <ul>
+                        <li>Vérifier le type MIME</li>
+                        <li>Limiter la taille des fichiers</li>
+                        <li>Générer des noms uniques</li>
+                        <li>Sécuriser le répertoire d'upload</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="syntaxe">
+                <h2>La syntaxe PHP</h2>
+                
+                <div class="info-box">
+                    <h3>Points essentiels :</h3>
+                    <ul>
+                        <li>Structure de base du code PHP</li>
+                        <li>Variables et conditions</li>
+                        <li>Boucles et contrôles</li>
+                        <li>Fonctions et includes</li>
+                        <li>Programmation Orientée Objet</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h3>Variables et Conditions</h3>
+                <div class="content-section">
+                        <h4>Les Variables</h4>
+                        <p>Les variables en PHP sont des conteneurs pour stocker des informations. Elles commencent toujours par le symbole $.</p>
+                        
+                        <pre><code class="language-php">
+/*
+ * Types de variables en PHP
+ * -----------------------
+ * string  : Chaînes de caractères
+ * integer : Nombres entiers
+ * float   : Nombres décimaux
+ * boolean : Valeurs true/false
+ * array   : Tableaux
+ * object  : Objets
+ * null    : Valeur nulle
+ */
+
+// Déclaration et initialisation de variables
+$nom = "John";           // String (chaîne de caractères)
+$age = 25;              // Integer (nombre entier)
+$prix = 19.99;          // Float (nombre décimal)
+$estActif = true;       // Boolean (vrai/faux)
+$tableau = [1, 2, 3];   // Array (tableau)
+$personne = null;       // Null (valeur nulle)
+
+// Concaténation de chaînes
+$nomComplet = $nom . " Doe";  // Utilisation du point pour concaténer
+$presentation = "Je m'appelle $nom"; // Les guillemets doubles interprètent les variables
+
+// Opérations mathématiques avec des variables
+$a = 10;
+$b = 5;
+$somme = $a + $b;      // Addition
+$difference = $a - $b;  // Soustraction
+$produit = $a * $b;    // Multiplication
+$quotient = $a / $b;   // Division
+$modulo = $a % $b;     // Reste de la division
+
+// Variables dynamiques (variables variables)
+$x = "hello";
+$hello = "Bonjour";
+echo $$x;              // Affiche "Bonjour"
+
+// Portée des variables
+$global = "Variable globale";
+function test() {
+    global $global;    // Accès à une variable globale
+    $local = "Variable locale";
+    static $compteur = 0; // Variable statique
+    $compteur++;
+}
+
+// Vérification des variables
+isset($nom);           // Vérifie si la variable existe et n'est pas null
+empty($age);          // Vérifie si la variable est vide
+is_null($personne);   // Vérifie si la variable est null
+gettype($prix);       // Retourne le type de la variable
+var_dump($tableau);   // Affiche le contenu et le type de la variable
+
+// Constantes
+define('PI', 3.14159);           // Définition d'une constante
+const MAX_USERS = 100;           // Alternative pour définir une constante
+const STATUTS = [                // Constante tableau
+    'ACTIF' => 1,
+    'INACTIF' => 0
+];
+
+// Typage strict (PHP 7+)
+declare(strict_types=1);         // Active le typage strict
+
+// Conversion de types
+$nombre = "42";
+$entier = (int)$nombre;         // Conversion explicite en entier
+$flottant = (float)"3.14";      // Conversion en nombre décimal
+$chaine = (string)42;           // Conversion en chaîne
+                        </code></pre>
+
+                        <div class="explanation">
+                            <h4>Points importants sur les variables :</h4>
+                            <ul>
+                                <li>Les noms de variables sont sensibles à la casse</li>
+                                <li>Ils doivent commencer par une lettre ou un underscore</li>
+                                <li>Ils peuvent contenir des lettres, des chiffres et des underscores</li>
+                                <li>Les variables non initialisées ont la valeur null</li>
+                                <li>PHP est un langage à typage dynamique</li>
+                            </ul>
+                        </div>
+
+                        <h4>Les Conditions</h4>
+                        <p>Les structures conditionnelles permettent d'exécuter différents blocs de code selon des conditions.</p>
+                        
+                        <pre><code class="language-php">
+/*
+ * Structures conditionnelles en PHP
+ * -------------------------------
+ * if, else, elseif : Conditions de base
+ * switch : Alternative aux multiples if/else
+ * match : Version moderne du switch (PHP 8+)
+ * Opérateurs de comparaison : ==, ===, !=, !==, <, >, <=, >=
+ * Opérateurs logiques : &&, ||, !, and, or, xor
+ */
+
+// Structure if-else simple
+$age = 20;
+if ($age >= 18) {
+    echo "Majeur";
+} else {
+    echo "Mineur";
+}
+
+// Structure if-elseif-else
+$note = 15;
+if ($note >= 16) {
+    echo "Très bien";
+} elseif ($note >= 14) {
+    echo "Bien";
+} elseif ($note >= 12) {
+    echo "Assez bien";
+} else {
+    echo "Passable";
+}
+
+// Conditions avec opérateurs logiques
+$estConnecte = true;
+$estAdmin = false;
+if ($estConnecte && $estAdmin) {
+    echo "Accès au panneau d'administration";
+} elseif ($estConnecte || $estAdmin) {
+    echo "Accès limité";
+}
+
+// Switch case
+$fruit = "pomme";
+switch ($fruit) {
+    case "pomme":
+        echo "C'est une pomme";
+        break;
+    case "orange":
+        echo "C'est une orange";
+        break;
+    case "banane":
+        echo "C'est une banane";
+        break;
+    default:
+        echo "Fruit inconnu";
+}
+
+// Match (PHP 8+) - Plus moderne et concis
+$statut = match($note) {
+    20 => "Parfait",
+    18, 19 => "Excellent",
+    16, 17 => "Très bien",
+    14, 15 => "Bien",
+    12, 13 => "Assez bien",
+    default => "À améliorer"
+};
+
+// Opérateur ternaire
+$age = 20;
+$statut = ($age >= 18) ? "Majeur" : "Mineur";
+
+// Opérateur null coalescing
+$nom = $_GET['nom'] ?? "Anonyme";  // Si $_GET['nom'] n'existe pas, utilise "Anonyme"
+
+// Opérateur spaceship (PHP 7+)
+$comparaison = 5 <=> 10;  // Retourne -1 si inférieur, 0 si égal, 1 si supérieur
+
+// Conditions imbriquées
+if ($estConnecte) {
+    if ($estAdmin) {
+        echo "Administrateur connecté";
+    } else {
+        echo "Utilisateur connecté";
+    }
+} else {
+    echo "Non connecté";
+}
+                        </code></pre>
+
+                        <div class="explanation">
+                            <h4>Bonnes pratiques pour les conditions :</h4>
+                            <ul>
+                                <li>Préférer === à == pour éviter les conversions de type implicites</li>
+                                <li>Utiliser match plutôt que switch quand possible (PHP 8+)</li>
+                                <li>Éviter les conditions trop imbriquées</li>
+                                <li>Utiliser les parenthèses pour clarifier l'ordre des opérations</li>
+                                <li>Penser à gérer tous les cas possibles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Boucles</h3>
+                    <div class="content-section">
+                        <h4>Types de Boucles en PHP</h4>
+                        <p>Les boucles sont des structures de contrôle essentielles qui permettent d'exécuter un bloc de code plusieurs fois.</p>
+
+                        <pre><code class="language-php">
+/*
+ * Types de boucles en PHP
+ * ---------------------
+ * for     : Quand le nombre d'itérations est connu
+ * while   : Tant qu'une condition est vraie
+ * do-while: Exécute au moins une fois
+ * foreach : Pour parcourir des tableaux/objets
+ */
+
+// Boucle for
+echo "Boucle for :<br>";
+for ($i = 1; $i <= 5; $i++) {
+    echo "Itération $i<br>";
+}
+
+// Boucle for avec multiple compteurs
+for ($i = 0, $j = 10; $i < 5; $i++, $j--) {
+    echo "i: $i, j: $j<br>";
+}
+
+// Boucle while
+echo "Boucle while :<br>";
+$compteur = 0;
+while ($compteur < 5) {
+    echo "Compteur: $compteur<br>";
+    $compteur++;
+}
+
+// Boucle do-while (s'exécute au moins une fois)
+echo "Boucle do-while :<br>";
+$x = 0;
+do {
+    echo "Valeur de x: $x<br>";
+    $x++;
+} while ($x < 3);
+
+// Boucle foreach avec tableau indexé
+$fruits = ["pomme", "banane", "orange"];
+foreach ($fruits as $fruit) {
+    echo "$fruit<br>";
+}
+
+// Boucle foreach avec tableau associatif
+$personne = [
+    "nom" => "Dupont",
+    "age" => 25,
+    "ville" => "Paris"
+];
+foreach ($personne as $cle => $valeur) {
+    echo "$cle: $valeur<br>";
+}
+
+// Boucle foreach avec référence
+$nombres = [1, 2, 3, 4, 5];
+foreach ($nombres as &$nombre) {
+    $nombre *= 2; // Modifie directement les valeurs du tableau
+}
+
+// Contrôle de boucle
+for ($i = 0; $i < 10; $i++) {
+    if ($i == 3) continue; // Saute l'itération quand i = 3
+    if ($i == 7) break;    // Sort de la boucle quand i = 7
+    echo $i;
+}
+
+// Boucles imbriquées
+echo "Table de multiplication :<br>";
+for ($i = 1; $i <= 3; $i++) {
+    for ($j = 1; $j <= 3; $j++) {
+        echo "$i x $j = " . ($i * $j) . "<br>";
+    }
+    echo "----------<br>";
+}
+
+// Boucle while avec condition complexe
+$continuer = true;
+$essais = 0;
+$max_essais = 3;
+
+while ($continuer && $essais < $max_essais) {
+    $essais++;
+    // Simulation d'une opération
+    $resultat = rand(0, 1);
+    if ($resultat) {
+        $continuer = false;
+        echo "Succès à l'essai $essais<br>";
+    }
+}
+
+// Boucle foreach avec objets
+class Personne {
+    public $nom;
+    public $age;
+    
+    public function __construct($nom, $age) {
+        $this->nom = $nom;
+        $this->age = $age;
+    }
+}
+
+$personnes = [
+    new Personne("Jean", 25),
+    new Personne("Marie", 30)
+];
+
+foreach ($personnes as $personne) {
+    echo "Nom: {$personne->nom}, Age: {$personne->age}<br>";
+}
+                        </code></pre>
+
+                        <div class="explanation">
+                            <h4>Points importants sur les boucles :</h4>
+                            <ul>
+                                <li>Choisir le bon type de boucle selon le besoin</li>
+                                <li>Éviter les boucles infinies</li>
+                                <li>Utiliser break et continue avec précaution</li>
+                                <li>Optimiser les boucles pour de meilleures performances</li>
+                    </ul>
+
+                            <h4>Exercices pratiques :</h4>
+                            <pre><code class="language-php">
+// Exercice 1: Afficher les nombres pairs de 0 à 20
+for ($i = 0; $i <= 20; $i += 2) {
+    echo $i . " ";
+}
+
+// Exercice 2: Calculer la factorielle d'un nombre
+function factorielle($n) {
+    $resultat = 1;
+    for ($i = 1; $i <= $n; $i++) {
+        $resultat *= $i;
+    }
+    return $resultat;
+}
+
+// Exercice 3: Créer une pyramide d'étoiles
+$hauteur = 5;
+for ($i = 1; $i <= $hauteur; $i++) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo "*";
+    }
+    echo "<br>";
+}
+
+// Exercice 4: Parcourir un tableau multidimensionnel
+$notes = [
+    "Jean" => ["math" => 15, "français" => 12],
+    "Marie" => ["math" => 18, "français" => 16]
+];
+
+foreach ($notes as $eleve => $matieres) {
+    echo "Élève: $eleve<br>";
+    foreach ($matieres as $matiere => $note) {
+        echo "$matiere: $note<br>";
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <h3>Fonctions et Includes</h3>
+                    <div class="content-section">
+                        <h4>Les Fonctions en PHP</h4>
+                        <p>Les fonctions sont des blocs de code réutilisables qui permettent d'organiser et de structurer votre code.</p>
+
+                        <pre><code class="language-php">
+/*
+ * Types de fonctions en PHP
+ * ----------------------
+ * Fonctions utilisateur
+ * Fonctions anonymes
+ * Arrow functions (PHP 7.4+)
+ * Fonctions avec typage (PHP 7+)
+ * Fonctions variadiques
+ */
+
+// Fonction simple
+function direBonjour($nom) {
+    return "Bonjour $nom !";
+}
+
+// Fonction avec paramètres typés et type de retour (PHP 7+)
+function additionner(int $a, int $b): int {
+    return $a + $b;
+}
+
+// Fonction avec paramètres par défaut
+function configurer(string $host = 'localhost', int $port = 80): string {
+    return "Configuration: $host:$port";
+}
+
+// Fonction avec paramètres nommés (PHP 8+)
+function creerUtilisateur(
+    string $nom,
+    string $email,
+    int $age = 18,
+    bool $actif = true
+) {
+    return [
+        'nom' => $nom,
+        'email' => $email,
+        'age' => $age,
+        'actif' => $actif
+    ];
+}
+
+// Utilisation des paramètres nommés
+$user = creerUtilisateur(
+    nom: "John",
+    email: "john@example.com",
+    actif: false
+);
+
+// Fonction variadique (nombre variable d'arguments)
+function somme(...$nombres) {
+    return array_sum($nombres);
+}
+echo somme(1, 2, 3, 4, 5); // Affiche 15
+
+// Fonction avec référence
+function doubler(&$nombre) {
+    $nombre *= 2;
+}
+$x = 5;
+doubler($x); // $x vaut maintenant 10
+
+// Fonction anonyme (closure)
+$multiplier = function($x, $y) {
+    return $x * $y;
+};
+echo $multiplier(4, 3); // Affiche 12
+
+// Arrow function (PHP 7.4+)
+$carre = fn($x) => $x * $x;
+echo $carre(5); // Affiche 25
+
+// Closure avec 'use'
+$prix = 100;
+$calculerTVA = function($taux) use ($prix) {
+    return $prix * $taux;
+};
+
+// Fonction récursive
+function factorielle(int $n): int {
+    if ($n <= 1) return 1;
+    return $n * factorielle($n - 1);
+}
+
+// Fonction avec documentation PHPDoc
+/**
+ * Calcule le prix TTC
+ * @param float $prixHT Prix hors taxe
+ * @param float $tauxTVA Taux de TVA (par défaut 20%)
+ * @return float Prix TTC
+ */
+function calculerPrixTTC(float $prixHT, float $tauxTVA = 0.20): float {
+    return $prixHT * (1 + $tauxTVA);
+}
+
+// Fonction avec gestion d'erreurs
+function diviser($a, $b) {
+    if ($b === 0) {
+        throw new Exception("Division par zéro impossible");
+    }
+    return $a / $b;
+}
+
+// Utilisation avec try-catch
+try {
+    echo diviser(10, 0);
+} catch (Exception $e) {
+    echo "Erreur : " . $e->getMessage();
+}
+
+// Fonction de callback
+function appliquerOperation(array $nombres, callable $operation): array {
+    return array_map($operation, $nombres);
+}
+
+$nombres = [1, 2, 3, 4, 5];
+$doubles = appliquerOperation($nombres, fn($n) => $n * 2);
+                        </code></pre>
+
+                        <div class="explanation">
+                            <h4>Points importants sur les fonctions :</h4>
+                            <ul>
+                                <li>Les noms de fonctions ne sont pas sensibles à la casse</li>
+                                <li>Une fonction doit avoir un nom unique</li>
+                                <li>Les fonctions peuvent être définies n'importe où dans le code</li>
+                                <li>Le typage des paramètres améliore la robustesse du code</li>
+                                <li>Les fonctions peuvent retourner plusieurs types de valeurs</li>
+                            </ul>
+
+                            <h4>Exercices pratiques :</h4>
+                        <pre><code class="language-php">
+// Exercice 1: Fonction de validation d'email
+function validerEmail(string $email): bool {
+    return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+}
+
+// Exercice 2: Fonction de génération de mot de passe
+function genererMotDePasse(int $longueur = 8): string {
+    $caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return substr(str_shuffle($caracteres), 0, $longueur);
+}
+
+// Exercice 3: Fonction de calcul de moyenne
+function calculerMoyenne(array $notes): float {
+    if (empty($notes)) {
+        throw new Exception("Le tableau de notes est vide");
+    }
+    return array_sum($notes) / count($notes);
+}
+                        </code></pre>
+                        </div>
+
+                        <h4>Les Includes en PHP</h4>
+                        <div class="content-section">
+                            <div class="info-box">
+                                <h3>Types d'includes :</h3>
+                                <ul>
+                                    <li>include : Inclusion simple avec warning si erreur</li>
+                                    <li>require : Inclusion avec erreur fatale si échec</li>
+                                    <li>include_once : Vérifie si déjà inclus</li>
+                                    <li>require_once : Idem avec erreur fatale</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-example">
+                                <h4>Structure de base</h4>
+                        <pre><code class="language-php">
+// Configuration (config.php)
+<?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+?>
+
+// Fonctions (functions.php)
+<?php
+function connectDB() {
+    try {
+        $pdo = new PDO(
+            'mysql:host=' . DB_HOST . ';dbname=test',
+            DB_USER,
+            DB_PASS
+        );
+        return $pdo;
+    } catch (PDOException $e) {
+        die("Erreur de connexion : " . $e->getMessage());
+    }
+}
+?>
+
+// Template (header.php)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Site</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+                                </code></pre>
+
+                                <h4>Utilisation des includes</h4>
+                                <pre><code class="language-php">
+// Dans index.php
+<?php
+// Fichiers requis pour le fonctionnement
+require_once 'config.php';     // Configuration (erreur si absent)
+require_once 'functions.php';  // Fonctions essentielles
+
+// Inclusion du template
+include 'header.php';    // En-tête du site
+include 'sidebar.php';   // Barre latérale (optionnel)
+
+// Utilisation
+$db = connectDB();
+// ... reste du code
+?>
+                        </code></pre>
+                            </div>
+
+                            <div class="explanation">
+                                <h4>Bonnes pratiques :</h4>
+                                <ul>
+                                    <li>Utiliser require_once pour les fichiers essentiels</li>
+                                    <li>Utiliser include pour les templates</li>
+                                    <li>Organiser les fichiers dans des dossiers logiques</li>
+                                    <li>Éviter les inclusions circulaires</li>
+                                </ul>
+
+                                <h4>Structure recommandée des dossiers :</h4>
+                                <pre>
+project/
+├── config/
+│   └── config.php
+├── includes/
+│   ├── functions.php
+│   └── database.php
+├── templates/
+│   ├── header.php
+│   └── footer.php
+└── public/
+    └── index.php
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="concepts-avances">
+                <h2>Concepts Avancés</h2>
+                
+                <div class="info-box">
+                    <h3>Dans cette section :</h3>
+                    <ul>
+                        <li>Utilisation de l'instruction goto</li>
+                        <li>Gestion des sessions utilisateur</li>
+                        <li>Manipulation des dates et heures</li>
+                        <li>Gestion des headers HTTP</li>
+                    </ul>
+                </div>
+
+                    <div class="code-example">
+                    <pre><code class="language-php">
+// === L'instruction goto ===
+// Exemple de base avec goto
+$compteur = 0;
+debut:
+    echo $compteur . " ";
+    $compteur++;
+    if ($compteur < 5) {
+        goto debut;
+    }
+
+// === Gestion des Sessions ===
+// Démarrage de la session
+session_start([
+    'cookie_lifetime' => 3600,
+    'cookie_secure' => true,
+    'cookie_httponly' => true
+]);
+
+// Stockage en session
+$_SESSION['user_id'] = 123;
+$_SESSION['username'] = "john_doe";
+
+// === Manipulation des Dates ===
+// Configuration du fuseau horaire
+date_default_timezone_set('Europe/Paris');
+
+// Utilisation de DateTime
+$date = new DateTime();
+$date->modify('+1 day');
+echo $date->format('Y-m-d H:i:s');
+
+// === Headers HTTP ===
+// Configuration des headers
+header('Content-Type: application/json');
+header('Cache-Control: no-cache');
+header('X-Frame-Options: DENY');
+                    </code></pre>
+                    </div>
+
+    <div class="explanation">
+        <h4>Points importants :</h4>
+        <ul>
+            <li>L'instruction goto doit être utilisée avec précaution</li>
+            <li>Les sessions permettent de stocker des données utilisateur</li>
+            <li>La manipulation des dates nécessite une bonne configuration</li>
+            <li>Les headers doivent être envoyés avant tout contenu HTML</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h3>Exemples détaillés</h3>
+        
+        <h4>1. Utilisation avancée de goto</h4>
+                    <pre><code class="language-php">
+// Gestion d'erreur avec goto
+function processData($data) {
+    if (empty($data)) {
+        goto error;
+    }
+    return "Données traitées";
+
+    error:
+    throw new Exception("Données invalides");
+}
+        </code></pre>
+
+        <h4>2. Gestion complète des sessions</h4>
+        <pre><code class="language-php">
+// Classe de gestion des sessions
+class SessionManager {
+    public static function start() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start([
+                'cookie_lifetime' => 3600,
+                'cookie_secure' => true
+            ]);
+        }
+    }
+
+    public static function set($key, $value) {
+        $_SESSION[$key] = $value;
+    }
+
+    public static function get($key, $default = null) {
+        return $_SESSION[$key] ?? $default;
+    }
+}
+                    </code></pre>
+
+        <h4>3. Manipulation avancée des dates</h4>
+                    <pre><code class="language-php">
+// Création et manipulation de dates
+$date = new DateTime();
+$interval = new DateInterval('P1Y2M3D');
+$date->add($interval);
+
+// Comparaison de dates
+$date1 = new DateTime('2024-01-01');
+$date2 = new DateTime('2024-12-31');
+$diff = $date1->diff($date2);
+echo $diff->days; // Nombre de jours entre les dates
+                    </code></pre>
+
+        <h4>4. Gestion complète des headers</h4>
+                    <pre><code class="language-php">
+// Configuration sécurisée des headers
+class HeaderManager {
+    public static function setSecureHeaders() {
+header('Content-Type: application/json');
+header('X-Frame-Options: DENY');
+header('X-XSS-Protection: 1; mode=block');
+        header('X-Content-Type-Options: nosniff');
+    }
+
+    public static function setDownloadHeaders($filename) {
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+    }
+}
+                    </code></pre>
+                    </div>
+
+                    <div class="explanation">
+        <h4>Bonnes pratiques :</h4>
+        <ul>
+            <li>Toujours sécuriser les sessions avec les bons paramètres</li>
+            <li>Utiliser les classes modernes pour la gestion des dates</li>
+            <li>Configurer correctement les headers de sécurité</li>
+            <li>Éviter l'utilisation excessive de goto</li>
+                        </ul>
+                </div>
+            </article>
+
+            <footer>
+                <p>&copy; 2024 Formation DWWM - Tous droits réservés</p>
+            </footer>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html> 

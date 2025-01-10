@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours CSS - DWWM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cours.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">DWWM</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="../lexique.html"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="course-content">
+        <aside class="course-menu">
+            <h3>Sommaire CSS</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#selecteurs">Sélecteurs</a></li>
+                <li><a href="#box-model">Box Model</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#responsive">Design Responsive</a></li>
+                <li><a href="#animations">Animations</a></li>
+                <li><a href="#variables">Variables CSS</a></li>
+                <li><a href="#transformations">Transformations Avancées</a></li>
+                <li><a href="#layout-avance">Layout Avancé</a></li>
+                <li><a href="#selecteurs-avances">Sélecteurs Avancés et Pseudo-éléments</a></li>
+                <li><a href="#performance">Performance et Optimisation CSS</a></li>
+                <li><a href="#accessibilite">Accessibilité et CSS</a></li>
+                <li><a href="#css-moderne">CSS Moderne et Nouvelles Fonctionnalités</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-main">
+            <h1>CSS3 - Les Fondamentaux</h1>
+
+            <article id="introduction">
+                <h2>Introduction au CSS</h2>
+                <p>CSS (Cascading Style Sheets) est un langage de style utilisé pour décrire la présentation d'un document HTML.</p>
+                
+                <div class="info-box">
+                    <h3>Méthodes d'intégration CSS :</h3>
+                    <ul>
+                        <li>Inline CSS (dans l'attribut style)</li>
+                        <li>Internal CSS (dans la balise style)</li>
+                        <li>External CSS (fichier .css externe)</li>
+                    </ul>
+                </div>
+
+                <h3>Syntaxe de base</h3>
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Sélecteur externe (dans un fichier .css) */</span>
+<span class="token selector">.ma-classe</span> {
+    <span class="token property">color</span>: <span class="token value">blue</span>;
+    <span class="token property">font-size</span>: <span class="token value">16px</span>;
+    <span class="token property">margin</span>: <span class="token value">10px</span>;
+}
+
+<span class="token selector">#mon-id</span> {
+    <span class="token property">background-color</span>: <span class="token value">#f0f0f0</span>;
+}
+
+<span class="token selector">div</span> {
+    <span class="token property">padding</span>: <span class="token value">20px</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h4>Spécificité CSS</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Spécificité croissante */</span>
+<span class="token selector">h1</span> { <span class="token comment">/* Spécificité: 0,0,1 */</span>
+    <span class="token property">color</span>: <span class="token value">blue</span>;
+}
+
+<span class="token selector">.titre</span> { <span class="token comment">/* Spécificité: 0,1,0 */</span>
+    <span class="token property">color</span>: <span class="token value">red</span>;
+}
+
+<span class="token selector">#header h1</span> { <span class="token comment">/* Spécificité: 1,0,1 */</span>
+    <span class="token property">color</span>: <span class="token value">green</span>;
+}
+
+<span class="token comment">/* Héritage */</span>
+<span class="token selector">body</span> {
+    <span class="token property">font-family</span>: <span class="token value">Arial, sans-serif</span>;
+    <span class="token property">color</span>: <span class="token value">#333</span>;
+}
+
+<span class="token comment">/* Valeurs initiales et héritées */</span>
+<span class="token selector">.container</span> {
+    <span class="token property">color</span>: <span class="token value">inherit</span>;
+    <span class="token property">border</span>: <span class="token value">initial</span>;
+}
+
+<span class="token comment">/* Unités CSS courantes */</span>
+<span class="token selector">.element</span> {
+    <span class="token comment">/* Unités absolues */</span>
+    <span class="token property">width</span>: <span class="token value">100px</span>;
+    <span class="token property">margin</span>: <span class="token value">1cm</span>;
+    
+    <span class="token comment">/* Unités relatives */</span>
+    <span class="token property">font-size</span>: <span class="token value">1.2em</span>;
+    <span class="token property">padding</span>: <span class="token value">2rem</span>;
+    <span class="token property">width</span>: <span class="token value">50%</span>;
+    
+    <span class="token comment">/* Unités viewport */</span>
+    <span class="token property">height</span>: <span class="token value">100vh</span>;
+    <span class="token property">width</span>: <span class="token value">50vw</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Concepts avancés :</h4>
+                    <ul>
+                        <li>La spécificité détermine quel style sera appliqué en cas de conflit</li>
+                        <li>L'héritage permet la transmission des propriétés aux éléments enfants</li>
+                        <li>Les unités relatives s'adaptent au contexte</li>
+                    </ul>
+                    <h4>Calcul de la spécificité :</h4>
+                    <ul>
+                        <li>Style inline : 1,0,0,0</li>
+                        <li>ID : 0,1,0,0</li>
+                        <li>Classes, attributs, pseudo-classes : 0,0,1,0</li>
+                        <li>Éléments, pseudo-éléments : 0,0,0,1</li>
+                    </ul>
+                    <h4>Bonnes pratiques d'organisation :</h4>
+                    <ul>
+                        <li>Utiliser une méthodologie de nommage (BEM, SMACSS, OOCSS)</li>
+                        <li>Structurer les fichiers CSS par composants</li>
+                        <li>Minimiser l'utilisation des !important</li>
+                        <li>Commenter le code pour la maintenance</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="selecteurs">
+                <h2>Sélecteurs CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Types de sélecteurs :</h3>
+                    <ul>
+                        <li>Sélecteurs simples (élément, classe, id)</li>
+                        <li>Sélecteurs combinateurs</li>
+                        <li>Sélecteurs de pseudo-classes</li>
+                        <li>Sélecteurs d'attributs</li>
+                    </ul>
+                </div>
+
+                <h3>Exemples de sélecteurs</h3>
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Sélecteur d'élément */</span>
+<span class="token selector">p</span> {
+    <span class="token property">color</span>: <span class="token value">blue</span>;
+}
+
+<span class="token comment">/* Sélecteur de classe */</span>
+<span class="token selector">.ma-classe</span> {
+    <span class="token property">background-color</span>: <span class="token value">gray</span>;
+}
+
+<span class="token comment">/* Sélecteur d'ID */</span>
+<span class="token selector">#mon-id</span> {
+    <span class="token property">border</span>: <span class="token value">1px solid black</span>;
+}
+
+<span class="token comment">/* Sélecteur descendant */</span>
+<span class="token selector">div p</span> {
+    <span class="token property">margin</span>: <span class="token value">10px</span>;
+}
+
+<span class="token comment">/* Sélecteur d'enfant direct */</span>
+<span class="token selector">div > p</span> {
+    <span class="token property">padding</span>: <span class="token value">5px</span>;
+}
+
+<span class="token comment">/* Pseudo-classes */</span>
+<span class="token selector">a:hover</span> {
+    <span class="token property">color</span>: <span class="token value">red</span>;
+}
+
+<span class="token comment">/* Sélecteur d'attribut */</span>
+<span class="token selector">input[type="text"]</span> {
+    <span class="token property">border-radius</span>: <span class="token value">5px</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h4>Sélecteurs avancés et combinaisons</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Sélecteurs d'attributs avancés */</span>
+<span class="token selector">[class*="btn-"]</span> { <span class="token comment">/* Contient "btn-" */</span>
+    <span class="token property">padding</span>: <span class="token value">10px 20px</span>;
+}
+
+<span class="token selector">[lang|="en"]</span> { <span class="token comment">/* Commence par "en" suivi de "-" */</span>
+    <span class="token property">font-style</span>: <span class="token value">italic</span>;
+}
+
+<span class="token comment">/* Pseudo-classes structurelles */</span>
+<span class="token selector">li:nth-child(odd)</span> {
+    <span class="token property">background</span>: <span class="token value">#f5f5f5</span>;
+}
+
+<span class="token selector">p:first-of-type</span> {
+    <span class="token property">font-size</span>: <span class="token value">1.2em</span>;
+}
+
+<span class="token comment">/* Combinaisons complexes */</span>
+<span class="token selector">.sidebar h2:not(.exclude)</span> {
+    <span class="token property">border-bottom</span>: <span class="token value">2px solid currentColor</span>;
+}
+
+<span class="token selector">article > *:not(h2):not(h3)</span> {
+    <span class="token property">margin-left</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Sélecteurs de performance */</span>
+<span class="token selector">.menu .active</span> { <span class="token comment">/* Plus performant que .menu li.active */</span>
+    <span class="token property">font-weight</span>: <span class="token value">bold</span>;
+}
+
+<span class="token comment">/* Nouveaux sélecteurs modernes */</span>
+<span class="token selector">:is(h1, h2, h3):hover</span> {
+    <span class="token property">color</span>: <span class="token value">var(--accent-color)</span>;
+}
+
+<span class="token selector">.container:has(> img)</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Utilisations avancées :</h4>
+                    <ul>
+                        <li>Les sélecteurs d'attributs pour cibler des éléments spécifiques</li>
+                        <li>Les pseudo-classes pour des sélections basées sur l'état ou la position</li>
+                        <li>Les combinateurs pour des relations parent-enfant précises</li>
+                    </ul>
+                    <h4>Optimisation des sélecteurs :</h4>
+                    <ul>
+                        <li>Éviter les sélecteurs trop profonds (max 3 niveaux)</li>
+                        <li>Privilégier les classes aux sélecteurs d'éléments</li>
+                        <li>Utiliser les nouveaux sélecteurs pour simplifier le code</li>
+                    </ul>
+                    <h4>Cas d'utilisation courants :</h4>
+                    <ul>
+                        <li>Stylisation conditionnelle basée sur les attributs</li>
+                        <li>Mise en forme alternée avec nth-child</li>
+                        <li>Exclusion d'éléments spécifiques avec :not()</li>
+                        <li>Détection de contenu avec :has()</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="box-model">
+                <h2>Box Model</h2>
+                
+                <div class="info-box">
+                    <h3>Composants du Box Model :</h3>
+                    <ul>
+                        <li>Content (contenu)</li>
+                        <li>Padding (rembourrage)</li>
+                        <li>Border (bordure)</li>
+                        <li>Margin (marge)</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token selector">.element</span> {
+    <span class="token comment">/* Content */</span>
+    <span class="token property">width</span>: <span class="token value">300px</span>;
+    <span class="token property">height</span>: <span class="token value">200px</span>;
+
+    <span class="token comment">/* Padding */</span>
+    <span class="token property">padding</span>: <span class="token value">20px</span>;
+    <span class="token comment">/* ou */</span>
+    <span class="token property">padding-top</span>: <span class="token value">10px</span>;
+    <span class="token property">padding-right</span>: <span class="token value">20px</span>;
+    <span class="token property">padding-bottom</span>: <span class="token value">10px</span>;
+    <span class="token property">padding-left</span>: <span class="token value">20px</span>;
+
+    <span class="token comment">/* Border */</span>
+    <span class="token property">border</span>: <span class="token value">1px solid black</span>;
+    <span class="token comment">/* ou */</span>
+    <span class="token property">border-width</span>: <span class="token value">1px</span>;
+    <span class="token property">border-style</span>: <span class="token value">solid</span>;
+    <span class="token property">border-color</span>: <span class="token value">black</span>;
+
+    <span class="token comment">/* Margin */</span>
+    <span class="token property">margin</span>: <span class="token value">10px</span>;
+    <span class="token comment">/* ou */</span>
+    <span class="token property">margin</span>: <span class="token value">10px 20px</span>; <span class="token comment">/* vertical horizontal */</span>
+    <span class="token property">margin</span>: <span class="token value">10px 20px 15px 25px</span>; <span class="token comment">/* top right bottom left */</span>
+}
+
+<span class="token comment">/* Box-sizing */</span>
+<span class="token selector">*</span> {
+    <span class="token property">box-sizing</span>: <span class="token value">border-box</span>; <span class="token comment">/* inclut padding et border dans width/height */</span>
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Concept clé :</h4>
+                    <p>Le Box Model est fondamental pour comprendre la mise en page CSS :</p>
+                    <ul>
+                        <li>Le contenu est au centre de la boîte</li>
+                        <li>Le padding crée de l'espace autour du contenu</li>
+                        <li>La bordure encadre le padding</li>
+                        <li>La marge crée de l'espace entre les éléments</li>
+                    </ul>
+                    <p>Conseil pratique :</p>
+                    <ul>
+                        <li>Utilisez <code>box-sizing: border-box</code> pour un calcul plus intuitif des dimensions</li>
+                        <li>Les marges verticales peuvent se chevaucher (margin collapse)</li>
+                        <li>Le padding affecte la taille finale de l'élément</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="flexbox">
+                <h2>Flexbox Layout</h2>
+                
+                <div class="info-box">
+                    <h3>Concepts Flexbox :</h3>
+                    <ul>
+                        <li>Conteneur flex (flex container)</li>
+                        <li>Éléments flex (flex items)</li>
+                        <li>Axes principal et secondaire</li>
+                        <li>Distribution de l'espace</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Conteneur Flex de base */</span>
+<span class="token selector">.flex-container</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">flex-direction</span>: <span class="token value">row</span>; <span class="token comment">/* row | column | row-reverse | column-reverse */</span>
+    <span class="token property">flex-wrap</span>: <span class="token value">wrap</span>; <span class="token comment">/* nowrap | wrap | wrap-reverse */</span>
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Alignement sur l'axe principal */</span>
+<span class="token selector">.justify-content</span> {
+    <span class="token property">justify-content</span>: <span class="token value">space-between</span>; <span class="token comment">/* flex-start | center | space-around | space-evenly */</span>
+}
+
+<span class="token comment">/* Alignement sur l'axe secondaire */</span>
+<span class="token selector">.align-items</span> {
+    <span class="token property">align-items</span>: <span class="token value">center</span>; <span class="token comment">/* flex-start | flex-end | stretch | baseline */</span>
+}
+
+<span class="token comment">/* Propriétés des éléments flex */</span>
+<span class="token selector">.flex-item</span> {
+    <span class="token property">flex</span>: <span class="token value">1 1 300px</span>; <span class="token comment">/* grow shrink basis */</span>
+    <span class="token property">align-self</span>: <span class="token value">flex-start</span>;
+    <span class="token property">order</span>: <span class="token value">1</span>;
+}
+
+<span class="token comment">/* Patterns Flexbox courants */</span>
+<span class="token comment">/* Navigation responsive */</span>
+<span class="token selector">.navbar</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">justify-content</span>: <span class="token value">space-between</span>;
+    <span class="token property">align-items</span>: <span class="token value">center</span>;
+    <span class="token property">padding</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Grille de cartes */</span>
+<span class="token selector">.card-grid</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">flex-wrap</span>: <span class="token value">wrap</span>;
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token selector">.card</span> {
+    <span class="token property">flex</span>: <span class="token value">1 1 300px</span>;
+    <span class="token property">max-width</span>: <span class="token value">calc(33.333% - 1rem)</span>;
+}
+
+<span class="token comment">/* Layout Holy Grail */</span>
+<span class="token selector">.holy-grail</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">flex-direction</span>: <span class="token value">column</span>;
+    <span class="token property">min-height</span>: <span class="token value">100vh</span>;
+}
+
+<span class="token selector">.holy-grail-body</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">flex</span>: <span class="token value">1</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Cas d'utilisation :</h4>
+                    <ul>
+                        <li>Barres de navigation</li>
+                        <li>Mise en page de cartes</li>
+                        <li>Centrage vertical et horizontal</li>
+                        <li>Layouts responsives</li>
+                    </ul>
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Utiliser flex-basis plutôt que width</li>
+                        <li>Préférer gap à margin pour l'espacement</li>
+                        <li>Combiner avec media queries pour la responsivité</li>
+                        <li>Éviter les flex-direction: column sur mobile</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="grid">
+                <h2>CSS Grid Layout</h2>
+                
+                <div class="info-box">
+                    <h3>Concepts Grid :</h3>
+                    <ul>
+                        <li>Lignes et colonnes</li>
+                        <li>Zones de grille</li>
+                        <li>Espacement (gap)</li>
+                        <li>Alignement</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Conteneur Grid de base */</span>
+<span class="token selector">.grid-container</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fit, minmax(250px, 1fr))</span>;
+    <span class="token property">grid-gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Grid Areas */</span>
+<span class="token selector">.layout</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-areas</span>: 
+        <span class="token value">"header header header"
+        "nav    main   aside"
+        "footer footer footer"</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">200px 1fr 200px</span>;
+    <span class="token property">grid-template-rows</span>: <span class="token value">auto 1fr auto</span>;
+}
+
+<span class="token comment">/* Positionnement des éléments */</span>
+<span class="token selector">.header</span> { <span class="token property">grid-area</span>: <span class="token value">header</span>; }
+<span class="token selector">.nav</span> { <span class="token property">grid-area</span>: <span class="token value">nav</span>; }
+<span class="token selector">.main</span> { <span class="token property">grid-area</span>: <span class="token value">main</span>; }
+
+<span class="token comment">/* Grid avancé */</span>
+<span class="token selector">.advanced-grid</span> {
+        <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">[start] 1fr [content-start] 900px [content-end] 1fr [end]</span>;
+    <span class="token property">grid-auto-rows</span>: <span class="token value">minmax(100px, auto)</span>;
+}
+
+<span class="token comment">/* Responsive Grid */</span>
+<span class="token selector">@media</span> (max-width: 768px) {
+    <span class="token selector">.layout</span> {
+        <span class="token property">grid-template-areas</span>:
+            <span class="token value">"header"
+            "nav"
+            "main"
+            "aside"
+            "footer"</span>;
+        <span class="token property">grid-template-columns</span>: <span class="token value">1fr</span>;
+    }
+}
+
+<span class="token comment">/* Grid avec auto-placement */</span>
+<span class="token selector">.auto-grid</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fill, minmax(200px, 1fr))</span>;
+    <span class="token property">grid-auto-flow</span>: <span class="token value">dense</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Avantages de Grid :</h4>
+                    <ul>
+                        <li>Contrôle bidimensionnel du layout</li>
+                        <li>Placement précis des éléments</li>
+                        <li>Responsive sans media queries</li>
+                        <li>Gestion simplifiée des espaces</li>
+                    </ul>
+                    <h4>Patterns courants :</h4>
+                    <ul>
+                        <li>Layouts de page complets</li>
+                        <li>Grilles de photos/cartes</li>
+                        <li>Systèmes de colonnes</li>
+                        <li>Layouts asymétriques</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="responsive">
+                <h2>Design Responsive</h2>
+                
+                <div class="info-box">
+                    <h3>Concepts clés :</h3>
+                    <ul>
+                        <li>Mobile First</li>
+                        <li>Media Queries</li>
+                        <li>Breakpoints</li>
+                        <li>Unités fluides</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Approche Mobile First */</span>
+<span class="token selector">.container</span> {
+    <span class="token property">width</span>: <span class="token value">100%</span>;
+    <span class="token property">padding</span>: <span class="token value">1rem</span>;
+    <span class="token property">font-size</span>: <span class="token value">16px</span>;
+}
+
+<span class="token comment">/* Media Queries - Breakpoints standards */</span>
+<span class="token atrule">@media</span> (min-width: 576px) {
+    <span class="token selector">.container</span> {
+        <span class="token property">max-width</span>: <span class="token value">540px</span>;
+    }
+}
+
+<span class="token atrule">@media</span> (min-width: 768px) {
+    <span class="token selector">.container</span> {
+        <span class="token property">max-width</span>: <span class="token value">720px</span>;
+    }
+}
+
+<span class="token comment">/* Unités fluides avec clamp() */</span>
+<span class="token selector">.fluid-text</span> {
+    <span class="token property">font-size</span>: <span class="token value">clamp(1rem, 2vw + 0.5rem, 2rem)</span>;
+}
+
+<span class="token comment">/* Layout responsive avec Grid */</span>
+<span class="token selector">.grid-responsive</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fit, minmax(250px, 1fr))</span>;
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Images responsives */</span>
+<span class="token selector">img</span> {
+    <span class="token property">max-width</span>: <span class="token value">100%</span>;
+    <span class="token property">height</span>: <span class="token value">auto</span>;
+}
+
+<span class="token comment">/* Navigation responsive */</span>
+<span class="token selector">.nav-mobile</span> {
+    <span class="token property">display</span>: <span class="token value">block</span>;
+}
+
+<span class="token selector">.nav-desktop</span> {
+    <span class="token property">display</span>: <span class="token value">none</span>;
+}
+
+<span class="token atrule">@media</span> (min-width: 992px) {
+    <span class="token selector">.nav-mobile</span> {
+        <span class="token property">display</span>: <span class="token value">none</span>;
+    }
+    
+    <span class="token selector">.nav-desktop</span> {
+        <span class="token property">display</span>: <span class="token value">flex</span>;
+    }
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Commencer par le mobile (Mobile First)</li>
+                        <li>Utiliser des breakpoints standards</li>
+                        <li>Préférer les unités relatives (rem, em, %)</li>
+                        <li>Tester sur différents appareils</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="variables">
+                <h2>Variables CSS (Custom Properties)</h2>
+                
+                <div class="info-box">
+                    <h3>Avantages :</h3>
+                    <ul>
+                        <li>Réutilisabilité</li>
+                        <li>Maintenance facilitée</li>
+                        <li>Thèmes dynamiques</li>
+                        <li>Scope CSS</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-css">
+<span class="token comment">/* Déclaration des variables globales */</span>
+<span class="token selector">:root</span> {
+    <span class="token comment">/* Couleurs */</span>
+    <span class="token property">--primary-color</span>: <span class="token value">#007bff</span>;
+    <span class="token property">--secondary-color</span>: <span class="token value">#6c757d</span>;
+    <span class="token property">--success-color</span>: <span class="token value">#28a745</span>;
+    
+    <span class="token comment">/* Typographie */</span>
+    <span class="token property">--font-main</span>: <span class="token value">'Arial', sans-serif</span>;
+    <span class="token property">--font-size-base</span>: <span class="token value">16px</span>;
+    <span class="token property">--line-height</span>: <span class="token value">1.5</span>;
+    
+    <span class="token comment">/* Espacements */</span>
+    <span class="token property">--spacing-unit</span>: <span class="token value">8px</span>;
+    <span class="token property">--container-padding</span>: <span class="token value">calc(var(--spacing-unit) * 2)</span>;
+}
+
+<span class="token comment">/* Utilisation des variables */</span>
+<span class="token selector">.button</span> {
+    <span class="token property">background-color</span>: <span class="token value">var(--primary-color)</span>;
+    <span class="token property">padding</span>: <span class="token value">var(--spacing-unit) calc(var(--spacing-unit) * 2)</span>;
+    <span class="token property">font-family</span>: <span class="token value">var(--font-main)</span>;
+}
+
+<span class="token comment">/* Thème sombre */</span>
+<span class="token atrule">@media</span> (prefers-color-scheme: dark) {
+    <span class="token selector">:root</span> {
+        <span class="token property">--primary-color</span>: <span class="token value">#66b3ff</span>;
+        <span class="token property">--text-color</span>: <span class="token value">#ffffff</span>;
+        <span class="token property">--bg-color</span>: <span class="token value">#1a1a1a</span>;
+    }
+}
+
+<span class="token comment">/* Variables locales */</span>
+<span class="token selector">.card</span> {
+    <span class="token property">--card-padding</span>: <span class="token value">1.5rem</span>;
+    <span class="token property">padding</span>: <span class="token value">var(--card-padding)</span>;
+}
+
+<span class="token comment">/* Fallbacks */</span>
+<span class="token selector">.element</span> {
+    <span class="token property">color</span>: <span class="token value">#007bff</span>; <span class="token comment">/* Fallback */</span>
+    <span class="token property">color</span>: <span class="token value">var(--primary-color, #007bff)</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Cas d'utilisation :</h4>
+                    <ul>
+                        <li>Systèmes de thèmes</li>
+                        <li>Composants réutilisables</li>
+                        <li>Gestion des couleurs</li>
+                        <li>Responsive design</li>
+                    </ul>
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Nommer les variables de manière descriptive</li>
+                        <li>Organiser les variables par catégories</li>
+                        <li>Utiliser des fallbacks</li>
+                        <li>Documenter les variables importantes</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="animations">
+                <h2>Animations et Transitions CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Types d'animations :</h3>
+                    <ul>
+                        <li>Transitions simples</li>
+                        <li>Animations keyframes</li>
+                        <li>Animations d'interface</li>
+                        <li>Effets interactifs</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Exemples d'animations courantes</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Animation de chargement (Spinner) */</span>
+<span class="token atrule">@keyframes</span> spinner {
+    <span class="token selector">0%</span> {
+        <span class="token property">transform</span>: <span class="token value">rotate(0deg)</span>;
+    }
+    <span class="token selector">100%</span> {
+        <span class="token property">transform</span>: <span class="token value">rotate(360deg)</span>;
+    }
+}
+
+<span class="token selector">.loading-spinner</span> {
+    <span class="token property">width</span>: <span class="token value">40px</span>;
+    <span class="token property">height</span>: <span class="token value">40px</span>;
+    <span class="token property">border</span>: <span class="token value">4px solid #f3f3f3</span>;
+    <span class="token property">border-top</span>: <span class="token value">4px solid #3498db</span>;
+    <span class="token property">border-radius</span>: <span class="token value">50%</span>;
+    <span class="token property">animation</span>: <span class="token value">spinner 1s linear infinite</span>;
+}
+
+<span class="token comment">/* Animation de fade-in */</span>
+<span class="token atrule">@keyframes</span> fadeIn {
+    <span class="token selector">from</span> {
+        <span class="token property">opacity</span>: <span class="token value">0</span>;
+        <span class="token property">transform</span>: <span class="token value">translateY(20px)</span>;
+    }
+    <span class="token selector">to</span> {
+        <span class="token property">opacity</span>: <span class="token value">1</span>;
+        <span class="token property">transform</span>: <span class="token value">translateY(0)</span>;
+    }
+}
+
+<span class="token selector">.fade-in</span> {
+    <span class="token property">animation</span>: <span class="token value">fadeIn 0.5s ease-out forwards</span>;
+}
+
+<span class="token comment">/* Animation de menu hamburger */</span>
+<span class="token selector">.hamburger-line</span> {
+    <span class="token property">transition</span>: <span class="token value">transform 0.3s ease-in-out</span>;
+}
+
+<span class="token selector">.hamburger.active .line-1</span> {
+    <span class="token property">transform</span>: <span class="token value">translateY(8px) rotate(45deg)</span>;
+}
+
+<span class="token selector">.hamburger.active .line-2</span> {
+    <span class="token property">opacity</span>: <span class="token value">0</span>;
+}
+
+<span class="token selector">.hamburger.active .line-3</span> {
+    <span class="token property">transform</span>: <span class="token value">translateY(-8px) rotate(-45deg)</span>;
+}
+
+<span class="token comment">/* Animation de carte flip */</span>
+<span class="token selector">.card</span> {
+    <span class="token property">perspective</span>: <span class="token value">1000px</span>;
+    <span class="token property">transform-style</span>: <span class="token value">preserve-3d</span>;
+    <span class="token property">transition</span>: <span class="token value">transform 0.6s</span>;
+}
+
+<span class="token selector">.card:hover</span> {
+    <span class="token property">transform</span>: <span class="token value">rotateY(180deg)</span>;
+}
+
+<span class="token comment">/* Animation de skeleton loading */</span>
+<span class="token atrule">@keyframes</span> shimmer {
+    <span class="token selector">0%</span> {
+        <span class="token property">background-position</span>: <span class="token value">-200% 0</span>;
+    }
+    <span class="token selector">100%</span> {
+        <span class="token property">background-position</span>: <span class="token value">200% 0</span>;
+    }
+}
+
+<span class="token selector">.skeleton</span> {
+    <span class="token property">background</span>: <span class="token value">linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)</span>;
+    <span class="token property">background-size</span>: <span class="token value">200% 100%</span>;
+    <span class="token property">animation</span>: <span class="token value">shimmer 1.5s infinite</span>;
+}
+
+<span class="token comment">/* Animation de notification */</span>
+<span class="token atrule">@keyframes</span> notification {
+    <span class="token selector">0%</span> {
+        <span class="token property">transform</span>: <span class="token value">translateX(100%)</span>;
+    }
+    <span class="token selector">10%</span> {
+        <span class="token property">transform</span>: <span class="token value">translateX(0)</span>;
+    }
+    <span class="token selector">90%</span> {
+        <span class="token property">transform</span>: <span class="token value">translateX(0)</span>;
+    }
+    <span class="token selector">100%</span> {
+        <span class="token property">transform</span>: <span class="token value">translateX(100%)</span>;
+    }
+}
+
+<span class="token selector">.notification</span> {
+    <span class="token property">animation</span>: <span class="token value">notification 4s ease-in-out</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Propriétés d'animation importantes :</h4>
+                    <ul>
+                        <li>animation-duration : durée de l'animation</li>
+                        <li>animation-timing-function : courbe d'accélération</li>
+                        <li>animation-delay : délai avant le début</li>
+                        <li>animation-iteration-count : nombre de répétitions</li>
+                        <li>animation-direction : direction de l'animation</li>
+                        <li>animation-fill-mode : état avant/après l'animation</li>
+                    </ul>
+
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Privilégier transform et opacity pour les performances</li>
+                        <li>Utiliser des animations courtes (< 400ms) pour l'UI</li>
+                        <li>Éviter les animations qui peuvent donner le mal des transports</li>
+                        <li>Respecter prefers-reduced-motion</li>
+                    </ul>
+
+                    <h4>Cas d'utilisation courants :</h4>
+                    <ul>
+                        <li>Feedback utilisateur (hover, click, etc.)</li>
+                        <li>États de chargement</li>
+                        <li>Transitions de page</li>
+                        <li>Micro-interactions</li>
+                        <li>Animations de contenu</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="transformations">
+                <h2>Transformations et Effets Avancés CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Types de transformations :</h3>
+                    <ul>
+                        <li>Transformations 2D</li>
+                        <li>Transformations 3D</li>
+                        <li>Perspectives</li>
+                        <li>Effets composés</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Transformations 2D de base</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Transformations de base */</span>
+<span class="token selector">.translate</span> {
+    <span class="token property">transform</span>: <span class="token value">translate(50px, 20px)</span>;
+}
+
+<span class="token selector">.scale</span> {
+    <span class="token property">transform</span>: <span class="token value">scale(1.5)</span>;
+}
+
+<span class="token selector">.rotate</span> {
+    <span class="token property">transform</span>: <span class="token value">rotate(45deg)</span>;
+}
+
+<span class="token selector">.skew</span> {
+    <span class="token property">transform</span>: <span class="token value">skew(10deg, 20deg)</span>;
+}
+
+<span class="token comment">/* Transformations combinées */</span>
+<span class="token selector">.combined</span> {
+    <span class="token property">transform</span>: <span class="token value">rotate(45deg) scale(1.5) translateX(50px)</span>;
+}
+
+<span class="token comment">/* Point d'origine de transformation */</span>
+<span class="token selector">.origin</span> {
+    <span class="token property">transform-origin</span>: <span class="token value">left top</span>;
+    <span class="token property">transform</span>: <span class="token value">rotate(45deg)</span>;
+}
+                    </code></pre>
+
+                    <h4>Transformations 3D avancées</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Configuration 3D */</span>
+<span class="token selector">.scene</span> {
+    <span class="token property">perspective</span>: <span class="token value">1000px</span>;
+    <span class="token property">perspective-origin</span>: <span class="token value">50% 50%</span>;
+}
+
+<span class="token selector">.container-3d</span> {
+    <span class="token property">transform-style</span>: <span class="token value">preserve-3d</span>;
+}
+
+<span class="token comment">/* Cube 3D */</span>
+<span class="token selector">.cube</span> {
+    <span class="token property">position</span>: <span class="token value">relative</span>;
+    <span class="token property">width</span>: <span class="token value">200px</span>;
+    <span class="token property">height</span>: <span class="token value">200px</span>;
+    <span class="token property">transform-style</span>: <span class="token value">preserve-3d</span>;
+    <span class="token property">animation</span>: <span class="token value">rotate3d 5s infinite linear</span>;
+}
+
+<span class="token selector">.cube-face</span> {
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">width</span>: <span class="token value">100%</span>;
+    <span class="token property">height</span>: <span class="token value">100%</span>;
+    <span class="token property">backface-visibility</span>: <span class="token value">hidden</span>;
+}
+
+<span class="token selector">.front</span> { <span class="token property">transform</span>: <span class="token value">translateZ(100px)</span>; }
+<span class="token selector">.back</span> { <span class="token property">transform</span>: <span class="token value">rotateY(180deg) translateZ(100px)</span>; }
+<span class="token selector">.right</span> { <span class="token property">transform</span>: <span class="token value">rotateY(90deg) translateZ(100px)</span>; }
+<span class="token selector">.left</span> { <span class="token property">transform</span>: <span class="token value">rotateY(-90deg) translateZ(100px)</span>; }
+<span class="token selector">.top</span> { <span class="token property">transform</span>: <span class="token value">rotateX(90deg) translateZ(100px)</span>; }
+<span class="token selector">.bottom</span> { <span class="token property">transform</span>: <span class="token value">rotateX(-90deg) translateZ(100px)</span>; }
+
+<span class="token comment">/* Effets de carte avec flip */</span>
+<span class="token selector">.card-container</span> {
+    <span class="token property">perspective</span>: <span class="token value">1000px</span>;
+}
+
+<span class="token selector">.card-3d</span> {
+    <span class="token property">position</span>: <span class="token value">relative</span>;
+    <span class="token property">transform-style</span>: <span class="token value">preserve-3d</span>;
+    <span class="token property">transition</span>: <span class="token value">transform 0.8s</span>;
+}
+
+<span class="token selector">.card-3d:hover</span> {
+    <span class="token property">transform</span>: <span class="token value">rotateY(180deg)</span>;
+}
+
+<span class="token comment">/* Effets parallax */</span>
+<span class="token selector">.parallax-container</span> {
+    <span class="token property">perspective</span>: <span class="token value">1px</span>;
+    <span class="token property">height</span>: <span class="token value">100vh</span>;
+    <span class="token property">overflow-x</span>: <span class="token value">hidden</span>;
+    <span class="token property">overflow-y</span>: <span class="token value">scroll</span>;
+}
+
+<span class="token selector">.parallax-layer</span> {
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">top</span>: <span class="token value">0</span>;
+    <span class="token property">right</span>: <span class="token value">0</span>;
+    <span class="token property">bottom</span>: <span class="token value">0</span>;
+    <span class="token property">left</span>: <span class="token value">0</span>;
+}
+
+<span class="token selector">.layer-back</span> {
+    <span class="token property">transform</span>: <span class="token value">translateZ(-1px) scale(2)</span>;
+}
+
+<span class="token selector">.layer-base</span> {
+    <span class="token property">transform</span>: <span class="token value">translateZ(0)</span>;
+}
+
+<span class="token selector">.layer-front</span> {
+    <span class="token property">transform</span>: <span class="token value">translateZ(1px) scale(0.5)</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Points clés :</h4>
+                    <ul>
+                        <li>Les transformations 3D nécessitent une perspective</li>
+                        <li>transform-style: preserve-3d maintient la hiérarchie 3D</li>
+                        <li>backface-visibility contrôle la visibilité du verso</li>
+                        <li>Les transformations peuvent être animées</li>
+                    </ul>
+                    <h4>Performances :</h4>
+                    <ul>
+                        <li>Utiliser transform plutôt que position absolute</li>
+                        <li>Activer l'accélération matérielle avec translateZ(0)</li>
+                        <li>Éviter les transformations sur des éléments trop grands</li>
+                        <li>Optimiser les animations avec will-change</li>
+                    </ul>
+                    <h4>Cas d'utilisation :</h4>
+                    <ul>
+                        <li>Cartes interactives</li>
+                        <li>Menus et navigation 3D</li>
+                        <li>Effets de parallaxe</li>
+                        <li>Transitions de page</li>
+                        <li>Galeries d'images</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="layout-avance">
+                <h2>Layout Avancé CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Techniques avancées :</h3>
+                    <ul>
+                        <li>CSS Grid Areas</li>
+                        <li>Masonry Layout</li>
+                        <li>Multi-column Layout</li>
+                        <li>Sticky Positioning</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Grid Areas et Templates complexes</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Layout avec Grid Areas */</span>
+<span class="token selector">.grid-container</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-areas</span>: 
+        <span class="token value">"header header  header"
+        "nav    content aside"
+        "footer footer  footer"</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">200px 1fr 200px</span>;
+    <span class="token property">grid-template-rows</span>: <span class="token value">auto 1fr auto</span>;
+    <span class="token property">min-height</span>: <span class="token value">100vh</span>;
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token selector">.header</span> { <span class="token property">grid-area</span>: <span class="token value">header</span>; }
+<span class="token selector">.nav</span> { <span class="token property">grid-area</span>: <span class="token value">nav</span>; }
+<span class="token selector">.content</span> { <span class="token property">grid-area</span>: <span class="token value">content</span>; }
+<span class="token selector">.aside</span> { <span class="token property">grid-area</span>: <span class="token value">aside</span>; }
+<span class="token selector">.footer</span> { <span class="token property">grid-area</span>: <span class="token value">footer</span>; }
+
+<span class="token comment">/* Masonry Layout avec Grid */</span>
+<span class="token selector">.masonry-grid</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fill, minmax(250px, 1fr))</span>;
+    <span class="token property">grid-auto-rows</span>: <span class="token value">20px</span>;
+    <span class="token property">grid-auto-flow</span>: <span class="token value">dense</span>;
+}
+
+<span class="token selector">.masonry-item</span> {
+    <span class="token property">grid-row-end</span>: <span class="token value">span var(--rows, 10)</span>;
+}
+
+<span class="token comment">/* Multi-column Layout */</span>
+<span class="token selector">.multi-column</span> {
+    <span class="token property">column-count</span>: <span class="token value">3</span>;
+    <span class="token property">column-gap</span>: <span class="token value">2rem</span>;
+    <span class="token property">column-rule</span>: <span class="token value">1px solid #ddd</span>;
+}
+
+<span class="token selector">.no-break</span> {
+    <span class="token property">break-inside</span>: <span class="token value">avoid</span>;
+    <span class="token property">page-break-inside</span>: <span class="token value">avoid</span>;
+}
+
+<span class="token comment">/* Sticky Positioning avancé */</span>
+<span class="token selector">.sticky-container</span> {
+    <span class="token property">position</span>: <span class="token value">relative</span>;
+    <span class="token property">height</span>: <span class="token value">100vh</span>;
+    <span class="token property">overflow-y</span>: <span class="token value">auto</span>;
+}
+
+<span class="token selector">.sticky-element</span> {
+    <span class="token property">position</span>: <span class="token value">sticky</span>;
+    <span class="token property">top</span>: <span class="token value">0</span>;
+    <span class="token property">z-index</span>: <span class="token value">10</span>;
+}
+
+<span class="token comment">/* Layout avec Subgrid */</span>
+<span class="token selector">.parent-grid</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(12, 1fr)</span>;
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token selector">.nested-grid</span> {
+    <span class="token property">grid-column</span>: <span class="token value">span 6</span>;
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">subgrid</span>;
+}
+
+<span class="token comment">/* Container Queries */</span>
+<span class="token selector">@container</span> (min-width: 400px) {
+    <span class="token selector">.responsive-component</span> {
+        <span class="token property">grid-template-columns</span>: <span class="token value">1fr 1fr</span>;
+    }
+}
+                    </code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h4>Layouts adaptatifs avancés</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Layout avec CSS Shapes */</span>
+<span class="token selector">.shape-outside</span> {
+    <span class="token property">float</span>: <span class="token value">left</span>;
+    <span class="token property">shape-outside</span>: <span class="token value">circle(50%)</span>;
+    <span class="token property">clip-path</span>: <span class="token value">circle(50%)</span>;
+    <span class="token property">width</span>: <span class="token value">200px</span>;
+    <span class="token property">height</span>: <span class="token value">200px</span>;
+}
+
+<span class="token comment">/* Aspect Ratio Boxes */</span>
+<span class="token selector">.aspect-ratio-box</span> {
+    <span class="token property">aspect-ratio</span>: <span class="token value">16 / 9</span>;
+    <span class="token property">width</span>: <span class="token value">100%</span>;
+}
+
+<span class="token comment">/* CSS Grid Auto-fit vs Auto-fill */</span>
+<span class="token selector">.auto-fit</span> {
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fit, minmax(200px, 1fr))</span>;
+}
+
+<span class="token selector">.auto-fill</span> {
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(auto-fill, minmax(200px, 1fr))</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Techniques avancées :</h4>
+                    <ul>
+                        <li>Grid Areas pour des layouts complexes</li>
+                        <li>Masonry pour des grilles dynamiques</li>
+                        <li>Multi-column pour le contenu textuel</li>
+                        <li>Sticky positioning pour les éléments fixes</li>
+                    </ul>
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Utiliser des unités relatives pour la flexibilité</li>
+                        <li>Combiner Grid et Flexbox selon les besoins</li>
+                        <li>Prévoir les cas de débordement</li>
+                        <li>Tester sur différentes tailles d'écran</li>
+                    </ul>
+                    <h4>Considérations de performance :</h4>
+                    <ul>
+                        <li>Éviter les calculs de layout trop fréquents</li>
+                        <li>Utiliser contain: layout pour isoler les composants</li>
+                        <li>Optimiser les animations de layout</li>
+                        <li>Préférer les propriétés composites</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="selecteurs-avances">
+                <h2>Sélecteurs Avancés et Pseudo-éléments</h2>
+                
+                <div class="info-box">
+                    <h3>Types de sélecteurs avancés :</h3>
+                    <ul>
+                        <li>Pseudo-éléments (::before, ::after)</li>
+                        <li>Sélecteurs relationnels</li>
+                        <li>Sélecteurs de négation et matches</li>
+                        <li>Sélecteurs d'attributs complexes</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Pseudo-éléments avancés</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Création de contenu décoratif */</span>
+<span class="token selector">.quote::before</span> {
+    <span class="token property">content</span>: <span class="token value">"""</span>;
+    <span class="token property">font-size</span>: <span class="token value">3em</span>;
+    <span class="token property">color</span>: <span class="token value">var(--accent-color)</span>;
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">left</span>: <span class="token value">-0.5em</span>;
+}
+
+<span class="token comment">/* Styles de première ligne et lettre */</span>
+<span class="token selector">.article p::first-letter</span> {
+    <span class="token property">font-size</span>: <span class="token value">2em</span>;
+    <span class="token property">float</span>: <span class="token value">left</span>;
+    <span class="token property">margin-right</span>: <span class="token value">0.2em</span>;
+    <span class="token property">line-height</span>: <span class="token value">1</span>;
+}
+
+<span class="token selector">.article p::first-line</span> {
+    <span class="token property">font-weight</span>: <span class="token value">bold</span>;
+    <span class="token property">color</span>: <span class="token value">var(--emphasis-color)</span>;
+}
+
+<span class="token comment">/* Sélection de texte personnalisée */</span>
+<span class="token selector">::selection</span> {
+    <span class="token property">background</span>: <span class="token value">var(--brand-color)</span>;
+    <span class="token property">color</span>: <span class="token value">white</span>;
+}
+
+<span class="token comment">/* Marqueurs de liste personnalisés */</span>
+<span class="token selector">.custom-list li::marker</span> {
+    <span class="token property">content</span>: <span class="token value">"👉 "</span>;
+    <span class="token property">color</span>: <span class="token value">var(--accent-color)</span>;
+}
+
+<span class="token comment">/* Effets de superposition avec ::before */</span>
+<span class="token selector">.overlay-effect::before</span> {
+    <span class="token property">content</span>: <span class="token value">""</span>;
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">inset</span>: <span class="token value">0</span>;
+    <span class="token property">background</span>: <span class="token value">linear-gradient(to bottom, transparent, rgba(0,0,0,0.7))</span>;
+    <span class="token property">opacity</span>: <span class="token value">0</span>;
+    <span class="token property">transition</span>: <span class="token value">opacity 0.3s</span>;
+}
+
+<span class="token selector">.overlay-effect:hover::before</span> {
+    <span class="token property">opacity</span>: <span class="token value">1</span>;
+}
+                    </code></pre>
+
+                    <h4>Sélecteurs relationnels modernes</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Sélecteur :has() */</span>
+<span class="token selector">article:has(> img)</span> {
+    <span class="token property">padding</span>: <span class="token value">0</span>;
+}
+
+<span class="token selector">form:has(:invalid)</span> {
+    <span class="token property">border-color</span>: <span class="token value">red</span>;
+}
+
+<span class="token comment">/* Combinaison :is() et :where() */</span>
+<span class="token selector">:is(article, section) :where(h1, h2, h3)</span> {
+    <span class="token property">color</span>: <span class="token value">var(--heading-color)</span>;
+}
+
+<span class="token comment">/* Sélecteurs de négation avancés */</span>
+<span class="token selector">.menu > :not(li, .separator)</span> {
+    <span class="token property">margin</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Sélecteurs d'attributs complexes */</span>
+<span class="token selector">[data-state*="active"]</span> {
+    <span class="token property">background</span>: <span class="token value">var(--active-bg)</span>;
+}
+
+<span class="token selector">[href^="https"][href*="example.com"]</span> {
+    <span class="token property">color</span>: <span class="token value">var(--external-link-color)</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Utilisations courantes :</h4>
+                    <ul>
+                        <li>Création d'icônes et décorations</li>
+                        <li>Effets de superposition</li>
+                        <li>Styles typographiques avancés</li>
+                        <li>Validation de formulaires</li>
+                        <li>Mise en page conditionnelle</li>
+                    </ul>
+
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Utiliser ::before/::after pour le contenu décoratif uniquement</li>
+                        <li>Préférer les attributs data- pour les états</li>
+                        <li>Éviter la surcharge de pseudo-éléments</li>
+                        <li>Maintenir l'accessibilité du contenu</li>
+                    </ul>
+
+                    <h4>Considérations de performance :</h4>
+                    <ul>
+                        <li>Les pseudo-éléments créent des éléments supplémentaires dans le DOM</li>
+                        <li>Limiter l'utilisation des sélecteurs complexes</li>
+                        <li>Optimiser les sélecteurs pour le rendu</li>
+                        <li>Utiliser des classes plutôt que des sélecteurs d'attributs quand possible</li>
+                    </ul>
+
+                    <h4>Compatibilité :</h4>
+                    <ul>
+                        <li>Vérifier le support des nouveaux sélecteurs (:has, :is)</li>
+                        <li>Prévoir des fallbacks pour les navigateurs anciens</li>
+                        <li>Tester sur différents navigateurs</li>
+                        <li>Utiliser @supports pour les fonctionnalités avancées</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="performance">
+                <h2>Performance et Optimisation CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Aspects clés de la performance :</h3>
+                    <ul>
+                        <li>Optimisation des sélecteurs</li>
+                        <li>Gestion du rendu</li>
+                        <li>Minification et compression</li>
+                        <li>Critical CSS</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Optimisation des sélecteurs</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* ❌ Sélecteurs inefficaces */</span>
+<span class="token selector">div div div div a</span> { <span class="token comment">/* Trop profond */</span>
+    <span class="token property">color</span>: <span class="token value">blue</span>;
+}
+
+<span class="token comment">/* ✅ Sélecteurs optimisés */</span>
+<span class="token selector">.nav-link</span> {
+    <span class="token property">color</span>: <span class="token value">blue</span>;
+}
+
+<span class="token comment">/* Éviter les sélecteurs universels */</span>
+<span class="token selector">.container *</span> { <span class="token comment">/* ❌ À éviter */</span>
+    <span class="token property">box-sizing</span>: <span class="token value">border-box</span>;
+}
+
+<span class="token comment">/* Optimisation du rendu */</span>
+<span class="token selector">.card</span> {
+    <span class="token property">will-change</span>: <span class="token value">transform</span>;
+    <span class="token property">transform</span>: <span class="token value">translateZ(0)</span>;
+    <span class="token property">contain</span>: <span class="token value">layout paint size</span>;
+}
+
+<span class="token comment">/* Réduction des reflows */</span>
+<span class="token selector">.dynamic-content</span> {
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">transform</span>: <span class="token value">translateX(0)</span>;
+    <span class="token property">opacity</span>: <span class="token value">0.8</span>;
+}
+                    </code></pre>
+
+                    <h4>Critical CSS et Chargement</h4>
+                    <pre><code class="language-html">
+<span class="token comment"><!-- Critical CSS inline --></span>
+<span class="token tag"><style></span>
+    <span class="token comment">/* Styles critiques pour le rendu initial */</span>
+    <span class="token selector">body</span> {
+        <span class="token property">margin</span>: <span class="token value">0</span>;
+        <span class="token property">font-family</span>: <span class="token value">system-ui, sans-serif</span>;
+    }
+    <span class="token selector">.header</span> {
+        <span class="token property">height</span>: <span class="token value">60px</span>;
+        <span class="token property">background</span>: <span class="token value">#fff</span>;
+    }
+<span class="token tag"></style></span>
+
+<span class="token comment"><!-- Chargement différé des styles non-critiques --></span>
+<span class="token tag"><link</span> 
+    <span class="token attr">rel</span>="preload" 
+    <span class="token attr">href</span>="styles.css" 
+    <span class="token attr">as</span>="style" 
+    <span class="token attr">onload</span>="this.onload=null;this.rel='stylesheet'"
+<span class="token tag">></span>
+                    </code></pre>
+
+                    <h4>Optimisations avancées</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Containment pour l'isolation */</span>
+<span class="token selector">.widget</span> {
+    <span class="token property">contain</span>: <span class="token value">content</span>;
+    <span class="token property">content-visibility</span>: <span class="token value">auto</span>;
+    <span class="token property">contain-intrinsic-size</span>: <span class="token value">0 500px</span>;
+}
+
+<span class="token comment">/* Layer pour l'optimisation du rendu */</span>
+<span class="token atrule">@layer</span> base, components, utilities;
+
+<span class="token atrule">@layer</span> base {
+    <span class="token comment">/* Styles de base */</span>
+}
+
+<span class="token comment">/* Support des anciennes versions */</span>
+<span class="token atrule">@supports</span> not (display: grid) {
+    <span class="token selector">.fallback</span> {
+        <span class="token property">float</span>: <span class="token value">left</span>;
+        <span class="token property">width</span>: <span class="token value">50%</span>;
+    }
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Stratégies d'optimisation :</h4>
+                    <ul>
+                        <li>Minimiser la spécificité des sélecteurs</li>
+                        <li>Utiliser des classes plutôt que des sélecteurs complexes</li>
+                        <li>Éviter les calculs de layout inutiles</li>
+                        <li>Optimiser le critical rendering path</li>
+                    </ul>
+
+                    <h4>Techniques de chargement :</h4>
+                    <ul>
+                        <li>Critical CSS inline pour le premier rendu</li>
+                        <li>Chargement asynchrone des styles non-critiques</li>
+                        <li>Préchargement des ressources importantes</li>
+                        <li>Utilisation de media queries pour le chargement conditionnel</li>
+                    </ul>
+
+                    <h4>Outils et mesures :</h4>
+                    <ul>
+                        <li>Chrome DevTools Performance Panel</li>
+                        <li>Lighthouse pour l'audit de performance</li>
+                        <li>CSS Stats pour l'analyse des styles</li>
+                        <li>Minification et compression des fichiers</li>
+                    </ul>
+
+                    <h4>Bonnes pratiques de performance :</h4>
+                    <ul>
+                        <li>Éviter les animations sur des propriétés coûteuses</li>
+                        <li>Utiliser les propriétés hardware-accelerated</li>
+                        <li>Gérer efficacement les media queries</li>
+                        <li>Optimiser les images et les ressources</li>
+                        <li>Mettre en cache les ressources statiques</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="accessibilite">
+                <h2>Accessibilité et CSS</h2>
+                
+                <div class="info-box">
+                    <h3>Points clés de l'accessibilité :</h3>
+                    <ul>
+                        <li>Contraste et lisibilité</li>
+                        <li>Navigation au clavier</li>
+                        <li>Préférences utilisateur</li>
+                        <li>États interactifs</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Contraste et Lisibilité</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Variables pour les couleurs accessibles */</span>
+<span class="token selector">:root</span> {
+    <span class="token property">--text-color</span>: <span class="token value">#333333</span>; <span class="token comment">/* Ratio de contraste > 4.5:1 */</span>
+    <span class="token property">--link-color</span>: <span class="token value">#0066cc</span>; <span class="token comment">/* Ratio de contraste > 4.5:1 */</span>
+    <span class="token property">--focus-outline</span>: <span class="token value">#2196f3</span>;
+}
+
+<span class="token comment">/* Taille de texte adaptative */</span>
+<span class="token selector">body</span> {
+    <span class="token property">font-size</span>: <span class="token value">clamp(1rem, 2vw, 1.2rem)</span>;
+    <span class="token property">line-height</span>: <span class="token value">1.5</span>;
+    <span class="token property">font-family</span>: <span class="token value">system-ui, -apple-system, sans-serif</span>;
+}
+
+<span class="token comment">/* Focus visible */</span>
+<span class="token selector">:focus-visible</span> {
+    <span class="token property">outline</span>: <span class="token value">3px solid var(--focus-outline)</span>;
+    <span class="token property">outline-offset</span>: <span class="token value">2px</span>;
+}
+
+<span class="token comment">/* Suppression du focus pour les éléments non-interactifs */</span>
+<span class="token selector">[tabindex="-1"]</span> {
+    <span class="token property">outline</span>: <span class="token value">none</span>;
+}
+        </code></pre>
+
+        <h4>Préférences Utilisateur</h4>
+        <pre><code class="language-css">
+<span class="token comment">/* Mode sombre */</span>
+<span class="token atrule">@media</span> (prefers-color-scheme: dark) {
+    <span class="token selector">:root</span> {
+        <span class="token property">--text-color</span>: <span class="token value">#f0f0f0</span>;
+        <span class="token property">--background-color</span>: <span class="token value">#1a1a1a</span>;
+        <span class="token property">--link-color</span>: <span class="token value">#66b3ff</span>;
+    }
+}
+
+<span class="token comment">/* Réduction de mouvement */</span>
+<span class="token atrule">@media</span> (prefers-reduced-motion: reduce) {
+    <span class="token selector">*</span> {
+        <span class="token property">animation</span>: <span class="token value">none !important</span>;
+        <span class="token property">transition</span>: <span class="token value">none !important</span>;
+        <span class="token property">scroll-behavior</span>: <span class="token value">auto !important</span>;
+    }
+}
+
+<span class="token comment">/* Contraste élevé */</span>
+<span class="token atrule">@media</span> (prefers-contrast: high) {
+    <span class="token selector">:root</span> {
+        <span class="token property">--text-color</span>: <span class="token value">#000000</span>;
+        <span class="token property">--background-color</span>: <span class="token value">#ffffff</span>;
+        <span class="token property">--link-color</span>: <span class="token value">#0000EE</span>;
+    }
+}
+        </code></pre>
+
+        <h4>États Interactifs</h4>
+        <pre><code class="language-css">
+<span class="token comment">/* États des liens */</span>
+<span class="token selector">a</span> {
+    <span class="token property">text-decoration</span>: <span class="token value">underline</span>;
+    <span class="token property">text-underline-offset</span>: <span class="token value">0.2em</span>;
+}
+
+<span class="token selector">a:hover, a:focus</span> {
+    <span class="token property">text-decoration-thickness</span>: <span class="token value">2px</span>;
+}
+
+<span class="token comment">/* États des boutons */</span>
+<span class="token selector">.button</span> {
+    <span class="token property">padding</span>: <span class="token value">0.5em 1em</span>;
+    <span class="token property">min-height</span>: <span class="token value">44px</span>; <span class="token comment">/* Zone de tap minimale */</span>
+    <span class="token property">min-width</span>: <span class="token value">44px</span>;
+}
+
+<span class="token selector">.button:disabled</span> {
+    <span class="token property">opacity</span>: <span class="token value">0.6</span>;
+    <span class="token property">cursor</span>: <span class="token value">not-allowed</span>;
+}
+
+<span class="token comment">/* Skip links */</span>
+<span class="token selector">.skip-link</span> {
+    <span class="token property">position</span>: <span class="token value">absolute</span>;
+    <span class="token property">top</span>: <span class="token value">-100px</span>;
+    <span class="token property">left</span>: <span class="token value">0</span>;
+    <span class="token property">z-index</span>: <span class="token value">100</span>;
+}
+
+<span class="token selector">.skip-link:focus</span> {
+    <span class="token property">top</span>: <span class="token value">0</span>;
+}
+        </code></pre>
+    </div>
+
+    <div class="explanation">
+        <h4>Principes d'accessibilité :</h4>
+        <ul>
+            <li>Maintenir un contraste suffisant (WCAG 2.1)</li>
+            <li>Assurer la visibilité du focus</li>
+            <li>Respecter les préférences utilisateur</li>
+            <li>Fournir des zones de clic suffisantes</li>
+        </ul>
+
+        <h4>Bonnes pratiques :</h4>
+        <ul>
+            <li>Ne jamais supprimer complètement l'outline du focus</li>
+            <li>Utiliser des unités relatives pour la taille du texte</li>
+            <li>Tester avec des outils d'accessibilité</li>
+            <li>Vérifier la navigation au clavier</li>
+        </ul>
+
+        <h4>Outils de test :</h4>
+        <ul>
+            <li>WAVE (Web Accessibility Evaluation Tool)</li>
+            <li>Lighthouse Accessibility Audit</li>
+            <li>Contrast Checker</li>
+            <li>Screen readers (NVDA, VoiceOver)</li>
+        </ul>
+
+        <h4>Considérations importantes :</h4>
+        <ul>
+            <li>Tester avec différents niveaux de zoom</li>
+            <li>Vérifier l'ordre de lecture logique</li>
+            <li>Assurer la compatibilité avec les technologies d'assistance</li>
+            <li>Documenter les fonctionnalités d'accessibilité</li>
+        </ul>
+    </div>
+</article>
+
+            <article id="css-moderne">
+                <h2>CSS Moderne et Nouvelles Fonctionnalités</h2>
+                
+                <div class="info-box">
+                    <h3>Fonctionnalités modernes :</h3>
+                    <ul>
+                        <li>Container Queries</li>
+                        <li>Cascade Layers</li>
+                        <li>Subgrid</li>
+                        <li>Nouvelles fonctions</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <h4>Container Queries</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Définition du conteneur */</span>
+<span class="token selector">.card-container</span> {
+    <span class="token property">container-type</span>: <span class="token value">inline-size</span>;
+    <span class="token property">container-name</span>: <span class="token value">card</span>;
+}
+
+<span class="token comment">/* Styles basés sur la taille du conteneur */</span>
+<span class="token atrule">@container</span> card (min-width: 400px) {
+    <span class="token selector">.card</span> {
+        <span class="token property">display</span>: <span class="token value">grid</span>;
+        <span class="token property">grid-template-columns</span>: <span class="token value">2fr 1fr</span>;
+        <span class="token property">gap</span>: <span class="token value">1rem</span>;
+    }
+}
+
+<span class="token comment">/* Style par défaut */</span>
+<span class="token selector">.card</span> {
+    <span class="token property">display</span>: <span class="token value">flex</span>;
+    <span class="token property">flex-direction</span>: <span class="token value">column</span>;
+}
+                    </code></pre>
+
+                    <h4>Cascade Layers</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Définition de l'ordre des layers */</span>
+<span class="token atrule">@layer</span> reset, base, theme, components, utilities;
+
+<span class="token comment">/* Layer pour le reset */</span>
+<span class="token atrule">@layer</span> reset {
+    <span class="token selector">*</span> {
+        <span class="token property">margin</span>: <span class="token value">0</span>;
+        <span class="token property">padding</span>: <span class="token value">0</span>;
+        <span class="token property">box-sizing</span>: <span class="token value">border-box</span>;
+    }
+}
+
+<span class="token comment">/* Layer pour les styles de base */</span>
+<span class="token atrule">@layer</span> base {
+    <span class="token selector">body</span> {
+        <span class="token property">font-family</span>: <span class="token value">system-ui</span>;
+        <span class="token property">line-height</span>: <span class="token value">1.5</span>;
+    }
+}
+
+<span class="token comment">/* Layer pour les composants */</span>
+<span class="token atrule">@layer</span> components {
+    <span class="token selector">.button</span> {
+        <span class="token property">padding</span>: <span class="token value">0.5em 1em</span>;
+    }
+}
+                    </code></pre>
+
+                    <h4>Nouvelles Fonctions CSS</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Fonction has() */</span>
+<span class="token selector">article:has(> img)</span> {
+    <span class="token property">padding</span>: <span class="token value">0</span>;
+}
+
+<span class="token comment">/* Fonctions mathématiques */</span>
+<span class="token selector">.element</span> {
+    <span class="token property">width</span>: <span class="token value">min(100% - 2rem, 600px)</span>;
+    <span class="token property">height</span>: <span class="token value">max(10vh, 200px)</span>;
+    <span class="token property">padding</span>: <span class="token value">clamp(1rem, 5vw, 3rem)</span>;
+}
+
+<span class="token comment">/* Nouvelles unités */</span>
+<span class="token selector">.modern-layout</span> {
+    <span class="token property">height</span>: <span class="token value">100dvh</span>; <span class="token comment">/* Dynamic viewport height */</span>
+    <span class="token property">width</span>: <span class="token value">100svw</span>; <span class="token comment">/* Small viewport width */</span>
+    <span class="token property">padding-inline</span>: <span class="token value">2rem</span>;
+    <span class="token property">margin-block</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token comment">/* Subgrid */</span>
+<span class="token selector">.parent-grid</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">repeat(3, 1fr)</span>;
+    <span class="token property">gap</span>: <span class="token value">1rem</span>;
+}
+
+<span class="token selector">.nested-grid</span> {
+    <span class="token property">display</span>: <span class="token value">grid</span>;
+    <span class="token property">grid-template-columns</span>: <span class="token value">subgrid</span>;
+}
+                    </code></pre>
+
+                    <h4>Nouvelles Propriétés</h4>
+                    <pre><code class="language-css">
+<span class="token comment">/* Aspect Ratio */</span>
+<span class="token selector">.image-container</span> {
+    <span class="token property">aspect-ratio</span>: <span class="token value">16 / 9</span>;
+}
+
+<span class="token comment">/* Scroll Snap */</span>
+<span class="token selector">.scroll-container</span> {
+    <span class="token property">scroll-snap-type</span>: <span class="token value">x mandatory</span>;
+    <span class="token property">overflow-x</span>: <span class="token value">scroll</span>;
+}
+
+<span class="token selector">.scroll-item</span> {
+    <span class="token property">scroll-snap-align</span>: <span class="token value">start</span>;
+}
+
+<span class="token comment">/* Backdrop Filter */</span>
+<span class="token selector">.glass-effect</span> {
+    <span class="token property">backdrop-filter</span>: <span class="token value">blur(10px)</span>;
+    <span class="token property">background</span>: <span class="token value">rgba(255, 255, 255, 0.1)</span>;
+}
+                    </code></pre>
+                </div>
+
+                <div class="explanation">
+                    <h4>Avantages des nouvelles fonctionnalités :</h4>
+                    <ul>
+                        <li>Container Queries pour un design plus modulaire</li>
+                        <li>Cascade Layers pour une meilleure organisation du code</li>
+                        <li>Subgrid pour des layouts plus flexibles</li>
+                        <li>Nouvelles fonctions pour plus de contrôle</li>
+                    </ul>
+
+                    <h4>Bonnes pratiques :</h4>
+                    <ul>
+                        <li>Vérifier la compatibilité des navigateurs</li>
+                        <li>Utiliser des fallbacks appropriés</li>
+                        <li>Progressive enhancement</li>
+                        <li>Tester sur différents appareils</li>
+                    </ul>
+
+                    <h4>Cas d'utilisation :</h4>
+                    <ul>
+                        <li>Composants réutilisables avec Container Queries</li>
+                        <li>Organisation du code avec Cascade Layers</li>
+                        <li>Layouts complexes avec Subgrid</li>
+                        <li>Effets visuels modernes avec les nouvelles propriétés</li>
+                    </ul>
+
+                    <h4>Ressources :</h4>
+                    <ul>
+                        <li>MDN Web Docs pour la documentation</li>
+                        <li>Can I Use pour la compatibilité</li>
+                        <li>CSS Working Group pour les spécifications</li>
+                        <li>Polyfills pour le support des anciennes versions</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Ajoutez le footer -->
+            <footer>
+                <p>&copy; 2024 Formation DWWM - Tous droits réservés</p>
+            </footer>
+        </section>
+    </main>
+</body>
+</html> 

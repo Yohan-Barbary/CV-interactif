@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours HTML - DWWM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cours.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">&lt;DWWM/&gt;</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="../lexique.html"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="course-content">
+        <aside class="course-menu">
+            <h3>Sommaire HTML</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#structure">Structure de base</a></li>
+                <li><a href="#balises">Balises essentielles</a></li>
+                <li><a href="#attributs">Attributs</a></li>
+                <li><a href="#semantique">HTML Sémantique</a></li>
+                <li><a href="#formulaires">Formulaires</a></li>
+                <li><a href="#multimedia">Multimédia</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-main">
+            <h1>&lt;HTML5 - Les Fondamentaux/&gt;</h1>
+
+            <article id="introduction">
+                <h2>&lt;Introduction à HTML5&gt;</h2>
+                <p>HTML (HyperText Markup Language) est le langage standard pour créer et structurer des pages web.</p>
+                
+                <div class="info-box">
+                    <h3>Caractéristiques :</h3>
+                    <ul>
+                        <li>Langage de balisage</li>
+                        <li>Structure sémantique</li>
+                        <li>Compatible multiplateforme</li>
+                        <li>Base du web moderne</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="structure">
+                <h2>&lt;Structure de base&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Éléments essentiels :</h3>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> : Déclare le type de document</li>
+                        <li><code>&lt;html&gt;</code> : Élément racine</li>
+                        <li><code>&lt;head&gt;</code> : Métadonnées et liens</li>
+                        <li><code>&lt;body&gt;</code> : Contenu visible</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mon site web<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bienvenue sur mon site<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Ceci est un paragraphe.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="balises">
+                <h2>&lt;Balises essentielles&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Balises de texte :</h3>
+                    <ul>
+                        <li><code class="tag">&lt;h1&gt;</code> à <code class="tag">&lt;h6&gt;</code> : Titres</li>
+                        <li><code class="tag">&lt;p&gt;</code> : Paragraphe</li>
+                        <li><code class="tag">&lt;strong&gt;</code> : Texte important</li>
+                        <li><code class="tag">&lt;em&gt;</code> : Texte emphase</li>
+                        <li><code class="tag">&lt;br&gt;</code> : Saut de ligne</li>
+                        <li><code class="tag">&lt;hr&gt;</code> : Ligne horizontale</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="tag">&lt;h1&gt;</span>Titre principal<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Sous-titre<span class="tag">&lt;/h2&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+    Ceci est un paragraphe avec du texte 
+    <span class="tag">&lt;strong&gt;</span>important<span class="tag">&lt;/strong&gt;</span> et 
+    <span class="tag">&lt;em&gt;</span>mis en emphase<span class="tag">&lt;/em&gt;</span>.
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>Premier paragraphe<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;hr&gt;</span>
+<span class="tag">&lt;p&gt;</span>Second paragraphe<span class="tag">&lt;/p&gt;</span>
+                    </code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h3>Balises de structure :</h3>
+                    <ul>
+                        <li><code class="tag">&lt;div&gt;</code> : Conteneur générique</li>
+                        <li><code class="tag">&lt;span&gt;</code> : Conteneur en ligne</li>
+                        <li><code class="tag">&lt;header&gt;</code> : En-tête</li>
+                        <li><code class="tag">&lt;nav&gt;</code> : Navigation</li>
+                        <li><code class="tag">&lt;main&gt;</code> : Contenu principal</li>
+                        <li><code class="tag">&lt;footer&gt;</code> : Pied de page</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="attributs">
+                <h2>&lt;Attributs HTML&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Attributs communs :</h3>
+                    <ul>
+                        <li><code class="attribute">class</code> : Classes CSS</li>
+                        <li><code class="attribute">id</code> : Identifiant unique</li>
+                        <li><code class="attribute">style</code> : Styles CSS en ligne</li>
+                        <li><code class="attribute">title</code> : Info-bulle</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">id</span>=<span class="value">"main"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">style</span>=<span class="value">"color: blue;"</span><span class="tag">&gt;</span>Texte bleu<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://exemple.com"</span> <span class="attribute">title</span>=<span class="value">"Visiter le site"</span><span class="tag">&gt;</span>
+        Lien
+    <span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="semantique">
+                <h2>&lt;HTML Sémantique&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Balises sémantiques HTML5 :</h3>
+                    <ul>
+                        <li><code class="tag">&lt;article&gt;</code> : Contenu autonome</li>
+                        <li><code class="tag">&lt;section&gt;</code> : Section thématique</li>
+                        <li><code class="tag">&lt;aside&gt;</code> : Contenu connexe</li>
+                        <li><code class="tag">&lt;figure&gt;</code> : Contenu autonome référencé</li>
+                        <li><code class="tag">&lt;figcaption&gt;</code> : Légende de figure</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="tag">&lt;article&gt;</span>
+    <span class="tag">&lt;header&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Titre de l'article<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+
+    <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Section 1<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Contenu...<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+
+    <span class="tag">&lt;aside&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>À propos<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Information complémentaire<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/aside&gt;</span>
+
+    <span class="tag">&lt;figure&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;figcaption&gt;</span>Légende de l'image<span class="tag">&lt;/figcaption&gt;</span>
+    <span class="tag">&lt;/figure&gt;</span>
+<span class="tag">&lt;/article&gt;</span>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="formulaires">
+                <h2>&lt;Formulaires&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Éléments de formulaire :</h3>
+                    <ul>
+                        <li><code class="tag">&lt;form&gt;</code> : Conteneur de formulaire</li>
+                        <li><code class="tag">&lt;input&gt;</code> : Champ de saisie</li>
+                        <li><code class="tag">&lt;label&gt;</code> : Étiquette</li>
+                        <li><code class="tag">&lt;select&gt;</code> : Liste déroulante</li>
+                        <li><code class="tag">&lt;textarea&gt;</code> : Zone de texte</li>
+                        <li><code class="tag">&lt;button&gt;</code> : Bouton</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="tag">&lt;form</span> <span class="attribute">action</span>=<span class="value">"/submit"</span> <span class="attribute">method</span>=<span class="value">"post"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div&gt;</span>
+        <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>Nom :<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"nom"</span> <span class="attribute">name</span>=<span class="value">"nom"</span> <span class="attribute">required</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div&gt;</span>
+        <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span>Email :<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">id</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div&gt;</span>
+        <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"message"</span><span class="tag">&gt;</span>Message :<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;textarea</span> <span class="attribute">id</span>=<span class="value">"message"</span> <span class="attribute">name</span>=<span class="value">"message"</span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>Envoyer<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="multimedia">
+                <h2>&lt;Multimédia&gt;</h2>
+                
+                <div class="info-box">
+                    <h3>Éléments multimédia :</h3>
+                    <ul>
+                        <li><code class="tag">&lt;img&gt;</code> : Images</li>
+                        <li><code class="tag">&lt;video&gt;</code> : Vidéos</li>
+                        <li><code class="tag">&lt;audio&gt;</code> : Sons</li>
+                        <li><code class="tag">&lt;iframe&gt;</code> : Contenu embarqué</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-html">
+<span class="token comment">&lt;!-- Image responsive --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> 
+     <span class="attribute">alt</span>=<span class="value">"Description"</span>
+     <span class="attribute">width</span>=<span class="value">"800"</span> 
+     <span class="attribute">height</span>=<span class="value">"600"</span><span class="tag">&gt;</span>
+
+<span class="token comment">&lt;!-- Vidéo avec contrôles --&gt;</span>
+<span class="tag">&lt;video</span> <span class="attribute">controls</span> <span class="attribute">width</span>=<span class="value">"100%"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"video.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span>
+    Votre navigateur ne supporte pas la vidéo.
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="token comment">&lt;!-- Audio avec contrôles --&gt;</span>
+<span class="tag">&lt;audio</span> <span class="attribute">controls</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"audio.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span>
+    Votre navigateur ne supporte pas l'audio.
+<span class="tag">&lt;/audio&gt;</span>
+
+<span class="token comment">&lt;!-- Iframe pour contenu embarqué --&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attribute">src</span>=<span class="value">"https://www.youtube.com/embed/video"</span>
+        <span class="attribute">width</span>=<span class="value">"560"</span> 
+        <span class="attribute">height</span>=<span class="value">"315"</span>
+        <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+                    </code></pre>
+                </div>
+            </article>
+
+            <footer>
+                <p>&copy; 2024 Formation DWWM - Tous droits réservés</p>
+            </footer>
+        </section>
+    </main>
+</body>
+</html> 

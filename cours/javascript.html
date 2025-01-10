@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours JavaScript - DWWM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cours.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">DWWM</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="../lexique.html"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="course-content">
+        <aside class="course-menu">
+            <h3>Sommaire JavaScript</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#variables">Variables et Types</a></li>
+                <li><a href="#conditions">Conditions et Boucles</a></li>
+                <li><a href="#fonctions">Fonctions</a></li>
+                <li><a href="#objets">Objets et Arrays</a></li>
+                <li><a href="#dom">Manipulation du DOM</a></li>
+                <li><a href="#evenements">Événements</a></li>
+                <li><a href="#async">Asynchrone</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-main">
+            <h1>JavaScript - Les Fondamentaux</h1>
+
+            <article id="introduction">
+                <h2>Introduction à JavaScript</h2>
+                <p>JavaScript est un langage de programmation qui permet d'ajouter de l'interactivité aux pages web.</p>
+                
+                <div class="info-box">
+                    <h3>Caractéristiques :</h3>
+                    <ul>
+                        <li>Langage interprété</li>
+                        <li>Orienté objet et fonctionnel</li>
+                        <li>Exécuté côté client</li>
+                        <li>Dynamiquement typé</li>
+                    </ul>
+                </div>
+
+                <h3>Intégration du JavaScript</h3>
+                <div class="code-example">
+                    <pre><code class="language-html">
+<!-- Dans le HTML -->
+<script>
+    console.log("Code JavaScript interne");
+</script>
+
+<!-- Fichier externe -->
+<script src="script.js"></script>
+
+<!-- Module -->
+<script type="module" src="module.js"></script>
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="variables">
+                <h2>Variables et Types de données</h2>
+                
+                <div class="info-box">
+                    <h3>Déclaration de variables :</h3>
+                    <ul>
+                        <li>let : variable modifiable</li>
+                        <li>const : constante</li>
+                        <li>var : ancienne déclaration (à éviter)</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Types primitifs
+let nombre = 42;              // Number
+let texte = "Hello";          // String
+let estVrai = true;          // Boolean
+let indefini = undefined;     // Undefined
+let nul = null;              // Null
+let symbole = Symbol('id');   // Symbol
+
+// Types complexes
+let tableau = [1, 2, 3];     // Array
+let objet = {                // Object
+    nom: "John",
+    age: 30
+};
+
+// Template literals
+let nom = "Alice";
+let message = `Bonjour ${nom}!`;
+
+// Type coercion
+console.log("5" + 3);        // "53"
+console.log("5" - 3);        // 2
+console.log(Boolean(""));     // false
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="conditions">
+                <h2>Conditions et Boucles</h2>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// If...else
+if (condition) {
+    // code
+} else if (autreCondition) {
+    // code
+} else {
+    // code
+}
+
+// Switch
+switch (valeur) {
+    case 1:
+        // code
+        break;
+    default:
+        // code
+}
+
+// Opérateur ternaire
+let resultat = condition ? "vrai" : "faux";
+
+// Boucles
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let tableau = [1, 2, 3];
+for (let element of tableau) {
+    console.log(element);
+}
+
+let objet = { a: 1, b: 2 };
+for (let key in objet) {
+    console.log(key, objet[key]);
+}
+
+while (condition) {
+    // code
+}
+
+do {
+    // code
+} while (condition);
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="fonctions">
+                <h2>Fonctions</h2>
+                
+                <div class="info-box">
+                    <h3>Types de fonctions :</h3>
+                    <ul>
+                        <li>Déclaration de fonction</li>
+                        <li>Expression de fonction</li>
+                        <li>Fonction fléchée</li>
+                        <li>Méthodes</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Déclaration de fonction
+function direBonjour(nom) {
+    return `Bonjour ${nom}!`;
+}
+
+// Expression de fonction
+const addition = function(a, b) {
+    return a + b;
+};
+
+// Fonction fléchée
+const multiplication = (a, b) => a * b;
+
+// Paramètres par défaut
+function config(options = {}) {
+    const { couleur = "noir", taille = "medium" } = options;
+    return `Couleur: ${couleur}, Taille: ${taille}`;
+}
+
+// Rest parameters
+function somme(...nombres) {
+    return nombres.reduce((acc, val) => acc + val, 0);
+}
+
+// Closure
+function compteur() {
+    let count = 0;
+    return () => ++count;
+}
+const incrementer = compteur();
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="objets">
+                <h2>Objets et Arrays</h2>
+                
+                <div class="info-box">
+                    <h3>Manipulation des objets et tableaux :</h3>
+                    <ul>
+                        <li>Création et modification</li>
+                        <li>Méthodes d'array</li>
+                        <li>Destructuring</li>
+                        <li>Spread operator</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Objets
+const personne = {
+    nom: "Dupont",
+    age: 30,
+    adresse: {
+        rue: "123 rue principale",
+        ville: "Paris"
+    }
+};
+
+// Destructuring
+const { nom, age } = personne;
+const { adresse: { ville } } = personne;
+
+// Spread operator
+const personneComplete = {
+    ...personne,
+    email: "dupont@email.com"
+};
+
+// Arrays et méthodes
+const nombres = [1, 2, 3, 4, 5];
+
+// map, filter, reduce
+const doubles = nombres.map(n => n * 2);
+const pairs = nombres.filter(n => n % 2 === 0);
+const somme = nombres.reduce((acc, val) => acc + val, 0);
+
+// Autres méthodes utiles
+nombres.push(6);           // Ajoute à la fin
+nombres.pop();            // Retire le dernier
+nombres.unshift(0);       // Ajoute au début
+nombres.shift();          // Retire le premier
+nombres.includes(3);      // Vérifie la présence
+nombres.find(n => n > 3); // Trouve le premier élément
+nombres.some(n => n > 3); // Vérifie si au moins un élément
+nombres.every(n => n > 0); // Vérifie si tous les éléments
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="dom">
+                <h2>Manipulation du DOM</h2>
+                
+                <div class="info-box">
+                    <h3>Opérations sur le DOM :</h3>
+                    <ul>
+                        <li>Sélection d'éléments</li>
+                        <li>Modification du contenu</li>
+                        <li>Manipulation des classes</li>
+                        <li>Création d'éléments</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Sélection d'éléments
+const element = document.querySelector('.ma-classe');
+const elements = document.querySelectorAll('.ma-classe');
+const parId = document.getElementById('mon-id');
+const parClasse = document.getElementsByClassName('ma-classe');
+
+// Modification du contenu
+element.textContent = 'Nouveau texte';
+element.innerHTML = '<span>HTML</span>';
+
+// Classes CSS
+element.classList.add('nouvelle-classe');
+element.classList.remove('ancienne-classe');
+element.classList.toggle('visible');
+element.classList.contains('active');
+
+// Styles
+element.style.backgroundColor = 'blue';
+element.style.display = 'none';
+
+// Création d'éléments
+const div = document.createElement('div');
+div.textContent = 'Nouveau div';
+document.body.appendChild(div);
+
+// Navigation dans le DOM
+const parent = element.parentNode;
+const enfants = element.children;
+const suivant = element.nextElementSibling;
+const precedent = element.previousElementSibling;
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="evenements">
+                <h2>Événements</h2>
+                
+                <div class="info-box">
+                    <h3>Gestion des événements :</h3>
+                    <ul>
+                        <li>addEventListener</li>
+                        <li>removeEventListener</li>
+                        <li>Event bubbling</li>
+                        <li>Event delegation</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Ajout d'événements
+element.addEventListener('click', function(event) {
+    console.log('Cliqué!');
+    event.preventDefault(); // Empêche le comportement par défaut
+});
+
+// Fonction nommée pour pouvoir la retirer
+function handleClick(event) {
+    console.log('Cliqué!');
+}
+element.addEventListener('click', handleClick);
+element.removeEventListener('click', handleClick);
+
+// Event bubbling
+parent.addEventListener('click', e => {
+    console.log('Parent cliqué');
+});
+child.addEventListener('click', e => {
+    e.stopPropagation(); // Arrête la propagation
+    console.log('Enfant cliqué');
+});
+
+// Event delegation
+document.addEventListener('click', e => {
+    if (e.target.matches('.btn')) {
+        console.log('Bouton cliqué');
+    }
+});
+
+// Types d'événements courants
+element.addEventListener('mouseover', () => {});
+element.addEventListener('mouseout', () => {});
+element.addEventListener('keydown', () => {});
+element.addEventListener('submit', () => {});
+element.addEventListener('change', () => {});
+                    </code></pre>
+                </div>
+            </article>
+
+            <article id="async">
+                <h2>Programmation Asynchrone</h2>
+                
+                <div class="info-box">
+                    <h3>Gestion de l'asynchrone :</h3>
+                    <ul>
+                        <li>Callbacks</li>
+                        <li>Promises</li>
+                        <li>Async/Await</li>
+                        <li>Fetch API</li>
+                    </ul>
+                </div>
+
+                <div class="code-example">
+                    <pre><code class="language-javascript">
+// Callbacks
+function chargerDonnees(callback) {
+    setTimeout(() => {
+        callback('Données chargées');
+    }, 1000);
+}
+
+// Promises
+const maPromesse = new Promise((resolve, reject) => {
+    if (condition) {
+        resolve('Succès');
+    } else {
+        reject('Erreur');
+    }
+});
+
+maPromesse
+    .then(resultat => console.log(resultat))
+    .catch(erreur => console.error(erreur));
+
+// Async/Await
+async function chargerUtilisateur() {
+    try {
+        const reponse = await fetch('https://api.exemple.com/user');
+        const donnees = await reponse.json();
+        return donnees;
+    } catch (erreur) {
+        console.error('Erreur:', erreur);
+    }
+}
+
+// Fetch API
+fetch('https://api.exemple.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Erreur:', error));
+
+// Exemple avec async/await et fetch
+async function chargerPlusieursRessources() {
+    try {
+        const [users, posts] = await Promise.all([
+            fetch('/api/users').then(r => r.json()),
+            fetch('/api/posts').then(r => r.json())
+        ]);
+        console.log(users, posts);
+    } catch (error) {
+        console.error('Erreur:', error);
+    }
+}
+                    </code></pre>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html> 

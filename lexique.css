@@ -1,0 +1,81 @@
+.lexique-content {
+    max-width: 1200px;
+    margin: 100px auto 2rem;
+    padding: 0 2rem;
+}
+
+.search-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.terms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.term-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.term-card:hover {
+    transform: translateY(-5px);
+}
+
+.term-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.term-card code {
+    background: #1a1a1a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+}
+
+.category {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+} 
