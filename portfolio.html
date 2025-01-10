@@ -76,13 +76,15 @@
                 </div>
             </div>
 
-            <div class="scroll-arrow">
-                <i class='bx bx-chevrons-down'></i>
-                <span>Défiler</span>
+            <div class="scroll-indicator">
+                <a href="#presentation" class="scroll-link">
+                    <p>Défiler</p>
+                    <i class="fas fa-chevron-down bounce"></i>
+                </a>
             </div>
         </section>
 
-        <section class="about section" id="about">
+        <section id="presentation" class="presentation-section">
             <div class="section-title-container">
                 <h2 class="section-title">Présentation</h2>
                 <p class="section-intro">
@@ -282,12 +284,59 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p class="footer-title">DWWM</p>
-        <p>&#169; 2024 Copyright all rights reserved</p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <h4>Yohan BARBARY</h4>
+                <p class="about-text">
+                    Développeur Web passionné, je suis spécialisé dans la création d'applications web modernes et responsives. Mon objectif est de transformer vos idées en solutions digitales performantes et innovantes.
+                </p>
+                <p class="about-text">
+                    La réussite de votre projet est ma priorité !
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <span class="highlight-text">barbary.yohan@gmail.com</span>
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <span class="highlight-text">+33 0(6) 16 50 28 70</span>
+                </p>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="highlight-text">Marquette-lez-lille 59520</span>
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/Mack-Kaba" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yohan-barbary/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/YohanBarbary" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">Plan du Site</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Formation DWWM - Tous droits réservés</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

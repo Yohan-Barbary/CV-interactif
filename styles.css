@@ -240,20 +240,18 @@ body {
 
 /* Footer */
 footer {
-    background: var(--card-bg);
-    padding: 3rem 2rem 1rem;
-    margin-top: 4rem;
-    font-family: var(--main-font);
+    background-color: var(--card-bg);
+    padding: 4rem 2rem 2rem;
+    color: var(--text-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-flow: dense;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
 }
 
 .footer-section h3 {
@@ -278,10 +276,6 @@ footer {
 
 .footer-section .highlight-text {
     font-weight: 600;
-    color: var(--accent-color);
-}
-
-.footer-section .highlight-text i {
     color: var(--accent-color);
 }
 
@@ -324,8 +318,10 @@ footer {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
 }
 
+/* Media queries pour la responsivité */
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
