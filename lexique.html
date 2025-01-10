@@ -16,7 +16,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
-                <li><a href="#"><i class="fas fa-code"></i><span class="nav-text">Cours</span></a></li>
+                <li><a href="#"><i class="fas fa-arrow-up"></i><span class="nav-text">Haut de page</span></a></li>
                 <li><a href="#"><i class="fas fa-book"></i><span class="nav-text">Lexique</span></a></li>
             </ul>
         </div>
@@ -38,26 +38,1083 @@
         <div class="terms-container">
             <!-- HTML Terms -->
             <div class="term-card" data-category="html">
-                <h3><code>&lt;div&gt;</code></h3>
-                <p>Élément de bloc générique utilisé pour créer des conteneurs et structurer le contenu.</p>
+                <h3><code class="syntax-html">&lt;div&gt;</code></h3>
+                <p>Conteneur générique qui permet de grouper et structurer d'autres éléments HTML.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;section&gt;</code></h3>
+                <p>Définit une section thématique dans un document (chapitres, onglets, etc).</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;article&gt;</code></h3>
+                <p>Contenu autonome et indépendant (articles de blog, commentaires, widgets).</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;nav&gt;</code></h3>
+                <p>Section contenant des liens de navigation principaux.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;header&gt;</code></h3>
+                <p>En-tête d'une section ou d'une page.</p>
                 <span class="category">HTML</span>
             </div>
 
             <!-- CSS Terms -->
             <div class="term-card" data-category="css">
-                <h3>display: flex</h3>
-                <p>Propriété CSS qui permet de créer une mise en page flexible et responsive.</p>
+                <h3><code class="syntax-css">display: flex</code></h3>
+                <p>Crée un conteneur flexible permettant d'organiser les éléments enfants.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">grid</code></h3>
+                <p>Système de mise en page en grille bidimensionnelle.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">position: relative</code></h3>
+                <p>Positionne un élément par rapport à sa position normale.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@media</code></h3>
+                <p>Règle permettant d'appliquer des styles selon les caractéristiques de l'appareil.</p>
                 <span class="category">CSS</span>
             </div>
 
             <!-- JavaScript Terms -->
             <div class="term-card" data-category="js">
-                <h3>addEventListener()</h3>
-                <p>Méthode qui attache un gestionnaire d'événements à un élément spécifié.</p>
+                <h3><code class="syntax-function">addEventListener()</code></h3>
+                <p>Attache un gestionnaire d'événements à un élément spécifique.</p>
                 <span class="category">JavaScript</span>
             </div>
 
-            <!-- Continuez à ajouter des termes... -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">querySelector()</code></h3>
+                <p>Sélectionne le premier élément correspondant à un sélecteur CSS.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">fetch()</code></h3>
+                <p>Effectue des requêtes HTTP et récupère des ressources.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">async</code>/<code class="syntax-keyword">await</code></h3>
+                <p>Gestion des opérations asynchrones de manière synchrone.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- PHP Terms -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-php">$_POST</code></h3>
+                <p>Tableau associatif contenant les données envoyées via une requête POST.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">mysqli_connect()</code></h3>
+                <p>Établit une connexion à une base de données MySQL.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">session_start()</code></h3>
+                <p>Démarre ou reprend une session existante.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">require_once</code></h3>
+                <p>Inclut et évalue un fichier PHP une seule fois.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- SQL Terms -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">SELECT</code></h3>
+                <p>Récupère des données d'une ou plusieurs tables.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">JOIN</code></h3>
+                <p>Combine des lignes de deux ou plusieurs tables.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">INSERT INTO</code></h3>
+                <p>Ajoute de nouvelles lignes dans une table.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">WHERE</code></h3>
+                <p>Filtre les résultats selon une condition spécifique.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- HTML Terms supplémentaires -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;main&gt;</code></h3>
+                <p>Contenu principal de la page, unique à chaque page.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;footer&gt;</code></h3>
+                <p>Pied de page d'une section ou de la page entière.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;form&gt;</code></h3>
+                <p>Conteneur pour créer un formulaire interactif.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- CSS Terms supplémentaires -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">transform</code></h3>
+                <p>Applique une transformation 2D ou 3D à un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">animation</code></h3>
+                <p>Crée des animations personnalisées avec des keyframes.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- JavaScript Terms supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-js">Promise</code></h3>
+                <p>Objet représentant l'achèvement ou l'échec d'une opération asynchrone.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">const</code> / <code class="syntax-keyword">let</code></h3>
+                <p>Déclarations de variables avec différentes portées.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">map()</code></h3>
+                <p>Crée un nouveau tableau avec les résultats d'une fonction.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- PHP Terms supplémentaires -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-php">$_SESSION</code></h3>
+                <p>Variable superglobale pour stocker les données de session.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_map()</code></h3>
+                <p>Applique une fonction à chaque élément d'un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">try</code>/<code class="syntax-keyword">catch</code></h3>
+                <p>Gestion des exceptions et des erreurs.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- SQL Terms supplémentaires -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">GROUP BY</code></h3>
+                <p>Regroupe les résultats selon une ou plusieurs colonnes.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">HAVING</code></h3>
+                <p>Filtre les résultats groupés selon une condition.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">ORDER BY</code></h3>
+                <p>Trie les résultats selon une ou plusieurs colonnes.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- HTML Terms supplémentaires -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;input&gt;</code></h3>
+                <p>Crée un champ de saisie interactif dans un formulaire.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;textarea&gt;</code></h3>
+                <p>Zone de texte multiligne pour la saisie de longs contenus.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;meta&gt;</code></h3>
+                <p>Définit les métadonnées de la page (encodage, viewport, description).</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- CSS Terms supplémentaires -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">box-shadow</code></h3>
+                <p>Ajoute une ou plusieurs ombres à un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">transition</code></h3>
+                <p>Définit la transition entre deux états d'un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">:hover</code></h3>
+                <p>Pseudo-classe qui s'applique au survol d'un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- JavaScript Terms supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">filter()</code></h3>
+                <p>Crée un nouveau tableau avec les éléments passant un test.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">reduce()</code></h3>
+                <p>Réduit un tableau à une seule valeur via une fonction.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">class</code></h3>
+                <p>Définit un modèle pour créer des objets avec propriétés et méthodes.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- PHP Terms supplémentaires -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-php">$_GET</code></h3>
+                <p>Tableau associatif des paramètres passés dans l'URL.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_filter()</code></h3>
+                <p>Filtre les éléments d'un tableau selon une fonction callback.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">foreach</code></h3>
+                <p>Boucle qui itère sur les éléments d'un tableau ou objet.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- SQL Terms supplémentaires -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">UPDATE</code></h3>
+                <p>Modifie des données existantes dans une table.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">DELETE FROM</code></h3>
+                <p>Supprime des lignes d'une table selon une condition.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">CREATE TABLE</code></h3>
+                <p>Crée une nouvelle table dans la base de données.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Encore plus de termes HTML -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;button&gt;</code></h3>
+                <p>Crée un bouton cliquable dans un formulaire ou interface.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- Encore plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">flex-direction</code></h3>
+                <p>Définit la direction principale des éléments dans un conteneur flex.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Encore plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">setTimeout()</code></h3>
+                <p>Exécute une fonction après un délai spécifié.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Encore plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-php">$_FILES</code></h3>
+                <p>Tableau associatif contenant les fichiers uploadés.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Encore plus de termes SQL -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">ALTER TABLE</code></h3>
+                <p>Modifie la structure d'une table existante.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Plus de termes HTML -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;select&gt;</code></h3>
+                <p>Crée une liste déroulante de choix dans un formulaire.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;label&gt;</code></h3>
+                <p>Étiquette associée à un élément de formulaire pour améliorer l'accessibilité.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;img&gt;</code></h3>
+                <p>Insère une image dans la page avec les attributs src et alt.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">flex-wrap</code></h3>
+                <p>Contrôle le retour à la ligne des éléments dans un conteneur flex.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">gap</code></h3>
+                <p>Définit l'espace entre les éléments dans un conteneur grid ou flex.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">border-radius</code></h3>
+                <p>Arrondit les coins d'un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">forEach()</code></h3>
+                <p>Exécute une fonction pour chaque élément d'un tableau.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">parseInt()</code></h3>
+                <p>Convertit une chaîne en nombre entier.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">import</code>/<code class="syntax-keyword">export</code></h3>
+                <p>Permet de partager du code entre différents fichiers modules.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-php">$_SERVER</code></h3>
+                <p>Contient les informations sur le serveur et l'environnement d'exécution.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">password_hash()</code></h3>
+                <p>Crée un hachage sécurisé d'un mot de passe.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">namespace</code></h3>
+                <p>Permet d'encapsuler des éléments liés dans un espace de noms.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes SQL -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">RIGHT JOIN</code></h3>
+                <p>Retourne tous les enregistrements de la table de droite et les correspondances de la table de gauche.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">MAX()</code></h3>
+                <p>Retourne la plus grande valeur d'une colonne.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">MIN()</code></h3>
+                <p>Retourne la plus petite valeur d'une colonne.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes HTML avancés -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;template&gt;</code></h3>
+                <p>Définit du contenu HTML qui peut être cloné et réutilisé.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- Termes CSS avancés -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@supports</code></h3>
+                <p>Applique des styles si le navigateur supporte une fonctionnalité.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Termes JavaScript avancés -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Object.assign()</code></h3>
+                <p>Copie les propriétés d'un ou plusieurs objets sources vers un objet cible.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@keyframes</code></h3>
+                <p>Définit les étapes d'une animation CSS.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">mix-blend-mode</code></h3>
+                <p>Définit comment un élément doit se mélanger avec son arrière-plan.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">scroll-behavior</code></h3>
+                <p>Spécifie le comportement de défilement de la page.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Array.from()</code></h3>
+                <p>Crée une nouvelle instance d'Array à partir d'un objet itérable.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Object.freeze()</code></h3>
+                <p>Rend un objet immuable (non modifiable).</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">yield</code></h3>
+                <p>Met en pause et reprend une fonction génératrice.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_merge()</code></h3>
+                <p>Fusionne un ou plusieurs tableaux.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">preg_match()</code></h3>
+                <p>Effectue une recherche de correspondance avec une expression régulière.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">final</code></h3>
+                <p>Empêche l'héritage d'une classe ou la redéfinition d'une méthode.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes SQL -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">CASE WHEN</code></h3>
+                <p>Permet d'ajouter une logique conditionnelle dans une requête.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">TRUNCATE TABLE</code></h3>
+                <p>Supprime rapidement toutes les lignes d'une table.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">INDEX</code></h3>
+                <p>Structure de données pour accélérer la recherche dans une table.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Plus de termes CSS avancés -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">perspective</code></h3>
+                <p>Définit la distance entre l'utilisateur et le plan z=0 pour les effets 3D.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript avancés -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">WeakMap()</code></h3>
+                <p>Collection de paires clé/valeur où les clés sont des objets faiblement référencés.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP avancés -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">curl_init()</code></h3>
+                <p>Initialise une session cURL pour les requêtes HTTP.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes SQL avancés -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">PARTITION BY</code></h3>
+                <p>Divise le résultat d'une requête en partitions pour le traitement.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">text-shadow</code></h3>
+                <p>Ajoute une ou plusieurs ombres au texte.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">filter</code></h3>
+                <p>Applique des effets graphiques comme le flou ou la saturation.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">grid-template-areas</code></h3>
+                <p>Définit un modèle de disposition pour les zones de grille nommées.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Object.entries()</code></h3>
+                <p>Retourne un tableau des paires [clé, valeur] d'un objet.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">String.prototype.replace()</code></h3>
+                <p>Remplace des occurrences dans une chaîne par une autre valeur.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">debugger</code></h3>
+                <p>Ajoute un point d'arrêt dans le code pour le débogage.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_push()</code></h3>
+                <p>Ajoute un ou plusieurs éléments à la fin d'un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">date()</code></h3>
+                <p>Formate une date/heure selon un format spécifié.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">static</code></h3>
+                <p>Déclare une propriété ou méthode accessible sans instanciation.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes SQL -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">TRIGGER</code></h3>
+                <p>Définit une action automatique en réponse à certains événements.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">STORED PROCEDURE</code></h3>
+                <p>Procédure stockée contenant une série d'instructions SQL.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">VIEW</code></h3>
+                <p>Table virtuelle basée sur le résultat d'une requête SQL.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Plus de termes CSS avancés -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">contain</code></h3>
+                <p>Optimise le rendu en isolant un élément du reste de la page.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript avancés -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">requestAnimationFrame()</code></h3>
+                <p>Planifie une animation en synchronisant avec le rafraîchissement de l'écran.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP avancés -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_column()</code></h3>
+                <p>Retourne les valeurs d'une colonne d'un tableau d'entrée.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Encore plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@property</code></h3>
+                <p>Définit une propriété CSS personnalisée avec type et valeur par défaut.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Encore plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Promise.allSettled()</code></h3>
+                <p>Attend que toutes les promesses soient résolues ou rejetées.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Encore plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_key_exists()</code></h3>
+                <p>Vérifie si une clé ou un index existe dans un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@container</code></h3>
+                <p>Définit des styles basés sur la taille du conteneur parent.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">:is()</code></h3>
+                <p>Sélecteur fonctionnel qui correspond à n'importe lequel des sélecteurs donnés.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">mask-image</code></h3>
+                <p>Crée un masque qui cache des parties d'un élément.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Array.prototype.flatMap()</code></h3>
+                <p>Mappe chaque élément en utilisant une fonction puis aplatit le résultat.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Promise.race()</code></h3>
+                <p>Renvoie une promesse qui se résout dès qu'une des promesses se résout.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-keyword">static</code></h3>
+                <p>Définit une méthode ou propriété de classe accessible sans instanciation.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_unique()</code></h3>
+                <p>Supprime les valeurs dupliquées d'un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">is_callable()</code></h3>
+                <p>Vérifie si une variable peut être appelée comme une fonction.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">readonly</code></h3>
+                <p>Déclare une propriété qui ne peut être modifiée après initialisation.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes CSS avancés -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@scope</code></h3>
+                <p>Limite la portée des styles à un conteneur spécifique.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript avancés -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Proxy</code></h3>
+                <p>Crée un objet qui peut intercepter et redéfinir les opérations fondamentales.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP avancés -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">get_object_vars()</code></h3>
+                <p>Retourne les propriétés accessibles d'un objet.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Encore plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@property</code></h3>
+                <p>Définit une propriété personnalisée avec type et valeurs par défaut.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Encore plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Object.hasOwn()</code></h3>
+                <p>Teste si un objet possède une propriété en propre (non héritée).</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Encore plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_intersect()</code></h3>
+                <p>Retourne les valeurs communes à tous les tableaux.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@media print</code></h3>
+                <p>Définit des styles spécifiques pour l'impression.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">writing-mode</code></h3>
+                <p>Définit si le texte est écrit horizontalement ou verticalement.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">user-select</code></h3>
+                <p>Contrôle si l'utilisateur peut sélectionner le texte.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Array.prototype.every()</code></h3>
+                <p>Vérifie si tous les éléments d'un tableau satisfont une condition.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Object.values()</code></h3>
+                <p>Retourne un tableau contenant les valeurs d'un objet.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">MutationObserver</code></h3>
+                <p>Observe les changements dans l'arbre DOM.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_splice()</code></h3>
+                <p>Supprime et remplace des éléments d'un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">json_decode()</code></h3>
+                <p>Décode une chaîne JSON en variable PHP.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">instanceof</code></h3>
+                <p>Vérifie si un objet est une instance d'une classe.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes CSS avancés -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">scroll-margin</code></h3>
+                <p>Définit la marge de défilement pour le scroll-snap.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript avancés -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">WebSocket</code></h3>
+                <p>Permet une communication bidirectionnelle avec un serveur.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP avancés -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_reduce()</code></h3>
+                <p>Réduit un tableau à une seule valeur en appliquant une fonction.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Encore plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">place-items</code></h3>
+                <p>Propriété raccourcie pour align-items et justify-items.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Encore plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">crypto.randomUUID()</code></h3>
+                <p>Génère un identifiant unique universel (UUID).</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Encore plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_walk_recursive()</code></h3>
+                <p>Applique une fonction récursivement à chaque membre d'un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes HTML -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;picture&gt;</code></h3>
+                <p>Conteneur pour plusieurs sources d'images avec des conditions de médias.</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- Plus de termes CSS -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@custom-media</code></h3>
+                <p>Définit des points d'arrêt personnalisés pour les media queries.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">:where()</code></h3>
+                <p>Sélecteur fonctionnel similaire à :is() mais avec une spécificité nulle.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Plus de termes JavaScript -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Array.prototype.findLast()</code></h3>
+                <p>Trouve le dernier élément qui satisfait une condition dans un tableau.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">navigator.clipboard</code></h3>
+                <p>API pour lire et écrire dans le presse-papiers.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Plus de termes PHP -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_chunk()</code></h3>
+                <p>Divise un tableau en plusieurs tableaux de taille spécifiée.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">match</code></h3>
+                <p>Expression de correspondance plus stricte que switch.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Plus de termes SQL -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">WITH RECURSIVE</code></h3>
+                <p>Permet de créer des requêtes récursives pour les structures hiérarchiques.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">EXPLAIN</code></h3>
+                <p>Analyse et affiche le plan d'exécution d'une requête.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes avancés supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">ResizeObserver</code></h3>
+                <p>Observe les changements de dimensions d'un élément.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_key_exists()</code></h3>
+                <p>Vérifie si une clé existe dans un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">FETCH NEXT</code></h3>
+                <p>Récupère un nombre spécifié de lignes suivantes.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes avancés supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Intl.DisplayNames</code></h3>
+                <p>Traduit les noms de langues, régions et écritures.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_key_exists()</code></h3>
+                <p>Vérifie si une clé existe dans un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">SKIP LOCKED</code></h3>
+                <p>Ignore les lignes verrouillées lors de la sélection.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes avancés supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Intl.DurationFormat</code></h3>
+                <p>Formate les durées selon les conventions locales.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_key_exists()</code></h3>
+                <p>Vérifie si une clé existe dans un tableau.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">ROLLUP</code></h3>
+                <p>Génère plusieurs niveaux de sous-totaux et un total général.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes HTML supplémentaires -->
+            <div class="term-card" data-category="html">
+                <h3><code class="syntax-html">&lt;cite&gt;</code></h3>
+                <p>Définit le titre d'une œuvre citée (livre, film, etc.).</p>
+                <span class="category">HTML</span>
+            </div>
+
+            <!-- Termes CSS supplémentaires -->
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">@custom-media</code></h3>
+                <p>Définit des alias personnalisés pour les media queries.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <div class="term-card" data-category="css">
+                <h3><code class="syntax-css">text-wrap: pretty</code></h3>
+                <p>Optimise la césure des mots pour une meilleure lisibilité.</p>
+                <span class="category">CSS</span>
+            </div>
+
+            <!-- Termes JavaScript supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Array.prototype.toReversed()</code></h3>
+                <p>Crée une copie inversée d'un tableau sans modifier l'original.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Temporal.ZonedDateTime</code></h3>
+                <p>Gère les dates et heures avec fuseau horaire.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <!-- Termes PHP supplémentaires -->
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">str_pad()</code></h3>
+                <p>Complète une chaîne jusqu'à une longueur spécifiée.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-keyword">__destruct</code></h3>
+                <p>Méthode appelée lors de la destruction d'un objet.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <!-- Termes SQL supplémentaires -->
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">COALESCE</code></h3>
+                <p>Retourne la première valeur non nulle d'une liste.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">INTERSECT</code></h3>
+                <p>Retourne les lignes communes à deux requêtes SELECT.</p>
+                <span class="category">SQL</span>
+            </div>
+
+            <!-- Termes avancés supplémentaires -->
+            <div class="term-card" data-category="js">
+                <h3><code class="syntax-function">Intl.ListFormat</code></h3>
+                <p>Formate des listes selon les conventions linguistiques.</p>
+                <span class="category">JavaScript</span>
+            </div>
+
+            <div class="term-card" data-category="php">
+                <h3><code class="syntax-function">array_column()</code></h3>
+                <p>Extrait une colonne d'un tableau multidimensionnel.</p>
+                <span class="category">PHP</span>
+            </div>
+
+            <div class="term-card" data-category="sql">
+                <h3><code class="syntax-sql">EXCEPT</code></h3>
+                <p>Retourne les lignes présentes dans la première requête mais pas dans la seconde.</p>
+                <span class="category">SQL</span>
+            </div>
         </div>
     </main>
 
