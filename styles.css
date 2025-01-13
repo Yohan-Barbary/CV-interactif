@@ -784,6 +784,7 @@ footer {
         linear-gradient(90deg, var(--card-bg) 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.05;
+    z-index: -100;
 }
 
 /* En-tête du portfolio */

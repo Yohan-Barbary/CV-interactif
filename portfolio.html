@@ -8,47 +8,53 @@
     <link rel="stylesheet" href="portfolio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body class="portfolio-page">
     
 
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <a href="index.html" class="nav-logo">&lt;DWWM/&gt;</a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">
-                            <i class='bx bx-home-alt'></i>
-                            <span>Accueil</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">
-                            <i class='bx bx-user'></i>
-                            <span>Présentation</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">
-                            <i class='bx bx-code-alt'></i>
-                            <span>Compétences</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#experience" class="nav-link">
-                            <i class='bx bx-briefcase'></i>
-                            <span>Expérience</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
     <main class="l-main">
         <section class="home bd-grid" id="home">
+            <nav class="nav">
+                <div class="nav-toggle-container">
+                    <a href="#" class="nav-logo">&lt;Accueil/&gt;</a>
+                    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+                    <label for="nav-toggle" class="nav-toggle-label">
+                        <i class="burger-icon">☰</i>
+                    </label>
+                </div>
+
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#presentation" class="nav-link">
+                                <i class="bx bx-user"></i>
+                                <span>Présentation</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#competences" class="nav-link">
+                                <i class="bx bx-code-alt"></i>
+                                <span>Compétences</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#experience" class="nav-link">
+                                <i class="bx bx-briefcase"></i>
+                                <span>Expérience</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#systeme" class="nav-link">
+                                <i class="bx bx-server"></i>
+                                <span>Système & Réseau</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
             <div class="home-content">
                 <div class="home-data">
                     <div class="intro-text">
@@ -66,21 +72,7 @@
                     </div>
                 </div>
                 
-                <div class="night">
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    <div class="star"></div>
-                    
-                </div>
-            </div>
-
-            <div class="scroll-indicator">
-                <a href="#presentation" class="scroll-link">
-                    <p>Défiler</p>
-                    <i class="fas fa-chevron-down bounce"></i>
-                </a>
+                
             </div>
         </section>
 
@@ -95,190 +87,223 @@
             </div>
         </section>
 
-        <section class="skills section" id="skills">
+        <section id="competences" class="skills section">
+            <div class="skills-container">
+                <!-- Partie texte -->
+                <div class="skills-intro-container">
+                    <h2 class="section-title">Compétences</h2>
+                    <p class="skills-intro-text">
+                        En tant que développeur web en formation, je combine mes compétences techniques acquises dans l'IT avec les nouvelles technologies du web. Cette double expertise me permet d'avoir une vision globale des projets de développement.
+                    </p>
+                </div>
+
+                <!-- Partie compétences -->
+                <div class="skills-content">
+                    <div class="skills-group">
+                        <h3 class="skills-category">Développement Front-end</h3>
+                        <div class="skills-data">
+                            <div class="skills-names">
+                                <i class='bx bxl-html5 skills-icon'></i>
+                                <span class="skills-name">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-names">
+                                <i class='bx bxl-css3 skills-icon'></i>
+                                <span class="skills-name">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-names">
+                                <i class='bx bxl-javascript skills-icon'></i>
+                                <span class="skills-name">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3 class="skills-category">Développement Back-end</h3>
+                        <div class="skills-data">
+                            <div class="skills-names">
+                                <i class='bx bxl-php skills-icon'></i>
+                                <span class="skills-name">PHP</span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-names">
+                                <i class='bx bx-data skills-icon'></i>
+                                <span class="skills-name">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3 class="skills-category">Outils & Méthodologies</h3>
+                        <div class="skills-tools">
+                            <div class="tool-item">
+                                <i class='bx bxl-git skills-icon'></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class='bx bxl-github skills-icon'></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class='bx bx-code-block skills-icon'></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class='bx bx-terminal skills-icon'></i>
+                                <span>Terminal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="main">
+            <!-- Section de droite -->
+            <div>
+                <div class="presentation-text">
+                    <span>Mon parcours</span>
+                    <h1>Expérience</h1>
+                    <hr>
+                    <p>
+                        Mon parcours en tant que technicien informatique m'a permis de développer une vision globale du domaine numérique. Cette expérience enrichissante nourrit aujourd'hui ma passion pour le développement web, où je peux allier expertise technique et créativité. Toujours en quête d'apprentissage, je m'épanouis dans ce secteur en constante évolution qui me permet de me perfectionner continuellement.
+                    </p>
+                </div>
+                <a href="#contact">Me contacter</a>
+            </div>
+
+            <!-- Carousel à gauche -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Carte 1 - Econocom -->
+                    <div class="swiper-slide">
+                        <div>
+                            <span class="year">2023 - 2024</span>
+                            <h2>Technicien support en informatique</h2>
+                            <h3>Econocom</h3>
+                            <ul>
+                                <li>Support technique niveau 1 et 2</li>
+                                <li>Gestion des incidents et des demandes</li>
+                                <li>Maintenance préventive et corrective</li>
+                                <li>Utilisation des outils de ticketing</li>
+                            </ul>
+                            <a href="#" class="explore">En savoir plus</a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 2 - EPS -->
+                    <div class="swiper-slide">
+                        <div>
+                            <span class="year">2021 - 2022</span>
+                            <h2>Technicien support et sécurité en informatique</h2>
+                            <h3>EPS</h3>
+                            <ul>
+                                <li>Gestion de la sécurité informatique</li>
+                                <li>Administration des systèmes</li>
+                                <li>Support utilisateurs</li>
+                                <li>Maintenance du parc informatique</li>
+                            </ul>
+                            <a href="#" class="explore">En savoir plus</a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 3 - Proman -->
+                    <div class="swiper-slide">
+                        <div>
+                            <span class="year">2021</span>
+                            <h2>Technicien support en informatique</h2>
+                            <h3>Proman 128</h3>
+                            <ul>
+                                <li>Support technique aux utilisateurs</li>
+                                <li>Maintenance du parc informatique</li>
+                            </ul>
+                            <a href="#" class="explore">En savoir plus</a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 4 - Interway -->
+                    <div class="swiper-slide">
+                        <div>
+                            <span class="year">2019 - 2020</span>
+                            <h2>Technicien support et réseau en informatique</h2>
+                            <h3>Interway</h3>
+                            <ul>
+                                <li>Maintenance des infrastructures réseau</li>
+                                <li>Gestion des équipements réseau</li>
+                                <li>Support technique niveau 1 et 2</li>
+                                <li>Gestion des sauvegardes et de la sécurité</li>
+                            </ul>
+                            <a href="#" class="explore">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-navigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <img src="path/to/your/background1.png" alt="" class="bg">
+            <img src="path/to/your/background2.png" alt="" class="bg2">
+        </section>
+
+        <section id="systeme" class="competences-systeme section">
             <div class="section-title-container">
-                <h2 class="section-title">Compétences</h2>
-                <p class="section-intro">
-                    En tant que développeur web en formation, je combine mes compétences techniques acquises dans l'IT avec les nouvelles technologies du web. Cette double expertise me permet d'avoir une vision globale des projets de développement.
+                <h2 class="section-title">Système & Réseau</h2>
+                <p class="intro-competences">
+                    Expertise approfondie en administration système et réseau, 
+                    avec une maîtrise des infrastructures IT modernes et des bonnes pratiques de maintenance.
                 </p>
             </div>
 
-            <div class="skills-container bd-grid">
-                <div class="skills-group">
-                    <h3 class="skills-category">Développement Front-end</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class='bx bxl-html5 skills-icon'></i>
-                            <span class="skills-name">HTML5</span>
-                        </div>
-                        <div class="skills-bar skills-html"></div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class='bx bxl-css3 skills-icon'></i>
-                            <span class="skills-name">CSS3</span>
-                        </div>
-                        <div class="skills-bar skills-css"></div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class='bx bxl-javascript skills-icon'></i>
-                            <span class="skills-name">JavaScript</span>
-                        </div>
-                        <div class="skills-bar skills-js"></div>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <h3 class="skills-category">Développement Back-end</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class='bx bxl-php skills-icon'></i>
-                            <span class="skills-name">PHP</span>
-                        </div>
-                        <div class="skills-bar skills-php"></div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class='bx bx-data skills-icon'></i>
-                            <span class="skills-name">MySQL</span>
-                        </div>
-                        <div class="skills-bar skills-mysql"></div>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <h3 class="skills-category">Outils & Méthodologies</h3>
-                    <div class="skills-tools">
-                        <div class="tool-item">
-                            <i class='bx bxl-git skills-icon'></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class='bx bxl-github skills-icon'></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class='bx bx-code-block skills-icon'></i>
-                            <span>VS Code</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class='bx bx-terminal skills-icon'></i>
-                            <span>Terminal</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="experience section" id="experience">
-            <div class="section-title-container">
-                <h2 class="section-title">Expérience</h2>
-            </div>
-
-            <div class="timeline bd-grid">
-                <div class="timeline-item">
-                    <h3 class="year">2023 - 2024</h3>
-                    <div class="timeline-content">
-                        <h3>Technicien support en informatique</h3>
-                        <p class="company">Econocom</p>
-                        <ul class="experience-details">
-                            <li>Support technique niveau 1 et 2</li>
-                            <li>Gestion des incidents et des demandes</li>
-                            <li>Maintenance préventive et corrective</li>
-                            <li>Utilisation des outils de ticketing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="year">2021 - 2022</h3>
-                    <div class="timeline-content">
-                        <h3>Technicien support et sécurité en informatique</h3>
-                        <p class="company">EPS</p>
-                        <ul class="experience-details">
-                            <li>Gestion de la sécurité informatique</li>
-                            <li>Administration des systèmes</li>
-                            <li>Support utilisateurs</li>
-                            <li>Maintenance du parc informatique</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="year">2021</h3>
-                    <div class="timeline-content">
-                        <h3>Technicien support en informatique</h3>
-                        <p class="company">Proman 128</p>
-                        <ul class="experience-details">
-                            <li>Support technique aux utilisateurs</li>
-                            <li>Maintenance du parc informatique</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 class="year">2019 - 2020</h3>
-                    <div class="timeline-content">
-                        <h3>Technicien support et réseau en informatique</h3>
-                        <p class="company">Interway</p>
-                        <ul class="experience-details">
-                            <li>Maintenance des infrastructures réseau</li>
-                            <li>Gestion des équipements réseau</li>
-                            <li>Support technique niveau 1 et 2</li>
-                            <li>Gestion des sauvegardes et de la sécurité</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="systems section" id="systems">
-            <div class="section-title-container">
-                <h2 class="section-title">Système & Réseau</h2>
-            </div>
-
-            <div class="systems-container bd-grid">
-                <div class="system-card">
-                    <div class="card-header">
-                        <i class='bx bx-server'></i>
-                        <h3>Infrastructure Réseau</h3>
-                    </div>
-                    <ul class="system-list">
-                        <li>Modèle OSI, TCP/IP</li>
-                        <li>Adressage IPv4 / IPv6</li>
-                        <li>Routage statique et dynamique (RIPv1, RIPv2)</li>
-                        <li>DHCP NAT, sécurité, troubleshooting</li>
-                    </ul>
-                </div>
-
-                <div class="system-card">
+            <div class="competences-grid">
+                <div class="competence-card">
                     <div class="card-header">
                         <i class='bx bx-network-chart'></i>
-                        <h3>Administration Système</h3>
+                        <h3>Infrastructure Réseau</h3>
                     </div>
-                    <ul class="system-list">
-                        <li>VLAN, Trunking, DTP, VTP, Inter-VLAN</li>
-                        <li>Server 2008 R2, 2012 R2, Active Directory</li>
-                        <li>GPO, NTFS, WDS, DHCP, DNS</li>
-                        <li>Linux, Windows 7 à 11</li>
-                    </ul>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class='bx bx-check-circle'></i>Modèle OSI, TCP/IP</li>
+                            <li><i class='bx bx-check-circle'></i>Adressage IPv4 / IPv6</li>
+                            <li><i class='bx bx-check-circle'></i>Routage statique et dynamique (RIPv1, RIPv2)</li>
+                            <li><i class='bx bx-check-circle'></i>DHCP NAT, sécurité, troubleshooting</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="system-card">
+                <div class="competence-card">
+                    <div class="card-header">
+                        <i class='bx bx-server'></i>
+                        <h3>Administration Système</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class='bx bx-check-circle'></i>VLAN, Trunking, DTP, VTP, Inter-VLAN</li>
+                            <li><i class='bx bx-check-circle'></i>Server 2008 R2, 2012 R2, Active Directory</li>
+                            <li><i class='bx bx-check-circle'></i>GPO, NTFS, WDS, DHCP, DNS</li>
+                            <li><i class='bx bx-check-circle'></i>Linux, Windows 7 à 11</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="competence-card">
                     <div class="card-header">
                         <i class='bx bx-support'></i>
                         <h3>Support & Maintenance</h3>
                     </div>
-                    <ul class="system-list">
-                        <li>Hardware, diagnostic, dépannage</li>
-                        <li>Maintenance préventive</li>
-                        <li>Gestion de parc (GLPI)</li>
-                        <li>ITIL, PMAD</li>
-                    </ul>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class='bx bx-check-circle'></i>Hardware, diagnostic, dépannage</li>
+                            <li><i class='bx bx-check-circle'></i>Maintenance préventive</li>
+                            <li><i class='bx bx-check-circle'></i>Gestion de parc (GLPI)</li>
+                            <li><i class='bx bx-check-circle'></i>ITIL, PMAD</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
