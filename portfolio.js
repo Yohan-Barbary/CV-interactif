@@ -36,7 +36,7 @@ const animateTitle = () => {
     text.split('').forEach((char, i) => {
         const span = document.createElement('span')
         span.textContent = char
-        span.style.animationDelay = `${i * 0.05}s`
+        span.style.animationDelay = `${i * 1}s`
         title.appendChild(span)
     })
 }
