@@ -1,0 +1,592 @@
+/* Styles pour la page des outils */
+.tools-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tools-intro {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.tools-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Styles des cartes d'outils */
+.tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tool-header {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tool-logo {
+    width: 60px;
+    height: 60px;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tool-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.tool-title {
+    flex: 1;
+}
+
+.tool-title h2 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.tool-tag {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: 15px;
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+.tool-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-content p {
+    color: #e0e0e0;
+    line-height: 1.5;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tool-content ul {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    margin: 0 0 1rem 0;
+    list-style: none;
+}
+
+.tool-content li {
+    color: #e0e0e0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.tool-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Styles des boutons */
+.tool-links {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-download, .btn-docs {
+    min-width: 160px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 0 1 auto;
+}
+
+.btn-download {
+    background: linear-gradient(45deg, #43A047, #4CAF50);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-docs {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-download:hover {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-docs:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Section des outils additionnels */
+.additional-tools {
+    margin: 6rem auto;
+    max-width: 1400px;
+    padding: 3rem 2rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border-radius: 20px;
+}
+
+.additional-tools h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.additional-tools .tool-logo {
+    width: 60px;
+    height: 60px;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.additional-tools .tool-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.additional-tools .tool-card {
+    min-height: 420px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.additional-tools .tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.additional-tools .tool-card:hover .tool-logo {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.tools-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin: 3rem auto 0;
+    width: 100%;
+}
+
+.tool-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+    transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tool-icon {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-item h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.tool-description {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.tool-features {
+    width: 100%;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.tool-features li {
+    padding: 0.6rem 0 0.6rem 1.8rem;
+    position: relative;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.tool-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.tool-actions {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
+
+.btn-tool, .btn-tool-secondary {
+    min-width: 160px;
+    padding: 0.8rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 0 1 auto;
+}
+
+.btn-tool {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-tool-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-tool:hover, .btn-tool-secondary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.btn-tool i, .btn-tool-secondary i {
+    margin-right: 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+    border-radius: 30px;
+    margin-bottom: 6rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.hero-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.5rem 1.5rem;
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4CAF50;
+    border-radius: 20px;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+/* Main Tools Section */
+.main-tools {
+    margin: 6rem auto;
+}
+
+.tool-card.featured {
+    min-height: 420px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card.featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.tool-logo {
+    width: 70px;
+    height: 70px;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.tool-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tool-title {
+    flex: 1;
+}
+
+.tool-title h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.tool-tag {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: 15px;
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+.tool-card.featured:hover .tool-logo {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 1400px) {
+    .tools-grid,
+    .tools-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .tool-card.featured,
+    .tool-item {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tools-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .additional-tools {
+        margin: 4rem 2rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 4rem 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .main-tools {
+        margin: 4rem auto;
+    }
+
+    .additional-tools {
+        padding: 2rem 1rem;
+        margin: 4rem auto;
+    }
+
+    .tool-card.featured,
+    .tool-item {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-content {
+        padding: 1rem;
+    }
+
+    .tools-grid,
+    .tools-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tool-card.featured,
+    .tool-item {
+        min-height: auto;
+        padding: 1.2rem;
+    }
+
+    .hero-section {
+        padding: 3rem 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .tool-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .tool-logo {
+        margin-bottom: 1rem;
+    }
+
+    .tool-content,
+    .tool-item {
+        padding: 1.5rem;
+    }
+
+    .tool-links, .tool-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-download, .btn-docs,
+    .btn-tool, .btn-tool-secondary {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .tools-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tool-item {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .additional-tools {
+        padding: 2rem 1rem;
+        margin: 3rem 1rem;
+    }
+
+    .additional-tools h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .additional-tools .tool-card {
+        min-height: auto;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .tool-features {
+        padding: 1.2rem;
+    }
+
+    .btn-download,
+    .btn-docs,
+    .btn-tool,
+    .btn-tool-secondary {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+} 

@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Réinitialiser l'animation lors du retour en haut de page
+     /*er */
     window.addEventListener('scroll', () => {
         if (window.scrollY === 0) {
             setTimeout(resetAnimation, 300);
