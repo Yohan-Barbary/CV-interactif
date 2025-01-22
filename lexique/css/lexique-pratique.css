@@ -1,0 +1,213 @@
+/* Styles généraux */
+.lexique-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+    border-radius: 30px;
+    margin-bottom: 4rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Outil */
+.tool-section {
+    margin-bottom: 6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.tool-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tool-logo {
+    width: 80px;
+    height: 80px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+.tool-header h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+/* Grille de commandes */
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.command-category {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.command-category:hover {
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.command-category h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.command-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.command-item {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.command-item:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.command-item code {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    font-size: 0.9rem;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+.command-item code:hover {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.command-item code::after {
+    content: 'Cliquer pour copier';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: rgba(76, 175, 80, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.command-item code:hover::after {
+    opacity: 1;
+}
+
+.command-item p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Media Queries */
+@media (max-width: 1400px) {
+    .commands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .commands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .command-item code {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .command-item {
+        padding: 1rem;
+    }
+
+    .command-item code {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .tool-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .tool-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .command-category {
+        padding: 1.5rem;
+    }
+
+    .command-item {
+        padding: 1rem;
+    }
+
+    .command-item code {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .commands-grid {
+        grid-template-columns: 1fr;
+    }
+} 

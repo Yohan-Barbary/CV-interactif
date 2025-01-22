@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice - CRUD MySQL</title>
+    <link rel="stylesheet" href="../../../commun/styles.css">
+    <link rel="stylesheet" href="../../css/exercices.css">
+    <link rel="stylesheet" href="./css/exercice.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../../../index.html" class="logo-text">&lt;DWWM/&gt;</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="../../exercices.html"><i class="fas fa-tasks"></i><span class="nav-text">Exercices</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="exercise-content">
+        <div class="exercise-header">
+            <h1>CRUD MySQL</h1>
+            <span class="difficulty intermediate">Intermédiaire</span>
+        </div>
+
+        <div class="note-demo">
+            <p class="note">
+                <i class="fas fa-info-circle"></i>
+                Note: Cette démo est actuellement simulée en JavaScript car GitHub Pages ne prend pas en charge PHP. 
+                Dans un environnement serveur réel, les opérations seraient effectuées via PHP et MySQL.
+            </p>
+        </div>
+        
+        <section class="exercise-description">
+            <h2>Description</h2>
+            <p>
+                Dans cet exercice, vous allez créer une application CRUD (Create, Read, Update, Delete) complète 
+                avec PHP et MySQL. L'application permettra de gérer une liste de produits avec leurs caractéristiques.
+            </p>
+            
+            <div class="objectives">
+                <h3>Objectifs</h3>
+                <ul>
+                    <li>Créer une base de données MySQL</li>
+                    <li>Implémenter les opérations CRUD</li>
+                    <li>Gérer les formulaires et la validation des données</li>
+                    <li>Utiliser PDO pour la connexion à la base de données</li>
+                    <li>Gérer les erreurs et les messages de confirmation</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Créez une base de données 'products_db' avec une table 'products'</li>
+                    <li>Implémentez un formulaire pour ajouter des produits</li>
+                    <li>Affichez la liste des produits avec options de modification et suppression</li>
+                    <li>Ajoutez la validation des données côté serveur</li>
+                    <li>Gérez les messages de succès et d'erreur</li>
+                    <li>Implémentez la pagination des résultats</li>
+                </ol>
+            </div>
+
+            <div class="demo-container">
+                <h3>Démo</h3>
+                <div class="crud-app">
+                    <div class="crud-header">
+                        <h2>Gestion des Produits</h2>
+                        <button class="btn-add"><i class="fas fa-plus"></i> Nouveau Produit</button>
+                    </div>
+                    <div class="products-list">
+                        <!-- La liste des produits sera chargée ici -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources">
+                <h2>Ressources</h2>
+                <ul>
+                    <li><a href="https://www.php.net/manual/fr/book.pdo.php" target="_blank">Documentation PDO</a></li>
+                    <li><a href="https://www.php.net/manual/fr/pdo.prepared-statements.php" target="_blank">Requêtes préparées PDO</a></li>
+                    <li><a href="https://www.php.net/manual/fr/function.filter-var.php" target="_blank">Validation des données PHP</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="exercise-actions">
+            <a href="solution.html" class="btn-solution">Voir la solution</a>
+            <a href="../../exercices.html" class="btn-back">Retour aux exercices</a>
+        </div>
+    </main>
+
+    <script src="./js/exercice.js"></script>
+</body>
+</html>

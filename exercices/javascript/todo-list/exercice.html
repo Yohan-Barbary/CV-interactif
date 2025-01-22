@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice - Todo List</title>
+    <link rel="stylesheet" href="../../../commun/styles.css">
+    <link rel="stylesheet" href="../../css/exercices.css">
+    <link rel="stylesheet" href="./css/exercice.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../../../index.html" class="logo-text">&lt;DWWM/&gt;</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="../../exercices.html"><i class="fas fa-tasks"></i><span class="nav-text">Exercices</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="exercise-content">
+        <div class="exercise-header">
+            <h1>Todo List</h1>
+            <span class="difficulty beginner">Débutant</span>
+        </div>
+
+        <section class="exercise-description">
+            <h2>Objectif</h2>
+            <p>Créez une application de liste de tâches interactive avec stockage local des données.</p>
+
+            <div class="instructions">
+                <h3>Fonctionnalités requises</h3>
+                <ul>
+                    <li>Ajouter une nouvelle tâche</li>
+                    <li>Marquer une tâche comme terminée</li>
+                    <li>Supprimer une tâche</li>
+                    <li>Sauvegarder les tâches dans le localStorage</li>
+                </ul>
+
+                <h3>Exigences techniques</h3>
+                <ul>
+                    <li>Utiliser JavaScript vanilla (pas de framework)</li>
+                    <li>Implémenter la persistance des données avec localStorage</li>
+                    <li>Gérer les événements utilisateur</li>
+                    <li>Manipuler le DOM de manière dynamique</li>
+                </ul>
+
+                <h3>Bonus</h3>
+                <ul>
+                    <li>Ajouter une fonction de filtrage (Toutes/Actives/Terminées)</li>
+                    <li>Permettre la modification des tâches existantes</li>
+                    <li>Ajouter des animations CSS</li>
+                </ul>
+            </div>
+
+            <div class="expected-result">
+                <h2>Résultat Attendu</h2>
+                <div class="demo-container">
+                    <div class="todo-app">
+                        <h2>Ma Todo List</h2>
+                        <div class="todo-input">
+                            <input type="text" placeholder="Ajouter une tâche...">
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <span class="todo-text">Exemple de tâche</span>
+                                <div class="todo-actions">
+                                    <button class="complete-btn"><i class="fas fa-check"></i></button>
+                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources">
+                <h2>Ressources</h2>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage" target="_blank">Documentation localStorage</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector" target="_blank">Manipulation du DOM</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener" target="_blank">Gestion des événements</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="exercise-actions">
+            <a href="solution.html" class="btn-solution">Voir la solution</a>
+            <a href="../../exercices.html" class="btn-back">Retour aux exercices</a>
+        </div>
+    </main>
+</body>
+</html> 

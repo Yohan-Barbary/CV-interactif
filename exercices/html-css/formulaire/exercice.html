@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice - Formulaire Interactif</title>
+    <link rel="stylesheet" href="../../../commun/styles.css">
+    <link rel="stylesheet" href="../../css/exercices.css">
+    <link rel="stylesheet" href="./css/exercice.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../../../index.html" class="logo-text">&lt;DWWM/&gt;</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="../../exercices.html"><i class="fas fa-tasks"></i><span class="nav-text">Exercices</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="exercise-content">
+        <div class="exercise-header">
+            <h1>Formulaire Interactif</h1>
+            <span class="difficulty intermediate">Intermédiaire</span>
+        </div>
+
+        <!-- Aperçu du résultat attendu -->
+        <section class="expected-result">
+            <h2>Résultat Attendu</h2>
+            <div class="preview-container">
+                <div class="demo-form">
+                    <h2>Inscription</h2>
+                    <form class="demo-form-content">
+                        <div class="form-group">
+                            <label for="demo-name">Nom complet</label>
+                            <input type="text" id="demo-name" placeholder="John Doe">
+                            <span class="validation-message">Le nom est requis</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-email">Email</label>
+                            <input type="email" id="demo-email" placeholder="john@example.com">
+                            <span class="validation-message">Email invalide</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-password">Mot de passe</label>
+                            <div class="password-input">
+                                <input type="password" id="demo-password">
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="exercise-description">
+            <h2>Objectif</h2>
+            <p>Créer un formulaire d'inscription interactif avec validation en temps réel et retours visuels.</p>
+
+            <h2>Consignes</h2>
+            <div class="instructions">
+                <h3>Structure requise</h3>
+                <ul>
+                    <li>Champs pour nom, email et mot de passe</li>
+                    <li>Messages de validation personnalisés</li>
+                    <li>Indicateur de force du mot de passe</li>
+                    <li>Bouton pour afficher/masquer le mot de passe</li>
+                </ul>
+
+                <h3>Exigences techniques</h3>
+                <ul>
+                    <li>Validation en temps réel avec JavaScript</li>
+                    <li>Styles personnalisés pour les états des champs :
+                        <ul>
+                            <li>Normal</li>
+                            <li>Focus</li>
+                            <li>Erreur</li>
+                            <li>Validé</li>
+                        </ul>
+                    </li>
+                    <li>Animations pour les messages d'erreur</li>
+                </ul>
+
+                <h3>Bonus</h3>
+                <ul>
+                    <li>Ajouter une vérification de force du mot de passe</li>
+                    <li>Implémenter une confirmation du mot de passe</li>
+                    <li>Ajouter des transitions fluides</li>
+                </ul>
+            </div>
+
+            <div class="resources">
+                <h2>Ressources</h2>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Learn/Forms" target="_blank">Guide MDN sur les formulaires</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Constraint_validation" target="_blank">API de validation des contraintes</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Animations" target="_blank">Animations CSS</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="exercise-actions">
+            <a href="solution.html" class="btn-solution">Voir la solution</a>
+            <a href="../../exercices.html" class="btn-back">Retour aux exercices</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+</body>
+</html> 

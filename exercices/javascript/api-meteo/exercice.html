@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice - API Météo</title>
+    <link rel="stylesheet" href="../../../commun/styles.css">
+    <link rel="stylesheet" href="../../css/exercices.css">
+    <link rel="stylesheet" href="./css/exercice.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="../../../index.html" class="logo-text">&lt;DWWM/&gt;</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../index.html"><i class="fas fa-home"></i><span class="nav-text">Accueil</span></a></li>
+                <li><a href="../../exercices.html"><i class="fas fa-tasks"></i><span class="nav-text">Exercices</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="exercise-content">
+        <div class="exercise-header">
+            <h1>API Météo</h1>
+            <span class="difficulty advanced">Avancé</span>
+        </div>
+
+        <section class="exercise-description">
+            <h2>Objectif</h2>
+            <p>Créez une application météo qui utilise l'API OpenWeatherMap pour afficher les conditions météorologiques actuelles et les prévisions.</p>
+
+            <div class="instructions">
+                <h3>Fonctionnalités requises</h3>
+                <ul>
+                    <li>Recherche de ville avec autocomplétion</li>
+                    <li>Affichage des conditions météo actuelles</li>
+                    <li>Affichage des prévisions sur 5 jours</li>
+                    <li>Gestion des erreurs et états de chargement</li>
+                    <li>Stockage des dernières recherches</li>
+                </ul>
+
+                <h3>Exigences techniques</h3>
+                <ul>
+                    <li>Utilisation de l'API Fetch et des Promesses</li>
+                    <li>Gestion asynchrone avec async/await</li>
+                    <li>Manipulation dynamique du DOM</li>
+                    <li>Gestion du localStorage</li>
+                    <li>Gestion des erreurs try/catch</li>
+                </ul>
+
+                <h3>Bonus</h3>
+                <ul>
+                    <li>Ajout d'animations pour les transitions</li>
+                    <li>Affichage d'une carte interactive</li>
+                    <li>Mode sombre/clair</li>
+                    <li>Support multilingue</li>
+                </ul>
+            </div>
+
+            <div class="expected-result">
+                <h2>Résultat Attendu</h2>
+                <div class="demo-container">
+                    <div class="weather-app">
+                        <div class="search-section">
+                            <input type="text" placeholder="Rechercher une ville..." class="search-input">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="weather-display">
+                            <div class="current-weather">
+                                <h2>Paris, FR</h2>
+                                <div class="weather-info">
+                                    <i class="fas fa-sun"></i>
+                                    <div class="temperature">22°C</div>
+                                    <div class="description">Ensoleillé</div>
+                                </div>
+                                <div class="details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-tint"></i>
+                                        <span>Humidité: 65%</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-wind"></i>
+                                        <span>Vent: 12 km/h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources">
+                <h2>Ressources</h2>
+                <ul>
+                    <li><a href="https://openweathermap.org/api" target="_blank">Documentation OpenWeatherMap</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API" target="_blank">Documentation Fetch API</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">Async/Await</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="exercise-actions">
+            <a href="solution.html" class="btn-solution">Voir la solution</a>
+            <a href="../../exercices.html" class="btn-back">Retour aux exercices</a>
+        </div>
+    </main>
+
+    <script src="./js/exercice.js"></script>
+</body>
+</html> 
